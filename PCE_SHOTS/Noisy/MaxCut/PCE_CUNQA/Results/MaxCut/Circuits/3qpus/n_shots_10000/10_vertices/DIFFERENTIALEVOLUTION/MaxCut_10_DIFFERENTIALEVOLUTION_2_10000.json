@@ -1,0 +1,57 @@
+{
+  "resultados": [
+    {
+      "compression": 2,
+      "qubits": 4,
+      "elapsed_time": 22373.62041401863,
+      "alpha": 6.0,
+      "beta": 0.5,
+      "f_loss_value": -8.595698827147602,
+      "function_evaluations": 36049,
+      "Number of iterations": 1000,
+      "num_params": 12,
+      "params": [
+        1.5967085058993316,
+        2.6161382030957254,
+        1.6705644218299105,
+        4.51415762965156,
+        6.238784365623834,
+        2.8662751374066167,
+        0.8218255725793147,
+        2.7067608246525054,
+        3.923021874970911,
+        6.129532043373611,
+        5.023953392565081,
+        5.187684640532268
+      ],
+      "initial_cut": 24.0,
+      "refined_cut": 24.0,
+      "initial_bitstring": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "refined_bitstring": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    }
+  ]
+}

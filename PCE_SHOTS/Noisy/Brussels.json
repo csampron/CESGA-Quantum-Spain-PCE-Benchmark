@@ -1,0 +1,4335 @@
+{
+    "Qubits": {
+        "q[0]": {
+            "T1 (s)": 0.0003744180821096646,
+            "T2 (s)": 0.00020219164335996367,
+            "Drive Frequency (Hz)": 4.897564143208395,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.987548828125
+        },
+        "q[1]": {
+            "T1 (s)": 0.0004874802714909657,
+            "T2 (s)": 6.251191926081985e-05,
+            "Drive Frequency (Hz)": 4.838443664624288,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98779296875
+        },
+        "q[2]": {
+            "T1 (s)": 0.00024177650804660478,
+            "T2 (s)": 0.00019428157422174896,
+            "Drive Frequency (Hz)": 4.654274772841678,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97705078125
+        },
+        "q[3]": {
+            "T1 (s)": 0.00030426494305863135,
+            "T2 (s)": 0.0003290896259128344,
+            "Drive Frequency (Hz)": 4.856016630270058,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.99169921875
+        },
+        "q[4]": {
+            "T1 (s)": 0.00032441855735724476,
+            "T2 (s)": 0.0002777316230211214,
+            "Drive Frequency (Hz)": 4.909437941935998,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986328125
+        },
+        "q[5]": {
+            "T1 (s)": 0.00022702429945744226,
+            "T2 (s)": 0.00023116008945010542,
+            "Drive Frequency (Hz)": 4.818060945985691,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98876953125
+        },
+        "q[6]": {
+            "T1 (s)": 0.0003446315841464813,
+            "T2 (s)": 0.00021279166365131025,
+            "Drive Frequency (Hz)": 4.7576125601821,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.974853515625
+        },
+        "q[7]": {
+            "T1 (s)": 0.00042584266277926957,
+            "T2 (s)": 0.00017372481846025141,
+            "Drive Frequency (Hz)": 4.530949675353083,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986328125
+        },
+        "q[8]": {
+            "T1 (s)": 0.0003977830728524519,
+            "T2 (s)": 0.0001925560570979972,
+            "Drive Frequency (Hz)": 4.769946797879444,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97802734375
+        },
+        "q[9]": {
+            "T1 (s)": 0.0006055352834924321,
+            "T2 (s)": 0.00030251911066354805,
+            "Drive Frequency (Hz)": 4.863291162233198,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.993896484375
+        },
+        "q[10]": {
+            "T1 (s)": 0.000252648890165071,
+            "T2 (s)": 0.00028994740657865576,
+            "Drive Frequency (Hz)": 4.775496951409778,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.99462890625
+        },
+        "q[11]": {
+            "T1 (s)": 0.0003558463962368469,
+            "T2 (s)": 0.00010847436705386145,
+            "Drive Frequency (Hz)": 4.66965834416856,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.990234375
+        },
+        "q[12]": {
+            "T1 (s)": 0.00041190678464079957,
+            "T2 (s)": 2.337222150501087e-05,
+            "Drive Frequency (Hz)": 4.578391960032995,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.980224609375
+        },
+        "q[13]": {
+            "T1 (s)": 0.0005395079565869604,
+            "T2 (s)": 0.0002630840116216627,
+            "Drive Frequency (Hz)": 4.622890845330395,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.988525390625
+        },
+        "q[14]": {
+            "T1 (s)": 0.00025777728896313786,
+            "T2 (s)": 0.00023358608525749451,
+            "Drive Frequency (Hz)": 4.788415381342146,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.993896484375
+        },
+        "q[15]": {
+            "T1 (s)": 0.00044741137129845074,
+            "T2 (s)": 8.298955675445477e-05,
+            "Drive Frequency (Hz)": 4.699833073392752,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.964599609375
+        },
+        "q[16]": {
+            "T1 (s)": 0.0005356717568691515,
+            "T2 (s)": 0.00029071453720961373,
+            "Drive Frequency (Hz)": 4.610604335145695,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.991943359375
+        },
+        "q[17]": {
+            "T1 (s)": 0.00036983522616899683,
+            "T2 (s)": 0.00034818801403134334,
+            "Drive Frequency (Hz)": 4.7894542466578995,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9853515625
+        },
+        "q[18]": {
+            "T1 (s)": 0.0003278531182999007,
+            "T2 (s)": 6.965835034470644e-05,
+            "Drive Frequency (Hz)": 4.9169769181465295,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.989013671875
+        },
+        "q[19]": {
+            "T1 (s)": 0.00016795085510317107,
+            "T2 (s)": 2.2069739091962655e-05,
+            "Drive Frequency (Hz)": 4.711876728447141,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.958740234375
+        },
+        "q[20]": {
+            "T1 (s)": 0.0003380990817518034,
+            "T2 (s)": 0.000150659145640115,
+            "Drive Frequency (Hz)": 4.75150684426629,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98095703125
+        },
+        "q[21]": {
+            "T1 (s)": 0.0002927317333131852,
+            "T2 (s)": 0.0001504198995145802,
+            "Drive Frequency (Hz)": 4.643175971661085,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.96142578125
+        },
+        "q[22]": {
+            "T1 (s)": 0.000346617048997218,
+            "T2 (s)": 5.8705664438374974e-05,
+            "Drive Frequency (Hz)": 4.894001526282361,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9189453125
+        },
+        "q[23]": {
+            "T1 (s)": 0.00016843130077525144,
+            "T2 (s)": 3.882109479024354e-05,
+            "Drive Frequency (Hz)": 4.673780472928107,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9560546875
+        },
+        "q[24]": {
+            "T1 (s)": 9.982915664902591e-05,
+            "T2 (s)": 7.20542030897389e-05,
+            "Drive Frequency (Hz)": 4.733395005141045,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97900390625
+        },
+        "q[25]": {
+            "T1 (s)": 0.00021880273829406714,
+            "T2 (s)": 0.00023150696207632735,
+            "Drive Frequency (Hz)": 4.810072581377586,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.981689453125
+        },
+        "q[26]": {
+            "T1 (s)": 0.00039439514451966573,
+            "T2 (s)": 0.0003278737937596039,
+            "Drive Frequency (Hz)": 4.71272227852176,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.990234375
+        },
+        "q[27]": {
+            "T1 (s)": 0.0003737692480222562,
+            "T2 (s)": 0.00020032061097511415,
+            "Drive Frequency (Hz)": 4.800989185940189,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.988037109375
+        },
+        "q[28]": {
+            "T1 (s)": 0.00017783000098483623,
+            "T2 (s)": 0.00010962891498982584,
+            "Drive Frequency (Hz)": 4.90196508145971,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.913330078125
+        },
+        "q[29]": {
+            "T1 (s)": 0.0003649662080637358,
+            "T2 (s)": 3.942732453150974e-05,
+            "Drive Frequency (Hz)": 4.636939181916007,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.964599609375
+        },
+        "q[30]": {
+            "T1 (s)": 0.0004724356240376861,
+            "T2 (s)": 0.0001975970540238012,
+            "Drive Frequency (Hz)": 4.563087250380774,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.989990234375
+        },
+        "q[31]": {
+            "T1 (s)": 0.0003857357140446349,
+            "T2 (s)": 7.731294471027666e-05,
+            "Drive Frequency (Hz)": 4.792784512374378,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.981689453125
+        },
+        "q[32]": {
+            "T1 (s)": 0.0004135853132916131,
+            "T2 (s)": 4.101427693730037e-05,
+            "Drive Frequency (Hz)": 4.73651461393604,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.963623046875
+        },
+        "q[33]": {
+            "T1 (s)": 0.0002556460417421939,
+            "T2 (s)": 0.00010917736857274184,
+            "Drive Frequency (Hz)": 4.849936777086279,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97412109375
+        },
+        "q[34]": {
+            "T1 (s)": 0.0004213981050010614,
+            "T2 (s)": 0.00026027116383258835,
+            "Drive Frequency (Hz)": 4.79004926658828,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.99365234375
+        },
+        "q[35]": {
+            "T1 (s)": 0.0001599103226456904,
+            "T2 (s)": 4.70896194992534e-05,
+            "Drive Frequency (Hz)": 4.762914149333855,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.93798828125
+        },
+        "q[36]": {
+            "T1 (s)": 0.00034448049507431903,
+            "T2 (s)": 0.00010628777508698307,
+            "Drive Frequency (Hz)": 4.5611402714548035,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97802734375
+        },
+        "q[37]": {
+            "T1 (s)": 0.0002515310419586028,
+            "T2 (s)": 6.517910702727145e-05,
+            "Drive Frequency (Hz)": 4.9573819852739005,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.970947265625
+        },
+        "q[38]": {
+            "T1 (s)": 0.000374608514279543,
+            "T2 (s)": 0.00018189399515504732,
+            "Drive Frequency (Hz)": 4.711706914908827,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.993408203125
+        },
+        "q[39]": {
+            "T1 (s)": 0.0002996387820939231,
+            "T2 (s)": 0.00012734976179271663,
+            "Drive Frequency (Hz)": 4.648800352489159,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.972900390625
+        },
+        "q[40]": {
+            "T1 (s)": 0.00038639587295421883,
+            "T2 (s)": 0.00014130736753767444,
+            "Drive Frequency (Hz)": 4.817628931710145,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98095703125
+        },
+        "q[41]": {
+            "T1 (s)": 0.0001458128456797799,
+            "T2 (s)": 1.4602058309009522e-05,
+            "Drive Frequency (Hz)": 4.768613376581079,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.96435546875
+        },
+        "q[42]": {
+            "T1 (s)": 0.00022187217452503355,
+            "T2 (s)": 0.0001596952488040689,
+            "Drive Frequency (Hz)": 4.854803227941787,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.99169921875
+        },
+        "q[43]": {
+            "T1 (s)": 0.00046639194474540205,
+            "T2 (s)": 0.0004646780874065065,
+            "Drive Frequency (Hz)": 4.717998768717497,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986083984375
+        },
+        "q[44]": {
+            "T1 (s)": 0.00024371163443390775,
+            "T2 (s)": 6.821034677467027e-05,
+            "Drive Frequency (Hz)": 4.563578886698587,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.95361328125
+        },
+        "q[45]": {
+            "T1 (s)": 0.0003497869359422193,
+            "T2 (s)": 0.00018182694712065532,
+            "Drive Frequency (Hz)": 4.818296243505754,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9375
+        },
+        "q[46]": {
+            "T1 (s)": 0.0002037729443566144,
+            "T2 (s)": 1.2679038593310595e-05,
+            "Drive Frequency (Hz)": 4.769202106080412,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.885009765625
+        },
+        "q[47]": {
+            "T1 (s)": 0.0005045717450556688,
+            "T2 (s)": 3.383239772748507e-05,
+            "Drive Frequency (Hz)": 4.693276698198214,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.95703125
+        },
+        "q[48]": {
+            "T1 (s)": 5.487387356823166e-05,
+            "T2 (s)": 3.671400570095471e-05,
+            "Drive Frequency (Hz)": 4.579561214128263,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9755859375
+        },
+        "q[49]": {
+            "T1 (s)": 0.00018816559503615017,
+            "T2 (s)": 0.00012835926066579083,
+            "Drive Frequency (Hz)": 4.800344423987549,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9755859375
+        },
+        "q[50]": {
+            "T1 (s)": 0.00030062486791855835,
+            "T2 (s)": 2.3817009162284994e-05,
+            "Drive Frequency (Hz)": 4.727822358648768,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.957763671875
+        },
+        "q[51]": {
+            "T1 (s)": 0.0003460880618289482,
+            "T2 (s)": 8.949196279746078e-05,
+            "Drive Frequency (Hz)": 4.771213210291972,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.979736328125
+        },
+        "q[52]": {
+            "T1 (s)": 0.00030664430800506667,
+            "T2 (s)": 1.8145249200293816e-05,
+            "Drive Frequency (Hz)": 4.871850723315274,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.978515625
+        },
+        "q[53]": {
+            "T1 (s)": 0.00027486347111682,
+            "T2 (s)": 0.0003190150084275003,
+            "Drive Frequency (Hz)": 4.986764509269198,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.96875
+        },
+        "q[54]": {
+            "T1 (s)": 0.00024098717887377236,
+            "T2 (s)": 0.000166337826139008,
+            "Drive Frequency (Hz)": 4.914162129071861,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.968505859375
+        },
+        "q[55]": {
+            "T1 (s)": 7.758287708361845e-05,
+            "T2 (s)": 8.230846244541295e-05,
+            "Drive Frequency (Hz)": 4.891693883256933,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.978759765625
+        },
+        "q[56]": {
+            "T1 (s)": 0.00013102854545219743,
+            "T2 (s)": 9.947565718828023e-05,
+            "Drive Frequency (Hz)": 4.9480142216801735,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986328125
+        },
+        "q[57]": {
+            "T1 (s)": 0.0004451618841679259,
+            "T2 (s)": 0.00020131314475103118,
+            "Drive Frequency (Hz)": 4.742541394817886,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98291015625
+        },
+        "q[58]": {
+            "T1 (s)": 0.0005187164808734434,
+            "T2 (s)": 0.0001537014137167812,
+            "Drive Frequency (Hz)": 4.864609643001999,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.839599609375
+        },
+        "q[59]": {
+            "T1 (s)": 0.00044599247798988084,
+            "T2 (s)": 5.136872696660932e-05,
+            "Drive Frequency (Hz)": 4.797427288983483,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.947509765625
+        },
+        "q[60]": {
+            "T1 (s)": 5.500436213949155e-05,
+            "T2 (s)": 0.00012335245405399934,
+            "Drive Frequency (Hz)": 4.921561602943866,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986083984375
+        },
+        "q[61]": {
+            "T1 (s)": 0.0002200843394856808,
+            "T2 (s)": 3.755255107210814e-05,
+            "Drive Frequency (Hz)": 4.826779511375754,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.978515625
+        },
+        "q[62]": {
+            "T1 (s)": 0.00020686634317778737,
+            "T2 (s)": 0.00017847876281883418,
+            "Drive Frequency (Hz)": 4.871928110946254,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.981201171875
+        },
+        "q[63]": {
+            "T1 (s)": 0.00041240520717856377,
+            "T2 (s)": 0.00029986262943860223,
+            "Drive Frequency (Hz)": 4.661826261799694,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9755859375
+        },
+        "q[64]": {
+            "T1 (s)": 0.00012914034851402967,
+            "T2 (s)": 0.00012563741827534684,
+            "Drive Frequency (Hz)": 4.749652800557593,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.976806640625
+        },
+        "q[65]": {
+            "T1 (s)": 0.0002913466791883952,
+            "T2 (s)": 0.00021219684019171275,
+            "Drive Frequency (Hz)": 4.684321985663524,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.932373046875
+        },
+        "q[66]": {
+            "T1 (s)": 8.509082395832828e-05,
+            "T2 (s)": 0.00011300603791604897,
+            "Drive Frequency (Hz)": 4.932189803479873,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.978271484375
+        },
+        "q[67]": {
+            "T1 (s)": 0.00047900140695677655,
+            "T2 (s)": 0.00023488354344900758,
+            "Drive Frequency (Hz)": 4.720300687258298,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.979736328125
+        },
+        "q[68]": {
+            "T1 (s)": 0.00027930830994344095,
+            "T2 (s)": 8.608388175689852e-05,
+            "Drive Frequency (Hz)": 4.831981380330571,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.982177734375
+        },
+        "q[69]": {
+            "T1 (s)": 0.0003311704089342112,
+            "T2 (s)": 4.356649896496423e-05,
+            "Drive Frequency (Hz)": 4.705227497599387,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98291015625
+        },
+        "q[70]": {
+            "T1 (s)": 0.00027322497182825136,
+            "T2 (s)": 4.051742488772261e-05,
+            "Drive Frequency (Hz)": 4.767693950716292,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.95166015625
+        },
+        "q[71]": {
+            "T1 (s)": 0.0003119545370761248,
+            "T2 (s)": 0.00013789164672038198,
+            "Drive Frequency (Hz)": 4.972105641872057,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.905517578125
+        },
+        "q[72]": {
+            "T1 (s)": 4.5539150348360266e-05,
+            "T2 (s)": 2.671593557259254e-05,
+            "Drive Frequency (Hz)": 4.7382609370396835,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.924560546875
+        },
+        "q[73]": {
+            "T1 (s)": 0.0002025602569125341,
+            "T2 (s)": 0.0002151537566596581,
+            "Drive Frequency (Hz)": 5.020377383289503,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.979736328125
+        },
+        "q[74]": {
+            "T1 (s)": 0.0002761864912477704,
+            "T2 (s)": 0.000244638520674049,
+            "Drive Frequency (Hz)": 4.807272789248015,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.99072265625
+        },
+        "q[75]": {
+            "T1 (s)": 5.725818422644726e-05,
+            "T2 (s)": 4.540020635172542e-05,
+            "Drive Frequency (Hz)": 4.768860365069644,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.91455078125
+        },
+        "q[76]": {
+            "T1 (s)": 0.000204022076848489,
+            "T2 (s)": 0.00012965686894876678,
+            "Drive Frequency (Hz)": 5.030914288462906,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9384765625
+        },
+        "q[77]": {
+            "T1 (s)": 0.00032518391466113074,
+            "T2 (s)": 0.00014248516008150348,
+            "Drive Frequency (Hz)": 4.747530451775171,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.865966796875
+        },
+        "q[78]": {
+            "T1 (s)": 0.00034588049138393106,
+            "T2 (s)": 0.00015573221425245435,
+            "Drive Frequency (Hz)": 4.826968269617968,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98193359375
+        },
+        "q[79]": {
+            "T1 (s)": 0.0004098712172642927,
+            "T2 (s)": 0.00018847458560683765,
+            "Drive Frequency (Hz)": 4.739020746709154,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.987548828125
+        },
+        "q[80]": {
+            "T1 (s)": 0.0001782418530803682,
+            "T2 (s)": 0.0003440447474913797,
+            "Drive Frequency (Hz)": 4.902829467830981,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.994873046875
+        },
+        "q[81]": {
+            "T1 (s)": 0.00028995022491168777,
+            "T2 (s)": 0.00020033156030502475,
+            "Drive Frequency (Hz)": 4.789850258243647,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.978515625
+        },
+        "q[82]": {
+            "T1 (s)": 0.0004649028562628079,
+            "T2 (s)": 0.0005803309182890611,
+            "Drive Frequency (Hz)": 4.64134435371974,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.992431640625
+        },
+        "q[83]": {
+            "T1 (s)": 0.0001025610990578978,
+            "T2 (s)": 0.00015528578700284979,
+            "Drive Frequency (Hz)": 4.7556097121369385,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9931640625
+        },
+        "q[84]": {
+            "T1 (s)": 0.00020597096594337743,
+            "T2 (s)": 0.0001162815515454978,
+            "Drive Frequency (Hz)": 4.854705666139947,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.983642578125
+        },
+        "q[85]": {
+            "T1 (s)": 0.00024336364840977433,
+            "T2 (s)": 0.00023647180163552554,
+            "Drive Frequency (Hz)": 4.934186273626605,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.984619140625
+        },
+        "q[86]": {
+            "T1 (s)": 0.0002511145971176541,
+            "T2 (s)": 0.0002616571606946652,
+            "Drive Frequency (Hz)": 4.841944840787324,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97509765625
+        },
+        "q[87]": {
+            "T1 (s)": 0.00022835972751783937,
+            "T2 (s)": 0.00019901869446217852,
+            "Drive Frequency (Hz)": 4.906399096887462,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9794921875
+        },
+        "q[88]": {
+            "T1 (s)": 0.00020011706094667214,
+            "T2 (s)": 0.00015322530764875334,
+            "Drive Frequency (Hz)": 4.83543940589325,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9921875
+        },
+        "q[89]": {
+            "T1 (s)": 0.0002607092323303312,
+            "T2 (s)": 1.8477530325549482e-05,
+            "Drive Frequency (Hz)": 4.756081561534875,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.974853515625
+        },
+        "q[90]": {
+            "T1 (s)": 0.0004502505327133424,
+            "T2 (s)": 0.0001517480361143918,
+            "Drive Frequency (Hz)": 4.641560429649339,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.838623046875
+        },
+        "q[91]": {
+            "T1 (s)": 0.00018869842776364143,
+            "T2 (s)": 0.00014463077815847258,
+            "Drive Frequency (Hz)": 4.6810722956144515,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.927001953125
+        },
+        "q[92]": {
+            "T1 (s)": 0.00018612369765191105,
+            "T2 (s)": 0.00022681168085545702,
+            "Drive Frequency (Hz)": 4.98279413022588,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.984375
+        },
+        "q[93]": {
+            "T1 (s)": 0.00021047334607659078,
+            "T2 (s)": 0.00017356720591135019,
+            "Drive Frequency (Hz)": 5.074896094498126,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.955810546875
+        },
+        "q[94]": {
+            "T1 (s)": 0.00030483031803626065,
+            "T2 (s)": 0.00023677919439152168,
+            "Drive Frequency (Hz)": 4.871484419572673,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9931640625
+        },
+        "q[95]": {
+            "T1 (s)": 0.00031460792641412527,
+            "T2 (s)": 0.00022328133541192106,
+            "Drive Frequency (Hz)": 4.770274172765023,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.954833984375
+        },
+        "q[96]": {
+            "T1 (s)": 0.00018512431726216735,
+            "T2 (s)": 0.00012423827774279576,
+            "Drive Frequency (Hz)": 4.908899465396736,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.985107421875
+        },
+        "q[97]": {
+            "T1 (s)": 0.0001557906081881533,
+            "T2 (s)": 4.5529176376125676e-07,
+            "Drive Frequency (Hz)": 4.604340455093575,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.509521484375
+        },
+        "q[98]": {
+            "T1 (s)": 0.0002885351873302465,
+            "T2 (s)": 0.00015787707950117575,
+            "Drive Frequency (Hz)": 4.8740239938898675,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.989990234375
+        },
+        "q[99]": {
+            "T1 (s)": 0.0002702381805034495,
+            "T2 (s)": 0.00019509063327594143,
+            "Drive Frequency (Hz)": 4.8328185666260035,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.96826171875
+        },
+        "q[100]": {
+            "T1 (s)": 0.0003389472130652101,
+            "T2 (s)": 0.00029861044070074075,
+            "Drive Frequency (Hz)": 4.617807733808394,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.95947265625
+        },
+        "q[101]": {
+            "T1 (s)": 0.00013680386057666772,
+            "T2 (s)": 0.00014109037751957337,
+            "Drive Frequency (Hz)": 4.837258869961302,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9736328125
+        },
+        "q[102]": {
+            "T1 (s)": 0.00010539246756931615,
+            "T2 (s)": 2.0880965845693415e-05,
+            "Drive Frequency (Hz)": 4.928513459109189,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9892578125
+        },
+        "q[103]": {
+            "T1 (s)": 0.00018450371103767517,
+            "T2 (s)": 6.734377315101978e-05,
+            "Drive Frequency (Hz)": 4.837573398715993,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.983642578125
+        },
+        "q[104]": {
+            "T1 (s)": 0.00023192866166032753,
+            "T2 (s)": 0.0002437634984875855,
+            "Drive Frequency (Hz)": 4.941634500406007,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.97509765625
+        },
+        "q[105]": {
+            "T1 (s)": 0.00024280273411178817,
+            "T2 (s)": 0.00019557544893849456,
+            "Drive Frequency (Hz)": 4.790804924032546,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98681640625
+        },
+        "q[106]": {
+            "T1 (s)": 0.00035289390237361687,
+            "T2 (s)": 0.0002456929786234669,
+            "Drive Frequency (Hz)": 4.9576752098454815,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.988525390625
+        },
+        "q[107]": {
+            "T1 (s)": 0.00014078671612893868,
+            "T2 (s)": 0.00020353606593045975,
+            "Drive Frequency (Hz)": 5.00622814135737,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9443359375
+        },
+        "q[108]": {
+            "T1 (s)": 0.0003197082874562024,
+            "T2 (s)": 0.00027367485448716094,
+            "Drive Frequency (Hz)": 4.793162713255041,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.955322265625
+        },
+        "q[109]": {
+            "T1 (s)": 0.0002778745953957724,
+            "T2 (s)": 0.0002426483184428941,
+            "Drive Frequency (Hz)": 4.805683780649669,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9453125
+        },
+        "q[110]": {
+            "T1 (s)": 0.00025441247571592003,
+            "T2 (s)": 0.00014907472230436225,
+            "Drive Frequency (Hz)": 4.872646659365962,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9443359375
+        },
+        "q[111]": {
+            "T1 (s)": 0.0001289382198697815,
+            "T2 (s)": 0.00016762561183262173,
+            "Drive Frequency (Hz)": 4.831981551709251,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98828125
+        },
+        "q[112]": {
+            "T1 (s)": 0.00029262223363588205,
+            "T2 (s)": 0.0002740911936333331,
+            "Drive Frequency (Hz)": 4.980310682049986,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.962646484375
+        },
+        "q[113]": {
+            "T1 (s)": 0.000130455912327201,
+            "T2 (s)": 0.00020171795374036104,
+            "Drive Frequency (Hz)": 4.929957179659225,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98046875
+        },
+        "q[114]": {
+            "T1 (s)": 0.0004415859856041604,
+            "T2 (s)": 0.000323258282767927,
+            "Drive Frequency (Hz)": 4.686639371484199,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9443359375
+        },
+        "q[115]": {
+            "T1 (s)": 0.00035207152498945254,
+            "T2 (s)": 4.387753631079622e-05,
+            "Drive Frequency (Hz)": 4.64889708257915,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.933349609375
+        },
+        "q[116]": {
+            "T1 (s)": 0.00030658636820091005,
+            "T2 (s)": 0.00023370767636221425,
+            "Drive Frequency (Hz)": 4.848922107806513,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.98779296875
+        },
+        "q[117]": {
+            "T1 (s)": 0.00025536131239031724,
+            "T2 (s)": 0.00020174022478302054,
+            "Drive Frequency (Hz)": 4.734397452186148,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.953125
+        },
+        "q[118]": {
+            "T1 (s)": 0.00011519031564099591,
+            "T2 (s)": 0.0001601741075264843,
+            "Drive Frequency (Hz)": 4.973002444175682,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.985107421875
+        },
+        "q[119]": {
+            "T1 (s)": 0.0002521558891569131,
+            "T2 (s)": 0.0003631145381399481,
+            "Drive Frequency (Hz)": 4.796021120549879,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.980224609375
+        },
+        "q[120]": {
+            "T1 (s)": 0.00024033825127352536,
+            "T2 (s)": 0.00023047230717220302,
+            "Drive Frequency (Hz)": 4.8908006729450815,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.983642578125
+        },
+        "q[121]": {
+            "T1 (s)": 0.0002207997825176497,
+            "T2 (s)": 0.00029549293959498754,
+            "Drive Frequency (Hz)": 4.80996031646978,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.980224609375
+        },
+        "q[122]": {
+            "T1 (s)": 0.0001955835199161332,
+            "T2 (s)": 0.00025011105804711466,
+            "Drive Frequency (Hz)": 4.93936138749358,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.984619140625
+        },
+        "q[123]": {
+            "T1 (s)": 0.0002999406896607362,
+            "T2 (s)": 0.00030933442743475716,
+            "Drive Frequency (Hz)": 4.751797197837263,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.989990234375
+        },
+        "q[124]": {
+            "T1 (s)": 0.00014965378223453428,
+            "T2 (s)": 0.0003050662607431395,
+            "Drive Frequency (Hz)": 4.972299425983409,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.986328125
+        },
+        "q[125]": {
+            "T1 (s)": 0.00023316413768462944,
+            "T2 (s)": 0.00029898515148698966,
+            "Drive Frequency (Hz)": 4.777911631230319,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9833984375
+        },
+        "q[126]": {
+            "T1 (s)": 0.0003561019791990906,
+            "T2 (s)": 0.0002025869564636172,
+            "Drive Frequency (Hz)": 4.8917688607013705,
+            "Readout duration (s)": 1.5e-06,
+            "Readout fidelity (RB)": 0.9853515625
+        }
+    },
+    "Q1Gates": {
+        "q[0]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998193382215199
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998193382215199
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998193382215199
+            }
+        },
+        "q[1]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999093848505695
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999093848505695
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999093848505695
+            }
+        },
+        "q[2]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999289209469194
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999289209469194
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999289209469194
+            }
+        },
+        "q[3]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998149993866425
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998149993866425
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998149993866425
+            }
+        },
+        "q[4]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998640662245777
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998640662245777
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998640662245777
+            }
+        },
+        "q[5]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996795334816396
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996795334816396
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996795334816396
+            }
+        },
+        "q[6]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999867149265693
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999867149265693
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999867149265693
+            }
+        },
+        "q[7]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998610867272469
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998610867272469
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998610867272469
+            }
+        },
+        "q[8]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998637204238304
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998637204238304
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998637204238304
+            }
+        },
+        "q[9]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998403570028233
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998403570028233
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998403570028233
+            }
+        },
+        "q[10]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998120347242813
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998120347242813
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998120347242813
+            }
+        },
+        "q[11]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998524524023944
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998524524023944
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998524524023944
+            }
+        },
+        "q[12]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994892695112738
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994892695112738
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994892695112738
+            }
+        },
+        "q[13]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997675916333894
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997675916333894
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997675916333894
+            }
+        },
+        "q[14]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998779106994387
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998779106994387
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998779106994387
+            }
+        },
+        "q[15]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998153411146793
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998153411146793
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998153411146793
+            }
+        },
+        "q[16]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999265802553255
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999265802553255
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999265802553255
+            }
+        },
+        "q[17]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997672272667328
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997672272667328
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997672272667328
+            }
+        },
+        "q[18]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998662776469693
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998662776469693
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998662776469693
+            }
+        },
+        "q[19]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992352701026811
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992352701026811
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992352701026811
+            }
+        },
+        "q[20]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997882817901969
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997882817901969
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997882817901969
+            }
+        },
+        "q[21]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999768776098019
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999768776098019
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999768776098019
+            }
+        },
+        "q[22]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999209530796818
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999209530796818
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999209530796818
+            }
+        },
+        "q[23]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993146081370115
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993146081370115
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993146081370115
+            }
+        },
+        "q[24]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995819849878566
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995819849878566
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995819849878566
+            }
+        },
+        "q[25]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998873034678016
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998873034678016
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998873034678016
+            }
+        },
+        "q[26]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997580038625984
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997580038625984
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997580038625984
+            }
+        },
+        "q[27]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996595723239833
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996595723239833
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996595723239833
+            }
+        },
+        "q[28]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994742454935569
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994742454935569
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994742454935569
+            }
+        },
+        "q[29]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991634777192611
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991634777192611
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991634777192611
+            }
+        },
+        "q[30]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433806492806
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433806492806
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433806492806
+            }
+        },
+        "q[31]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9990902317956148
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9990902317956148
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9990902317956148
+            }
+        },
+        "q[32]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999780695202437
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999780695202437
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999780695202437
+            }
+        },
+        "q[33]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999880987139605
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999880987139605
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999880987139605
+            }
+        },
+        "q[34]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998388511582729
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998388511582729
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998388511582729
+            }
+        },
+        "q[35]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997117477893648
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997117477893648
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997117477893648
+            }
+        },
+        "q[36]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997404988902147
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997404988902147
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997404988902147
+            }
+        },
+        "q[37]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994538862514363
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994538862514363
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994538862514363
+            }
+        },
+        "q[38]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998145326405133
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998145326405133
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998145326405133
+            }
+        },
+        "q[39]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991722204119089
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991722204119089
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991722204119089
+            }
+        },
+        "q[40]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999840969795361
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999840969795361
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999840969795361
+            }
+        },
+        "q[41]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.983763827175751
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.983763827175751
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.983763827175751
+            }
+        },
+        "q[42]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996522430586824
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996522430586824
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996522430586824
+            }
+        },
+        "q[43]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999019302628124
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999019302628124
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999019302628124
+            }
+        },
+        "q[44]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.998661046163967
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.998661046163967
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.998661046163967
+            }
+        },
+        "q[45]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993826631597541
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993826631597541
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993826631597541
+            }
+        },
+        "q[46]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996451171804877
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996451171804877
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996451171804877
+            }
+        },
+        "q[47]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995555331258593
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995555331258593
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995555331258593
+            }
+        },
+        "q[48]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996152321906427
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996152321906427
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996152321906427
+            }
+        },
+        "q[49]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998087616986857
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998087616986857
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998087616986857
+            }
+        },
+        "q[50]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991008346259311
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991008346259311
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991008346259311
+            }
+        },
+        "q[51]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997565094860904
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997565094860904
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997565094860904
+            }
+        },
+        "q[52]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986160231607669
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986160231607669
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986160231607669
+            }
+        },
+        "q[53]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998208682859316
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998208682859316
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998208682859316
+            }
+        },
+        "q[54]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999779827373654
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999779827373654
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999779827373654
+            }
+        },
+        "q[55]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992848526215357
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992848526215357
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9992848526215357
+            }
+        },
+        "q[56]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995218658753963
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995218658753963
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995218658753963
+            }
+        },
+        "q[57]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998783108199824
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998783108199824
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998783108199824
+            }
+        },
+        "q[58]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997018556992031
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997018556992031
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997018556992031
+            }
+        },
+        "q[59]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998878417086964
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998878417086964
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998878417086964
+            }
+        },
+        "q[60]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997963331252583
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997963331252583
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997963331252583
+            }
+        },
+        "q[61]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999486882673783
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999486882673783
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999486882673783
+            }
+        },
+        "q[62]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997642049364294
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997642049364294
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997642049364294
+            }
+        },
+        "q[63]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998305835042355
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998305835042355
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998305835042355
+            }
+        },
+        "q[64]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997439420924557
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997439420924557
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997439420924557
+            }
+        },
+        "q[65]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998753590425261
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998753590425261
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998753590425261
+            }
+        },
+        "q[66]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993801488931903
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993801488931903
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993801488931903
+            }
+        },
+        "q[67]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997507717987261
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997507717987261
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997507717987261
+            }
+        },
+        "q[68]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986967973953635
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986967973953635
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9986967973953635
+            }
+        },
+        "q[69]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997813424177168
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997813424177168
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997813424177168
+            }
+        },
+        "q[70]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991199516627192
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991199516627192
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9991199516627192
+            }
+        },
+        "q[71]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997738350810177
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997738350810177
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997738350810177
+            }
+        },
+        "q[72]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9878780669531037
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9878780669531037
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9878780669531037
+            }
+        },
+        "q[73]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997243759889625
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997243759889625
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997243759889625
+            }
+        },
+        "q[74]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997960843566157
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997960843566157
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997960843566157
+            }
+        },
+        "q[75]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9943781689922148
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9943781689922148
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9943781689922148
+            }
+        },
+        "q[76]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994250395832467
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994250395832467
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994250395832467
+            }
+        },
+        "q[77]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997748789230765
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997748789230765
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997748789230765
+            }
+        },
+        "q[78]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997635456703027
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997635456703027
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997635456703027
+            }
+        },
+        "q[79]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997020660407043
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997020660407043
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997020660407043
+            }
+        },
+        "q[80]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999848804659661
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999848804659661
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999848804659661
+            }
+        },
+        "q[81]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997471683118592
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997471683118592
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997471683118592
+            }
+        },
+        "q[82]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999198962203234
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999198962203234
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9999198962203234
+            }
+        },
+        "q[83]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433162853876
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433162853876
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997433162853876
+            }
+        },
+        "q[84]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994069347104431
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994069347104431
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994069347104431
+            }
+        },
+        "q[85]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997300149491699
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997300149491699
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997300149491699
+            }
+        },
+        "q[86]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997365295427451
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997365295427451
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997365295427451
+            }
+        },
+        "q[87]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997278994748116
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997278994748116
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997278994748116
+            }
+        },
+        "q[88]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996564195385192
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996564195385192
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996564195385192
+            }
+        },
+        "q[89]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9985304273825282
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9985304273825282
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9985304273825282
+            }
+        },
+        "q[90]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997853913961009
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997853913961009
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997853913961009
+            }
+        },
+        "q[91]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998001650182249
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998001650182249
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998001650182249
+            }
+        },
+        "q[92]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997757051004573
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997757051004573
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997757051004573
+            }
+        },
+        "q[93]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995997283052613
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995997283052613
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995997283052613
+            }
+        },
+        "q[94]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997808891976749
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997808891976749
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997808891976749
+            }
+        },
+        "q[95]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9981185979377166
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9981185979377166
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9981185979377166
+            }
+        },
+        "q[96]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998271157328126
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998271157328126
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998271157328126
+            }
+        },
+        "q[97]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.0
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.0
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.0
+            }
+        },
+        "q[98]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997951524828979
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997951524828979
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997951524828979
+            }
+        },
+        "q[99]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997501411598282
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997501411598282
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997501411598282
+            }
+        },
+        "q[100]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998168030737858
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998168030737858
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998168030737858
+            }
+        },
+        "q[101]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994979256864266
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994979256864266
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994979256864266
+            }
+        },
+        "q[102]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995824233245078
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995824233245078
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995824233245078
+            }
+        },
+        "q[103]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994338648025852
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994338648025852
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9994338648025852
+            }
+        },
+        "q[104]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995424151493374
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995424151493374
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995424151493374
+            }
+        },
+        "q[105]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997696537583084
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997696537583084
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997696537583084
+            }
+        },
+        "q[106]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998306775588374
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998306775588374
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998306775588374
+            }
+        },
+        "q[107]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995299579177913
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995299579177913
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995299579177913
+            }
+        },
+        "q[108]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997848703833108
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997848703833108
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997848703833108
+            }
+        },
+        "q[109]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998672222807
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998672222807
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998672222807
+            }
+        },
+        "q[110]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996364491500672
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996364491500672
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996364491500672
+            }
+        },
+        "q[111]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99953387588618
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99953387588618
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99953387588618
+            }
+        },
+        "q[112]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998392667432131
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998392667432131
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998392667432131
+            }
+        },
+        "q[113]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996290338555656
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996290338555656
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996290338555656
+            }
+        },
+        "q[114]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997814364589295
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997814364589295
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997814364589295
+            }
+        },
+        "q[115]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993968315265681
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993968315265681
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9993968315265681
+            }
+        },
+        "q[116]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998525805497088
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998525805497088
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998525805497088
+            }
+        },
+        "q[117]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997863327376155
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997863327376155
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997863327376155
+            }
+        },
+        "q[118]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997075309899837
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997075309899837
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997075309899837
+            }
+        },
+        "q[119]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99981163905964
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99981163905964
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.99981163905964
+            }
+        },
+        "q[120]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998427466409868
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998427466409868
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998427466409868
+            }
+        },
+        "q[121]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996124481452991
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996124481452991
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9996124481452991
+            }
+        },
+        "q[122]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997065794998452
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997065794998452
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9997065794998452
+            }
+        },
+        "q[123]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998349851713458
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998349851713458
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998349851713458
+            }
+        },
+        "q[124]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999739460937902
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999739460937902
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.999739460937902
+            }
+        },
+        "q[125]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995743499193295
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995743499193295
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9995743499193295
+            }
+        },
+        "q[126]": {
+            "Id": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998397663280354
+            },
+            "Rz": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 1
+            },
+            "SX": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998397663280354
+            },
+            "X": {
+                "Gate duration (s)": 0,
+                "Fidelity(RB)": 0.9998397663280354
+            }
+        }
+    },
+    "Q2Gates(RB)": {
+        "0-1": {
+            "ECR": {
+                "Control": 0,
+                "Target": 1,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9929038140797701
+            }
+        },
+        "1-2": {
+            "ECR": {
+                "Control": 1,
+                "Target": 2,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9878798459543259
+            }
+        },
+        "2-3": {
+            "ECR": {
+                "Control": 2,
+                "Target": 3,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9920822208295441
+            }
+        },
+        "4-15": {
+            "ECR": {
+                "Control": 4,
+                "Target": 15,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9965240723412162
+            }
+        },
+        "4-3": {
+            "ECR": {
+                "Control": 4,
+                "Target": 3,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9954592550003322
+            }
+        },
+        "5-4": {
+            "ECR": {
+                "Control": 5,
+                "Target": 4,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9951500204348446
+            }
+        },
+        "5-6": {
+            "ECR": {
+                "Control": 5,
+                "Target": 6,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9953129950916502
+            }
+        },
+        "6-7": {
+            "ECR": {
+                "Control": 6,
+                "Target": 7,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9960262311941108
+            }
+        },
+        "8-9": {
+            "ECR": {
+                "Control": 8,
+                "Target": 9,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9965297967464897
+            }
+        },
+        "8-7": {
+            "ECR": {
+                "Control": 8,
+                "Target": 7,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9954428081738481
+            }
+        },
+        "10-9": {
+            "ECR": {
+                "Control": 10,
+                "Target": 9,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9876480505342626
+            }
+        },
+        "11-10": {
+            "ECR": {
+                "Control": 11,
+                "Target": 10,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9959337676886505
+            }
+        },
+        "11-12": {
+            "ECR": {
+                "Control": 11,
+                "Target": 12,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9888849343220186
+            }
+        },
+        "12-17": {
+            "ECR": {
+                "Control": 12,
+                "Target": 17,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9850211554292763
+            }
+        },
+        "13-12": {
+            "ECR": {
+                "Control": 13,
+                "Target": 12,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9889416245449151
+            }
+        },
+        "14-0": {
+            "ECR": {
+                "Control": 14,
+                "Target": 0,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9941594707845952
+            }
+        },
+        "15-22": {
+            "ECR": {
+                "Control": 15,
+                "Target": 22,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.987952644702251
+            }
+        },
+        "16-8": {
+            "ECR": {
+                "Control": 16,
+                "Target": 8,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9959148778468687
+            }
+        },
+        "17-30": {
+            "ECR": {
+                "Control": 17,
+                "Target": 30,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.991318140191644
+            }
+        },
+        "18-19": {
+            "ECR": {
+                "Control": 18,
+                "Target": 19,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9861169867210531
+            }
+        },
+        "18-14": {
+            "ECR": {
+                "Control": 18,
+                "Target": 14,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9954791759645927
+            }
+        },
+        "19-20": {
+            "ECR": {
+                "Control": 19,
+                "Target": 20,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9859481441284336
+            }
+        },
+        "21-20": {
+            "ECR": {
+                "Control": 21,
+                "Target": 20,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9911486165027306
+            }
+        },
+        "22-21": {
+            "ECR": {
+                "Control": 22,
+                "Target": 21,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9870559104090142
+            }
+        },
+        "22-23": {
+            "ECR": {
+                "Control": 22,
+                "Target": 23,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.983400235566887
+            }
+        },
+        "24-23": {
+            "ECR": {
+                "Control": 24,
+                "Target": 23,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.985736164541326
+            }
+        },
+        "25-24": {
+            "ECR": {
+                "Control": 25,
+                "Target": 24,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9916783092983902
+            }
+        },
+        "25-26": {
+            "ECR": {
+                "Control": 25,
+                "Target": 26,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9949145365353784
+            }
+        },
+        "26-16": {
+            "ECR": {
+                "Control": 26,
+                "Target": 16,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9961551512201323
+            }
+        },
+        "27-26": {
+            "ECR": {
+                "Control": 27,
+                "Target": 26,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9944650868060596
+            }
+        },
+        "28-27": {
+            "ECR": {
+                "Control": 28,
+                "Target": 27,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9938509087929788
+            }
+        },
+        "28-29": {
+            "ECR": {
+                "Control": 28,
+                "Target": 29,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9877567001762957
+            }
+        },
+        "28-35": {
+            "ECR": {
+                "Control": 28,
+                "Target": 35,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9861333553118063
+            }
+        },
+        "30-29": {
+            "ECR": {
+                "Control": 30,
+                "Target": 29,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9912756416342593
+            }
+        },
+        "31-30": {
+            "ECR": {
+                "Control": 31,
+                "Target": 30,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.991084861881089
+            }
+        },
+        "32-36": {
+            "ECR": {
+                "Control": 32,
+                "Target": 36,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9933611259019911
+            }
+        },
+        "32-31": {
+            "ECR": {
+                "Control": 32,
+                "Target": 31,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9789904286846316
+            }
+        },
+        "33-20": {
+            "ECR": {
+                "Control": 33,
+                "Target": 20,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.995034590104442
+            }
+        },
+        "33-39": {
+            "ECR": {
+                "Control": 33,
+                "Target": 39,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.996217028032142
+            }
+        },
+        "34-24": {
+            "ECR": {
+                "Control": 34,
+                "Target": 24,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9916116514800863
+            }
+        },
+        "35-47": {
+            "ECR": {
+                "Control": 35,
+                "Target": 47,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9936114691926954
+            }
+        },
+        "37-52": {
+            "ECR": {
+                "Control": 37,
+                "Target": 52,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9810470323343021
+            }
+        },
+        "37-38": {
+            "ECR": {
+                "Control": 37,
+                "Target": 38,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9956701841857392
+            }
+        },
+        "39-38": {
+            "ECR": {
+                "Control": 39,
+                "Target": 38,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9907782885954499
+            }
+        },
+        "39-40": {
+            "ECR": {
+                "Control": 39,
+                "Target": 40,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9944249263821872
+            }
+        },
+        "40-41": {
+            "ECR": {
+                "Control": 40,
+                "Target": 41,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9741021076797411
+            }
+        },
+        "41-42": {
+            "ECR": {
+                "Control": 41,
+                "Target": 42,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9791971506070811
+            }
+        },
+        "43-34": {
+            "ECR": {
+                "Control": 43,
+                "Target": 34,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9968240503136521
+            }
+        },
+        "43-42": {
+            "ECR": {
+                "Control": 43,
+                "Target": 42,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.992763942197221
+            }
+        },
+        "44-43": {
+            "ECR": {
+                "Control": 44,
+                "Target": 43,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9906299067702958
+            }
+        },
+        "45-54": {
+            "ECR": {
+                "Control": 45,
+                "Target": 54,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9420356818422269
+            }
+        },
+        "45-44": {
+            "ECR": {
+                "Control": 45,
+                "Target": 44,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9805701267380333
+            }
+        },
+        "46-45": {
+            "ECR": {
+                "Control": 46,
+                "Target": 45,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.8262372197826716
+            }
+        },
+        "46-47": {
+            "ECR": {
+                "Control": 46,
+                "Target": 47,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.8680244216665098
+            }
+        },
+        "47-48": {
+            "ECR": {
+                "Control": 47,
+                "Target": 48,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9864359079097053
+            }
+        },
+        "48-49": {
+            "ECR": {
+                "Control": 48,
+                "Target": 49,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9901334925788902
+            }
+        },
+        "49-55": {
+            "ECR": {
+                "Control": 49,
+                "Target": 55,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9860530172360226
+            }
+        },
+        "49-50": {
+            "ECR": {
+                "Control": 49,
+                "Target": 50,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9868410615223069
+            }
+        },
+        "50-51": {
+            "ECR": {
+                "Control": 50,
+                "Target": 51,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9842603915076529
+            }
+        },
+        "51-36": {
+            "ECR": {
+                "Control": 51,
+                "Target": 36,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9944470585238516
+            }
+        },
+        "52-56": {
+            "ECR": {
+                "Control": 52,
+                "Target": 56,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9516563166830744
+            }
+        },
+        "53-41": {
+            "ECR": {
+                "Control": 53,
+                "Target": 41,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9740094151270988
+            }
+        },
+        "53-60": {
+            "ECR": {
+                "Control": 53,
+                "Target": 60,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9914669851993477
+            }
+        },
+        "54-64": {
+            "ECR": {
+                "Control": 54,
+                "Target": 64,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9921529255301258
+            }
+        },
+        "55-68": {
+            "ECR": {
+                "Control": 55,
+                "Target": 68,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9881078691921761
+            }
+        },
+        "57-56": {
+            "ECR": {
+                "Control": 57,
+                "Target": 56,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.992064825223238
+            }
+        },
+        "57-58": {
+            "ECR": {
+                "Control": 57,
+                "Target": 58,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9930821069637832
+            }
+        },
+        "58-59": {
+            "ECR": {
+                "Control": 58,
+                "Target": 59,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9952135737938778
+            }
+        },
+        "59-60": {
+            "ECR": {
+                "Control": 59,
+                "Target": 60,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9936658386033701
+            }
+        },
+        "60-61": {
+            "ECR": {
+                "Control": 60,
+                "Target": 61,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9900305483547025
+            }
+        },
+        "62-72": {
+            "ECR": {
+                "Control": 62,
+                "Target": 72,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9620662957612643
+            }
+        },
+        "62-61": {
+            "ECR": {
+                "Control": 62,
+                "Target": 61,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9898306389946246
+            }
+        },
+        "63-62": {
+            "ECR": {
+                "Control": 63,
+                "Target": 62,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9755197221295782
+            }
+        },
+        "64-63": {
+            "ECR": {
+                "Control": 64,
+                "Target": 63,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9944635874262588
+            }
+        },
+        "64-65": {
+            "ECR": {
+                "Control": 64,
+                "Target": 65,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9948284129644849
+            }
+        },
+        "66-73": {
+            "ECR": {
+                "Control": 66,
+                "Target": 73,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9861502237494585
+            }
+        },
+        "66-65": {
+            "ECR": {
+                "Control": 66,
+                "Target": 65,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9886130314906032
+            }
+        },
+        "67-66": {
+            "ECR": {
+                "Control": 67,
+                "Target": 66,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9889024580125332
+            }
+        },
+        "68-67": {
+            "ECR": {
+                "Control": 68,
+                "Target": 67,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9890410586520051
+            }
+        },
+        "69-68": {
+            "ECR": {
+                "Control": 69,
+                "Target": 68,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9919333578070808
+            }
+        },
+        "70-74": {
+            "ECR": {
+                "Control": 70,
+                "Target": 74,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.991513914406098
+            }
+        },
+        "70-69": {
+            "ECR": {
+                "Control": 70,
+                "Target": 69,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9906715505044594
+            }
+        },
+        "71-58": {
+            "ECR": {
+                "Control": 71,
+                "Target": 58,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9933451435520165
+            }
+        },
+        "71-77": {
+            "ECR": {
+                "Control": 71,
+                "Target": 77,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9922056986671101
+            }
+        },
+        "74-89": {
+            "ECR": {
+                "Control": 74,
+                "Target": 89,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9848664603094628
+            }
+        },
+        "76-75": {
+            "ECR": {
+                "Control": 76,
+                "Target": 75,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9400728601770623
+            }
+        },
+        "76-77": {
+            "ECR": {
+                "Control": 76,
+                "Target": 77,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9834573005753954
+            }
+        },
+        "78-77": {
+            "ECR": {
+                "Control": 78,
+                "Target": 77,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9894618472953787
+            }
+        },
+        "79-78": {
+            "ECR": {
+                "Control": 79,
+                "Target": 78,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9950032773310519
+            }
+        },
+        "79-80": {
+            "ECR": {
+                "Control": 79,
+                "Target": 80,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9933201814901199
+            }
+        },
+        "79-91": {
+            "ECR": {
+                "Control": 79,
+                "Target": 91,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9954736739525836
+            }
+        },
+        "80-81": {
+            "ECR": {
+                "Control": 80,
+                "Target": 81,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9957974205869266
+            }
+        },
+        "81-72": {
+            "ECR": {
+                "Control": 81,
+                "Target": 72,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9539940869073924
+            }
+        },
+        "82-81": {
+            "ECR": {
+                "Control": 82,
+                "Target": 81,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9954855577797437
+            }
+        },
+        "82-83": {
+            "ECR": {
+                "Control": 82,
+                "Target": 83,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9947897379532841
+            }
+        },
+        "83-92": {
+            "ECR": {
+                "Control": 83,
+                "Target": 92,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9919340587040537
+            }
+        },
+        "84-83": {
+            "ECR": {
+                "Control": 84,
+                "Target": 83,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.992061497908095
+            }
+        },
+        "85-73": {
+            "ECR": {
+                "Control": 85,
+                "Target": 73,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9907455261656251
+            }
+        },
+        "85-84": {
+            "ECR": {
+                "Control": 85,
+                "Target": 84,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9920733844831116
+            }
+        },
+        "85-86": {
+            "ECR": {
+                "Control": 85,
+                "Target": 86,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9917449299832383
+            }
+        },
+        "87-86": {
+            "ECR": {
+                "Control": 87,
+                "Target": 86,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9925050971806666
+            }
+        },
+        "88-87": {
+            "ECR": {
+                "Control": 88,
+                "Target": 87,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9943246246747758
+            }
+        },
+        "88-89": {
+            "ECR": {
+                "Control": 88,
+                "Target": 89,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.981351690121423
+            }
+        },
+        "90-75": {
+            "ECR": {
+                "Control": 90,
+                "Target": 75,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9552552176555325
+            }
+        },
+        "91-98": {
+            "ECR": {
+                "Control": 91,
+                "Target": 98,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9916955950637801
+            }
+        },
+        "92-102": {
+            "ECR": {
+                "Control": 92,
+                "Target": 102,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9906609994285724
+            }
+        },
+        "93-106": {
+            "ECR": {
+                "Control": 93,
+                "Target": 106,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9948976823348709
+            }
+        },
+        "93-87": {
+            "ECR": {
+                "Control": 93,
+                "Target": 87,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9928587903738928
+            }
+        },
+        "94-95": {
+            "ECR": {
+                "Control": 94,
+                "Target": 95,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9918505728158358
+            }
+        },
+        "94-90": {
+            "ECR": {
+                "Control": 94,
+                "Target": 90,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9946702143363175
+            }
+        },
+        "96-95": {
+            "ECR": {
+                "Control": 96,
+                "Target": 95,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9929620180745575
+            }
+        },
+        "96-97": {
+            "ECR": {
+                "Control": 96,
+                "Target": 97,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.0
+            }
+        },
+        "96-109": {
+            "ECR": {
+                "Control": 96,
+                "Target": 109,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9950207048258354
+            }
+        },
+        "97-98": {
+            "ECR": {
+                "Control": 97,
+                "Target": 98,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.0
+            }
+        },
+        "99-100": {
+            "ECR": {
+                "Control": 99,
+                "Target": 100,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9934493251058016
+            }
+        },
+        "99-98": {
+            "ECR": {
+                "Control": 99,
+                "Target": 98,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9942098023505511
+            }
+        },
+        "101-100": {
+            "ECR": {
+                "Control": 101,
+                "Target": 100,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9899883405509493
+            }
+        },
+        "101-102": {
+            "ECR": {
+                "Control": 101,
+                "Target": 102,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9816758133957865
+            }
+        },
+        "103-102": {
+            "ECR": {
+                "Control": 103,
+                "Target": 102,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9795257176855183
+            }
+        },
+        "104-111": {
+            "ECR": {
+                "Control": 104,
+                "Target": 111,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9732637810813443
+            }
+        },
+        "104-103": {
+            "ECR": {
+                "Control": 104,
+                "Target": 103,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.958886846444063
+            }
+        },
+        "105-104": {
+            "ECR": {
+                "Control": 105,
+                "Target": 104,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.98450336462184
+            }
+        },
+        "106-105": {
+            "ECR": {
+                "Control": 106,
+                "Target": 105,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9956834348165564
+            }
+        },
+        "107-106": {
+            "ECR": {
+                "Control": 107,
+                "Target": 106,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9919242443702119
+            }
+        },
+        "107-108": {
+            "ECR": {
+                "Control": 107,
+                "Target": 108,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9934404115658126
+            }
+        },
+        "108-112": {
+            "ECR": {
+                "Control": 108,
+                "Target": 112,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9945052072558315
+            }
+        },
+        "110-100": {
+            "ECR": {
+                "Control": 110,
+                "Target": 100,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9941084389650335
+            }
+        },
+        "113-114": {
+            "ECR": {
+                "Control": 113,
+                "Target": 114,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9952139829193316
+            }
+        },
+        "114-109": {
+            "ECR": {
+                "Control": 114,
+                "Target": 109,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9917630343351853
+            }
+        },
+        "115-114": {
+            "ECR": {
+                "Control": 115,
+                "Target": 114,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9913585344486409
+            }
+        },
+        "115-116": {
+            "ECR": {
+                "Control": 115,
+                "Target": 116,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9889087421970587
+            }
+        },
+        "117-116": {
+            "ECR": {
+                "Control": 117,
+                "Target": 116,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9952840483491405
+            }
+        },
+        "117-118": {
+            "ECR": {
+                "Control": 117,
+                "Target": 118,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9928675350663505
+            }
+        },
+        "118-110": {
+            "ECR": {
+                "Control": 118,
+                "Target": 110,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9918283639253882
+            }
+        },
+        "119-118": {
+            "ECR": {
+                "Control": 119,
+                "Target": 118,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9919033456169238
+            }
+        },
+        "119-120": {
+            "ECR": {
+                "Control": 119,
+                "Target": 120,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9940621748020261
+            }
+        },
+        "120-121": {
+            "ECR": {
+                "Control": 120,
+                "Target": 121,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.994090154232848
+            }
+        },
+        "122-121": {
+            "ECR": {
+                "Control": 122,
+                "Target": 121,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9888108560275533
+            }
+        },
+        "122-123": {
+            "ECR": {
+                "Control": 122,
+                "Target": 123,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9902358686720645
+            }
+        },
+        "122-111": {
+            "ECR": {
+                "Control": 122,
+                "Target": 111,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9908677987059257
+            }
+        },
+        "124-123": {
+            "ECR": {
+                "Control": 124,
+                "Target": 123,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9947372462918777
+            }
+        },
+        "124-125": {
+            "ECR": {
+                "Control": 124,
+                "Target": 125,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9958531905145542
+            }
+        },
+        "125-126": {
+            "ECR": {
+                "Control": 125,
+                "Target": 126,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9958008660876712
+            }
+        },
+        "126-112": {
+            "ECR": {
+                "Control": 126,
+                "Target": 112,
+                "Duration (s)": 6.6e-07,
+                "Fidelity(RB)": 0.9953988466026431
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+  "resultados": [
+    {
+      "tamano": 150,
+      "k": 2,
+      "shots": 1000,
+      "qubits": 11,
+      "n_profundidad": 110,
+      "n_gates": 856,
+      "n_params": 101,
+      "function_evaluations": 303000,
+      "average_time": 2.4923865360033233,
+      "teo_layers": 13,
+      "total_time": 755193.120409007
+    },
+    {
+      "tamano": 150,
+      "k": 3,
+      "shots": 1000,
+      "qubits": 8,
+      "n_profundidad": 516,
+      "n_gates": 1957,
+      "n_params": 176,
+      "function_evaluations": 528000,
+      "average_time": 0.92657777700515,
+      "teo_layers": 29,
+      "total_time": 489233.0662587192
+    },
+    {
+      "tamano": 150,
+      "k": 3,
+      "shots": 10000,
+      "qubits": 8,
+      "n_profundidad": 516,
+      "n_gates": 1957,
+      "n_params": 176,
+      "function_evaluations": 528000,
+      "average_time": 3.5465216520024114,
+      "teo_layers": 29,
+      "total_time": 1872563.4322572732
+    },
+    {
+      "tamano": 150,
+      "k": 2,
+      "shots": 10000,
+      "qubits": 11,
+      "n_profundidad": 110,
+      "n_gates": 856,
+      "n_params": 101,
+      "function_evaluations": 303000,
+      "average_time": 19.801586706998933,
+      "teo_layers": 13,
+      "total_time": 5999880.772220677
+    },
+    {
+      "tamano": 150,
+      "k": 4,
+      "shots": 1000,
+      "qubits": 8,
+      "n_profundidad": 794,
+      "n_gates": 2980,
+      "n_params": 260,
+      "function_evaluations": 780000,
+      "average_time": 1.1499242979989504,
+      "teo_layers": 43,
+      "total_time": 896940.9524391813
+    },
+    {
+      "tamano": 150,
+      "k": 4,
+      "shots": 10000,
+      "qubits": 8,
+      "n_profundidad": 794,
+      "n_gates": 2980,
+      "n_params": 260,
+      "function_evaluations": 780000,
+      "average_time": 5.151894468006503,
+      "teo_layers": 43,
+      "total_time": 4018477.685045073
+    }
+  ]
+}

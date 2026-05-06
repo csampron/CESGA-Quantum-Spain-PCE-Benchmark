@@ -35,6 +35,9 @@ The repository is organized as followed:
 
         Inside each of these directories the same structure as the TSP and BPP problems directories.
 
+- `PCE_SHOTS`: Code used for the execution of the MaxCut problem with shots and noisy simulation
+    - Follows the same structure as the `1_MaxCut` directory but allows execution with simulated noise and shots.
+
 
 ### How to execute on HPC environment
 
