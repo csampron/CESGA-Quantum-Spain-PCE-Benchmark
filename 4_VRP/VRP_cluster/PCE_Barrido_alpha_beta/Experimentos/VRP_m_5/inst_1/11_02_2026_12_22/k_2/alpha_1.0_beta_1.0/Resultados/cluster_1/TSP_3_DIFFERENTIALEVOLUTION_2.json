@@ -1,0 +1,53 @@
+{
+  "resultados": [
+    {
+      "qubits": 3,
+      "elapsed_time": 160.08957028388977,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "f_loss_value": 115.32060514070349,
+      "function_evaluations": 48167,
+      "Number of iterations": 1000,
+      "num_params": 6,
+      "params": [
+        4.409940554775661,
+        0.9681731579376982,
+        2.3689667327691284,
+        6.283185303287485,
+        2.0424158676830855,
+        4.240769416601838
+      ],
+      "initial_tour": [
+        1,
+        2,
+        5
+      ],
+      "refined_tour": [
+        1,
+        2,
+        5
+      ],
+      "initial_distance": 46.12595586786377,
+      "refined_distance": 46.12595586786377,
+      "embedding_values": {
+        "1": [
+          0.16978254765613715,
+          0.5000000000000001,
+          0.4999999999999999
+        ],
+        "2": [
+          0.4999999999999999,
+          0.5,
+          0.49999999999999994
+        ],
+        "5": [
+          0.6017664640376396,
+          0.2872742756862806,
+          0.2872742673344816
+        ]
+      },
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    }
+  ]
+}

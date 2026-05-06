@@ -1,0 +1,6 @@
+🎯 Mejor coste
+Coste mínimo: 69.42267128415534
+
+Combinaciones alpha/beta:
+  alpha=6.0, beta=1.0
+  alpha=7.0, beta=0.6

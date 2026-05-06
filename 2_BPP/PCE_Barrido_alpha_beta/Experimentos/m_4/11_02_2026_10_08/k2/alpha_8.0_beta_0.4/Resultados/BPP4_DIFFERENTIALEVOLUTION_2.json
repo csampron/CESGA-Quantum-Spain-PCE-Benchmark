@@ -1,0 +1,65 @@
+{
+  "resultados": [
+    {
+      "qubits": 5,
+      "elapsed_time": 191.9027054309845,
+      "alpha": 8.0,
+      "beta": 0.4,
+      "f_loss_value": 12.543572886789764,
+      "function_evaluations": 52869,
+      "Number of iterations": 1000,
+      "num_params": 17,
+      "params": [
+        0.8950456125073252,
+        0.622024112668234,
+        0.4713956321985753,
+        3.564967634420432,
+        4.5820239089041594,
+        3.882606706364686,
+        0.01998236728247854,
+        1.1963955952215166,
+        3.5136538833086712,
+        3.3771121826909174,
+        0.7346116782703133,
+        4.246179963707634,
+        0.8963261750158694,
+        1.0471789041177868,
+        1.8694159237352637,
+        0.13557786098075572,
+        4.724066259338223
+      ],
+      "bins_solution": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "num_bins_used": 2,
+      "bins_solution_post": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "num_bins_used_post": 2,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": "",
+      "feasibility_initial": {
+        "feasible": true,
+        "violations": []
+      },
+      "feasibility_post": {
+        "feasible": true,
+        "violations": []
+      }
+    }
+  ]
+}

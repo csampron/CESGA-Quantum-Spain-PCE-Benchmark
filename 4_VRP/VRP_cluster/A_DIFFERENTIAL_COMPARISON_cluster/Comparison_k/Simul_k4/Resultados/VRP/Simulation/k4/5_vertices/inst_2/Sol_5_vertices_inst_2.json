@@ -1,0 +1,139 @@
+{
+  "experiments": [
+    {
+      "num_ver": 5,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 298,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3
+          ],
+          "refined_distance": 154
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            5,
+            2
+          ],
+          "refined_distance": 144
+        }
+      ]
+    },
+    {
+      "num_ver": 5,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 298,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3
+          ],
+          "refined_distance": 154
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            5,
+            2
+          ],
+          "refined_distance": 144
+        }
+      ]
+    },
+    {
+      "num_ver": 5,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 298,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3
+          ],
+          "refined_distance": 154
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            5,
+            2
+          ],
+          "refined_distance": 144
+        }
+      ]
+    },
+    {
+      "num_ver": 5,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 298,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3
+          ],
+          "refined_distance": 154
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            5,
+            2
+          ],
+          "refined_distance": 144
+        }
+      ]
+    },
+    {
+      "num_ver": 5,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 298,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3
+          ],
+          "refined_distance": 154
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            5,
+            2
+          ],
+          "refined_distance": 144
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-03-30T15:40:15",
+  "best_cost": 69.42267128415534,
+  "num_best_combinations": 5,
+  "best_combinations": [
+    {
+      "alpha": 5.0,
+      "beta": 0.0
+    },
+    {
+      "alpha": 5.0,
+      "beta": 0.4
+    },
+    {
+      "alpha": 5.0,
+      "beta": 1.0
+    },
+    {
+      "alpha": 7.0,
+      "beta": 0.8
+    },
+    {
+      "alpha": 8.0,
+      "beta": 0.6
+    }
+  ],
+  "alpha_unique": 9,
+  "beta_unique": 6
+}

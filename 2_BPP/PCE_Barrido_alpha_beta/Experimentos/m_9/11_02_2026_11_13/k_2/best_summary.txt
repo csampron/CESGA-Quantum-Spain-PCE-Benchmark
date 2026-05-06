@@ -1,0 +1,10 @@
+🎯 Mejor solución encontrada
+Bins mínimos: 4
+
+Combinaciones alpha/beta:
+  alpha=6.0, beta=0.2
+  alpha=20.0, beta=0.2
+
+alpha únicos: 20
+beta únicos: 5
+timestamp: 2026-02-11T15:55:18

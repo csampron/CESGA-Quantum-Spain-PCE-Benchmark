@@ -1,0 +1,15 @@
+En el caso del DIFFERENTIAL EVOLUTION, los parámetros de ejecución fueron los siguientes:
+
+de_params = {
+                "strategy": "best1exp",
+                "maxiter": 1000,
+                "popsize": 3,
+                "tol": 1e-7,
+                "mutation": (0.5, 1),
+                "recombination": 0.7,
+                "disp": True,
+                "polish": True
+            }
+
+
+NOTA: Sin semilla y las simulaciones se hicieron con el alpha determinado

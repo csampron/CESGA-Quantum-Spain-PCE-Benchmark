@@ -1,0 +1,99 @@
+{
+  "experiments": [
+    {
+      "num_ver": 4,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 96,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 96
+        }
+      ]
+    },
+    {
+      "num_ver": 4,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 96,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 96
+        }
+      ]
+    },
+    {
+      "num_ver": 4,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 96,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 96
+        }
+      ]
+    },
+    {
+      "num_ver": 4,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 96,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 96
+        }
+      ]
+    },
+    {
+      "num_ver": 4,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 4,
+      "total_cost": 96,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 96
+        }
+      ]
+    }
+  ]
+}

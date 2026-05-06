@@ -1,0 +1,154 @@
+{
+  "experiments": [
+    {
+      "num_ver": 8,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 3,
+      "total_cost": 225,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            7
+          ],
+          "refined_distance": 126
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            6,
+            5
+          ],
+          "refined_distance": 99
+        }
+      ]
+    },
+    {
+      "num_ver": 8,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 3,
+      "total_cost": 225,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            2,
+            3,
+            8,
+            4,
+            7
+          ],
+          "refined_distance": 126
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            6,
+            5
+          ],
+          "refined_distance": 99
+        }
+      ]
+    },
+    {
+      "num_ver": 8,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 3,
+      "total_cost": 225,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            7,
+            8,
+            4,
+            3,
+            2
+          ],
+          "refined_distance": 126
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            6,
+            5
+          ],
+          "refined_distance": 99
+        }
+      ]
+    },
+    {
+      "num_ver": 8,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 3,
+      "total_cost": 225,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            2,
+            3,
+            8,
+            4,
+            7
+          ],
+          "refined_distance": 126
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            6,
+            5
+          ],
+          "refined_distance": 99
+        }
+      ]
+    },
+    {
+      "num_ver": 8,
+      "instancia": 2,
+      "optimizer": "DIFFERENTIALEVOLUTION",
+      "k": 3,
+      "total_cost": 225,
+      "clusters": [
+        {
+          "cluster_index": 0,
+          "refined_tour": [
+            1,
+            2,
+            3,
+            8,
+            4,
+            7
+          ],
+          "refined_distance": 126
+        },
+        {
+          "cluster_index": 1,
+          "refined_tour": [
+            1,
+            6,
+            5
+          ],
+          "refined_distance": 99
+        }
+      ]
+    }
+  ]
+}

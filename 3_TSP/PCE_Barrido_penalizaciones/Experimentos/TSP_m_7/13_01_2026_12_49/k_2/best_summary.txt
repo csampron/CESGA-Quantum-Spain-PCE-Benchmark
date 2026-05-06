@@ -1,0 +1,15 @@
+🎯 Mejor tour inicial
+Distancia mínima inicial: 9913.487851472679
+
+Combinaciones alpha/A:
+  alpha=3.0, A=10.0
+  alpha=3.0, A=50.0
+  alpha=3.0, A=100.0
+  alpha=3.0, A=500.0
+  alpha=4.0, A=10.0
+  alpha=4.0, A=50.0
+  alpha=4.0, A=100.0
+
+alpha únicos: 20
+A únicos: 4
+timestamp: 2026-01-13T13:17:22

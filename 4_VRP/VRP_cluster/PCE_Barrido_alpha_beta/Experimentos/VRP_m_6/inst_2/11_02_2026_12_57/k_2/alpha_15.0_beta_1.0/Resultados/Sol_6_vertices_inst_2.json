@@ -1,0 +1,27 @@
+{
+  "num_ver": 6,
+  "instancia": 2,
+  "optimizer": "DIFFERENTIALEVOLUTION",
+  "total_cost": 127.26769015220313,
+  "clusters": [
+    {
+      "cluster_index": 0,
+      "refined_tour": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "refined_distance": 87.19283013658145
+    },
+    {
+      "cluster_index": 1,
+      "refined_tour": [
+        1,
+        4,
+        2
+      ],
+      "refined_distance": 40.07486001562168
+    }
+  ]
+}
