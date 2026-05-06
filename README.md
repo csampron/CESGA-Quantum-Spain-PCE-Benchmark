@@ -41,10 +41,13 @@ The repository is organized as followed:
 In order to execute a problem of your liking you must change the `main_simul.py` file to your desired problem specifications
 the following represents a given specification:
 
+```console
 Problema = ["MaxCut"]             # Type of problem, in this case, instead of changing this just execute the directory of the desired problem
 Tamaño = [10]                     # Number of nodes on the graph, check the `graphs/` directory to see the available problem sizes
 Optimiz = ["POWELL"]              # Classical algorithm optimizer, you can choose any optimizer you desire as long as their behavour is described on the `utilities.py` file
 k = [2]                           # PCE compression parameter
+
+```
 
 After chosing the desired problem to solve:
 
