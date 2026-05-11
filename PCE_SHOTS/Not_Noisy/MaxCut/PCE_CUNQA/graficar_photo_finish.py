@@ -6,7 +6,7 @@ from collections import defaultdict
 
 # === CONFIGURACIÓN ===
 DB_NAME = "MaxCut_results.db"
-OUTPUT_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/PCE_SHOTS/Not_Noisy/MaxCut/PCE_CUNQA"
+OUTPUT_DIR = "Your_route/PCE_SHOTS/Not_Noisy/MaxCut/PCE_CUNQA"
 
 # === DIRECTORIO DE IMÁGENES ===
 IMAGES_DIR = os.path.join(OUTPUT_DIR, "Images")

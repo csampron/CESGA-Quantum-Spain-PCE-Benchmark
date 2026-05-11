@@ -210,7 +210,7 @@ def plot_errors_vs_m_separado(lista_m, k, base_folder="Resultados"):
 
 lista_m = [10, 20, 40, 50, 60, 100, 150, 200, 250, 300]
 k = 4
-direc = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/PCE_SHOTS/Not_Noisy/MaxCut/PCE_Shots_Estimation/Resultados"
+direc = "Your_route/PCE_SHOTS/Not_Noisy/MaxCut/PCE_Shots_Estimation/Resultados"
 
 #generar_graficas_varios_m(lista_m, k, direc)
 plot_errors_vs_m_separado(lista_m, k, direc)

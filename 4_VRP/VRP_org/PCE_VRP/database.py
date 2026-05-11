@@ -9,7 +9,7 @@ import glob
 # ------------------------
 # Configuración
 # ------------------------
-RESULTS_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_org/PCE_VRP/Resultados/VRP/k_2/Simulation"
+RESULTS_DIR = "Your_route/z_VRP/VRP_org/PCE_VRP/Resultados/VRP/k_2/Simulation"
 DB_NAME = "VRP_results.db"
 
 PENALTY = 10.0

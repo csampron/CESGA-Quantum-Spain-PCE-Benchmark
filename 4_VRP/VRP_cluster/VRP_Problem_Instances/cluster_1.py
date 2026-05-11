@@ -387,8 +387,8 @@ def generate_all_cluster_tsps(
 
 
 generate_all_cluster_tsps(
-    vrp_dir="/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_cluster/VARIOS/graphs",
-    output_base_dir="/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_cluster/VARIOS/graphs_clusters",
+    vrp_dir="Your_route/z_VRP/VRP_cluster/VARIOS/graphs",
+    output_base_dir="Your_route/z_VRP/VRP_cluster/VARIOS/graphs_clusters",
     sizes=(4,5,6,7,8),   # de 4 a 8 nodos
     instances=(1,2)
 )

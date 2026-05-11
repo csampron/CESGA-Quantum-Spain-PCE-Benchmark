@@ -65,7 +65,7 @@ COLOR_K = {
     5: "darkorange"
 }
 
-output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/A_DIFFERENTIAL_COMPARISON"
+output_dir = "Your_route/z_VRP/A_DIFFERENTIAL_COMPARISON"
 os.makedirs(output_dir, exist_ok=True)
 
 # ------------------------------------------------

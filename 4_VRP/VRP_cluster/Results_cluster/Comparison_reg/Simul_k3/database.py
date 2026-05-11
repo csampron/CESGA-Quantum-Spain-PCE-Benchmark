@@ -11,7 +11,7 @@ import numpy as np
 # ------------------------
 # Configuración
 # ------------------------
-RESULTS_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/A_DIFFERENTIAL_COMPARISON_cluster_int/Comparison_reg/Simul_k3/Resultados/VRP/Simulation/k3"
+RESULTS_DIR = "Your_route/z_VRP/A_DIFFERENTIAL_COMPARISON_cluster_int/Comparison_reg/Simul_k3/Resultados/VRP/Simulation/k3"
 DB_NAME = "VRP_results.db"
 PENALTY = 10.0
 

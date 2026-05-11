@@ -227,5 +227,5 @@ def plot_bpp_results(base_path):
 # RUN
 # ====================================================
 if __name__ == "__main__":
-    base_path = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1/Experimentos/m_6/11_02_2026_10_21/k_2"
+    base_path = "Your_route/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1/Experimentos/m_6/11_02_2026_10_21/k_2"
     plot_bpp_results(base_path)

@@ -77,7 +77,7 @@ def draw_tsp_graph_to_dir(coords, output_dir, filename="grafo_tsp.png", show_plo
 # ===========================
 m = 25
 
-tsp_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/TSP_v2/src/graphs"  # donde están los .tsp
+tsp_dir = "Your_route/z_TSP/TSP_v2/src/graphs"  # donde están los .tsp
 output_dir = "./graficas_tsp"  # donde quieres guardar las gráficas
 tsp_file = f"tsp_{m}.tsp"         # nombre del archivo TSP
 

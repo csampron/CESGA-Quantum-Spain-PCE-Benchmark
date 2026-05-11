@@ -69,7 +69,7 @@ def save_all_feasible_solutions(base_path, results_list):
 # Recopilar resultados
 # =====================================
 results_list = []
-resultados_path = Path("/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/PCE_BPP_yj/PCE_Barrido_multi_qubits+1/Experimentos")
+resultados_path = Path("Your_route/z_BPP/PCE_BPP_yj/PCE_Barrido_multi_qubits+1/Experimentos")
 
 pattern = re.compile(r"alpha_(?P<alpha>[\d\.]+)_A_(?P<A>[\d\.]+)_B_(?P<B>[\d\.]+)_D_(?P<D>[\d\.]+)")
 
@@ -111,6 +111,6 @@ for m_folder in resultados_path.glob("m_*"):
 
 # Guardar resultados
 save_all_feasible_solutions(
-    "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/PCE_BPP_yj/PCE_Barrido_multi_qubits+1/Resumen_experimentos",
+    "Your_route/z_BPP/PCE_BPP_yj/PCE_Barrido_multi_qubits+1/Resumen_experimentos",
     results_list
 )

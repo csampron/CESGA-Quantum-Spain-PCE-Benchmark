@@ -2,8 +2,8 @@ import os
 import json
 import matplotlib.pyplot as plt
 
-BASE_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1/Experimentos"
-OUT_DIR  = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1"
+BASE_DIR = "Your_route/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1/Experimentos"
+OUT_DIR  = "Your_route/z_BPP/PCE_BPP_yj_reg/PCE_Barrido_qubits+1"
 
 m_values = []
 alpha_values = []

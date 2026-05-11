@@ -10,7 +10,7 @@ import re
 from typing import List, Optional
 import statistics
 
-RESULTS_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/TSP_base/PCE_TSP_reg"
+RESULTS_DIR = "Your_route/z_TSP/TSP_base/PCE_TSP_reg"
 DB_NAME = "TSP_results.db"
 
 # ------------------------

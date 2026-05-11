@@ -10,7 +10,7 @@ import re
 # ------------------------
 # Configuración
 # ------------------------
-RESULTS_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_cluster/PCE_TSP_2/Resultados/VRP/Simulation"
+RESULTS_DIR = "Your_route/z_VRP/VRP_cluster/PCE_TSP_2/Resultados/VRP/Simulation"
 DB_NAME = "VRP_results.db"
 
 # ------------------------

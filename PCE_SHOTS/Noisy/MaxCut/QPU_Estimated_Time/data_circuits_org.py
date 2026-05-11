@@ -266,7 +266,7 @@ def plot_results(order_list, results, y_index, ylabel, filename, ylim=None):
 #  Generación de figuras
 # ------------------------------------------------
 
-output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_FAC/Resources"
+output_dir = "Your_route/z_FAC/Resources"
 os.makedirs(output_dir, exist_ok=True)
 
 # Número de nodos vs Qubits

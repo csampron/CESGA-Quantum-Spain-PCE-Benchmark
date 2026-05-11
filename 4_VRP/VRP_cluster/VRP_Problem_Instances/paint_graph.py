@@ -94,7 +94,7 @@ def draw_tsp_graph_to_dir(coords, output_dir, filename="grafo_tsp.png", show_plo
 ms = [10, 12, 14]     # valores de m
 instances = [1]      # dos instancias por m
 
-tsp_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_cluster/graphs"
+tsp_dir = "Your_route/z_VRP/VRP_cluster/graphs"
 output_dir = "./graficas_tsp"
 
 # ===========================

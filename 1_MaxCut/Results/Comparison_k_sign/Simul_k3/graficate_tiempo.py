@@ -53,7 +53,7 @@ def extract_times_from_db(vertex_sizes=[], optimizers=[]):
 
 def plot_times_from_db(vertex_sizes=[], optimizers=[]):
 
-    output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_MaxCut/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k2"
+    output_dir = "Your_route/z_MaxCut/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k2"
     os.makedirs(output_dir, exist_ok=True)
 
     times = extract_times_from_db(vertex_sizes, optimizers)

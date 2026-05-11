@@ -5,7 +5,7 @@ import numpy as np
 import re
 
 # === CONFIGURACIÓN ===
-BASE_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/PCE_SHOTS/Not_Noisy/MaxCut/PCE_CUNQA"
+BASE_DIR = "Your_route/PCE_SHOTS/Not_Noisy/MaxCut/PCE_CUNQA"
 DB_NAME = "MaxCut_results.db"
 
 # === CREAR / CONECTAR A LA BASE DE DATOS ===

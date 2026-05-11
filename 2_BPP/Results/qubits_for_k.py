@@ -146,7 +146,7 @@ def plot_results(order_list, results, filename):
 #  Generación de figuras
 # ------------------------------------------------
 
-output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/A_DIFFERENTIAL_COMPARISON"
+output_dir = "Your_route/z_BPP/A_DIFFERENTIAL_COMPARISON"
 os.makedirs(output_dir, exist_ok=True)
 
 plot_results(

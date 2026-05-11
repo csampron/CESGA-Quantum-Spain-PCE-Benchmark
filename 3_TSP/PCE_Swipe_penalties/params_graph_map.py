@@ -192,5 +192,5 @@ def plot_tsp_results(base_path):
 # EJEMPLO DE USO
 # ====================================================
 if __name__ == "__main__":
-    base_path = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/PCE_TSP_barrido_alpha_B/Experimentos/TSP_m_15/13_01_2026_22_51/k_2"
+    base_path = "Your_route/z_TSP/PCE_TSP_barrido_alpha_B/Experimentos/TSP_m_15/13_01_2026_22_51/k_2"
     plot_tsp_results(base_path)

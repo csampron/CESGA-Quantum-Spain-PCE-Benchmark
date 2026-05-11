@@ -182,6 +182,6 @@ def plot_vrp_results(base_path):
 # ====================================================
 if __name__ == "__main__":
     base_path = (
-        "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_VRP/VRP_cluster/PCE_TSP_barrido_alpha_beta/Experimentos/VRP_m_8/inst_2/11_02_2026_14_03/k_2"
+        "Your_route/z_VRP/VRP_cluster/PCE_TSP_barrido_alpha_beta/Experimentos/VRP_m_8/inst_2/11_02_2026_14_03/k_2"
     )
     plot_vrp_results(base_path)

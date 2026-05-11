@@ -7,7 +7,7 @@ import sqlite3
 from typing import List, Optional
 
 RESULTS_DIR = (
-    "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3"
+    "Your_route/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3"
 )
 
 DB_NAME = "BPP_results.db"

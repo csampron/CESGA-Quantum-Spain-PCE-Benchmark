@@ -15,9 +15,9 @@ k = 3
 # ---------------------------------------------------
 # RUTAS BD
 # ---------------------------------------------------
-DB_NAME_NONREG = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3/Resultados/BPP_results.db"
+DB_NAME_NONREG = "Your_route/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3/Resultados/BPP_results.db"
 
-DB_NAME_REG = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_reg/Simul_k3/Resultados/BPP_results.db"
+DB_NAME_REG = "Your_route/z_BPP/A_DIFFERENTIAL_COMPARISON/Comparison_reg/Simul_k3/Resultados/BPP_results.db"
 
 FIG_DIR = "Images_2"
 os.makedirs(FIG_DIR, exist_ok=True)

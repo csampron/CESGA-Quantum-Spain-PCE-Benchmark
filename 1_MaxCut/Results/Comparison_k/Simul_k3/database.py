@@ -5,7 +5,7 @@ import numpy as np
 import re
 
 # === CONFIGURACIÓN ===
-BASE_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_MaxCut/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3"
+BASE_DIR = "Your_route/z_MaxCut/A_DIFFERENTIAL_COMPARISON/Comparison_k/Simul_k3"
 DB_NAME = "MaxCut_results.db"
 
 # === CREAR / CONECTAR A LA BASE DE DATOS ===

@@ -2,7 +2,7 @@ import warnings
 import sys
 
 # Añade tu instalación local de qiskit_ibm_runtime
-sys.path.append("/mnt/netapp1/Store_CESGA/home/cesga/falonso/dependencies/qiskit-ibm-runtime")
+sys.path.append("Your_route/dependencies/qiskit-ibm-runtime")
 
 warnings.filterwarnings("ignore")
 
