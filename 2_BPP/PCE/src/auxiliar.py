@@ -137,8 +137,8 @@ def build_bpp_solution_from_expmap(node_exp_map, alpha, weights, Capacity, y_thr
     y_vals = z[N*N:]
 
     # x_ij y y_j (transformados a [0,1])
-    x_vals = np.int((z[:N*N].reshape(N, N)/2) + 0.5)
-    y_vals = np.int((z[N*N:]/2) + 0.5)
+    x_vals = (((z[:N*N].reshape(N, N)+1)/2) > 0.5).astype(int)
+    y_vals = (((z[N*N:] + 1) / 2) > 0.5).astype(int)
 
     # -------------------------
     # 1) Filtrar bins activos según y_threshold
@@ -153,7 +153,7 @@ def build_bpp_solution_from_expmap(node_exp_map, alpha, weights, Capacity, y_thr
     bins = {j: [] for j in active_bins}
 
     # -------------------------
-    # 2) Asignar cada ítem al bin activo con mayor x_ij
+    # 2) Asignar cada ítem al bin activo
     # -------------------------
     for i in range(N):
         j_best = max(active_bins, key=lambda j: x_vals[i, j])

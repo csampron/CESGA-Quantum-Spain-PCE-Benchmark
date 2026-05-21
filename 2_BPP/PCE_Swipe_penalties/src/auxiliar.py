@@ -137,8 +137,8 @@ def build_bpp_solution_from_expmap(node_exp_map, alpha, weights, Capacity, y_thr
     y_vals = z[N*N:]
 
     # x_ij y y_j (transformados a [0,1])
-    x_vals = np.int((z[:N*N].reshape(N, N)/2) + 0.5)
-    y_vals = np.int((z[N*N:]/2) + 0.5)
+    x_vals = (((z[:N*N].reshape(N, N)+1)/2) > 0.5).astype(int)
+    y_vals = (((z[N*N:] + 1) / 2) > 0.5).astype(int)
 
     # -------------------------
     # 1) Filtrar bins activos según y_threshold
