@@ -76,8 +76,8 @@ def num_qubits(num_variables: int, order_compression: int) -> Optional[int]:
 
 num_variables = [10, 20, 40, 50, 60, 100, 150, 200, 250, 300]
 
-ORDERS_FULL = [1, 2, 3, 4, 5]
-ORDERS_PARTIAL = [2, 3, 4, 5]
+ORDERS_FULL = [1, 2, 3, 4]
+ORDERS_PARTIAL = [2, 3, 4]
 
 # ------------------------------------------------
 #  Paleta fija por order (CLAVE)
