@@ -22,13 +22,64 @@
 ###
 ### ========================================================= ###
 
+from scipy.optimize import minimize, differential_evolution, brute
 import numpy as np
 import csv
 import os
-
-
 from functools import partial
-from scipy.optimize import minimize, differential_evolution, brute #, import SPSA  # Descomentar si se utiliza Qiskit SPSA
+
+
+def compute_loss_bpp(
+    x,
+    loss_func_estimator,
+    alpha,
+    beta,
+    lambda_1,
+    lambda_2,
+    lambda_3,
+    compiled_circuit,
+    sim,
+    Capacity,
+    Weights,
+    num_items,
+    list_size,
+    d_t,
+    n_shots,
+    experiment_result,
+    CUNQA,
+    family_name=None,
+    cost_history=None,
+    worker_id=None,
+    worker_histories=None
+):
+    value = loss_func_estimator(
+        x=x,
+        alpha=alpha,
+        beta=beta,
+        lambda_1=lambda_1,
+        lambda_2=lambda_2,
+        lambda_3=lambda_3,
+        ansatz=compiled_circuit,
+        sim=sim,
+        Capacity=Capacity,
+        Weights=Weights,
+        num_items=num_items,
+        list_size=list_size,
+        num_qubits=compiled_circuit[0].num_qubits,
+        d_t=d_t,
+        n_shots=n_shots,
+        experiment_result=experiment_result,
+        CUNQA=CUNQA,
+        family_name=family_name
+    )
+
+    if cost_history is not None:
+        cost_history.append(value)
+
+    if worker_histories is not None and worker_id is not None:
+        worker_histories[worker_id].append(value)
+
+    return value
 
 
 def run_vqe_optimization(
@@ -36,10 +87,13 @@ def run_vqe_optimization(
     n_shots,
     alpha,
     beta,
+    lambda_1,
+    lambda_2,
+    lambda_3,
     compiled_circuit,
     Capacity,
+    Weights,
     num_items,
-    pesos,
     list_size,
     d_t,
     optimizer,
@@ -50,77 +104,47 @@ def run_vqe_optimization(
     cunqa_str="None",
     family_name=None
 ):
-    """
-    Ejecuta una optimización variacional (VQE) sobre un ansatz cuántico dado.
-
-    Retorna:
-    --------
-    result : OptimizeResult
-        Resultado del optimizador.
-    experiment_result : list
-        Lista con los resultados de la función de pérdida en cada evaluación.
-    """
     experiment_result = []
     cost_history = []
     iteration_costs = []
 
-    ### CALLBACKS
     def callback(xk):
-        """Callback simple para optimización clásica."""
         value = loss_func(xk)
         iteration_costs.append(value)
 
     def callback_de(intermediate_result):
-        """Callback para differential_evolution."""
         iteration_costs.append(intermediate_result.fun)
         return None
 
-    def callback_spsa(nfev, x, fx, stepsize, accepted):
-        """Callback para SPSA."""
-        cost_history.append(fx)
+    loss_func = partial(
+        compute_loss_bpp,
+        loss_func_estimator=loss_func_estimator,
+        alpha=alpha,
+        beta=beta,
+        lambda_1=lambda_1,
+        lambda_2=lambda_2,
+        lambda_3=lambda_3,
+        compiled_circuit=compiled_circuit,
+        sim=sim,
+        Capacity=Capacity,
+        Weights=Weights,
+        num_items=num_items,
+        list_size=list_size,
+        d_t=d_t,
+        n_shots=n_shots,
+        experiment_result=experiment_result,
+        CUNQA=cunqa_str,
+        family_name=family_name,
+        cost_history=cost_history
+    )
 
-    def loss_func(x):
-        value = loss_func_estimator(
-            x=x,
-            alpha=alpha,
-            beta=beta,
-            ansatz=compiled_circuit,
-            sim=sim,
-            Capacity = Capacity,
-            pesos=pesos,
-            num_items=num_items,
-            list_size=list_size,
-            num_qubits=compiled_circuit[0].num_qubits,
-            d_t=d_t,
-            n_shots=n_shots,
-            experiment_result=experiment_result,
-            CUNQA=cunqa_str,
-            family_name=family_name
-        )
-        cost_history.append(value)
-        return value
-
-    # Generar parámetros iniciales
     rng_default = np.random.default_rng(33)
     initial_params = rng_default.random(len(compiled_circuit[0].parameters)) * 2 * np.pi
-    
+
     if isinstance(optimizer, str):
         optimizer_lower = optimizer.lower()
 
-        # --- Definir parámetros por defecto de cada optimizador ---
         default_optimizers = {
-            "spsa": {
-                "class": None,  # Descomentar SPSA si lo usas
-                "params": {
-                    "maxiter": maxiter,
-                    "learning_rate": 0.25,
-                    "perturbation": 0.01,
-                    "blocking": True,
-                    "allowed_increase": 0.05,
-                    "last_avg": 10,
-                    "callback": callback_spsa
-                }
-            },
             "powell": {
                 "method": "Powell",
                 "options": {
@@ -163,17 +187,6 @@ def run_vqe_optimization(
                 },
                 "callback": callback
             },
-            "tnc": {
-                "method": "TNC",
-                "options": {
-                    "disp": True,
-                    "maxiter": maxiter,
-                    "ftol": 1e-8,
-                    "xtol": 1e-8,
-                    "gtol": 1e-4
-                },
-                "callback": callback
-            },
             "slsqp": {
                 "method": "SLSQP",
                 "options": {
@@ -188,53 +201,66 @@ def run_vqe_optimization(
                 "kwargs": {
                     "strategy": "best1exp",
                     "maxiter": maxiter,
-                    "popsize": 3,
-                    "tol": 1e-7,
+                    "popsize": 1,
+                    "tol": 1e-24,
                     "mutation": (0.5, 1),
                     "recombination": 0.7,
                     "disp": True,
                     "polish": True,
-                    "init": "halton"
+                    "init": "halton",
+                    "workers": -1
                 }
             },
-            "brute": {}  # Sin opciones por defecto
+            "brute": {}
         }
 
         if optimizer_lower not in default_optimizers:
             raise ValueError(f"Optimizador desconocido: {optimizer}")
 
-        # --- Sobrescribir parámetros con optimizer_params ---
         opt_config = default_optimizers[optimizer_lower]
 
         if optimizer_params:
-            print(f"⚡ Usando parámetros personalizados para el optimizador {optimizer.upper()}")
-
             if optimizer_lower == "differentialevolution":
                 opt_config["kwargs"].update(optimizer_params)
-            elif optimizer_lower == "spsa":
-                opt_config["params"].update(optimizer_params)
             else:
                 opt_config["options"].update(optimizer_params)
-        else:
-            print(f"⚡ No se pasaron parámetros, usando valores por defecto del optimizador {optimizer.upper()}")
 
-        # --- Ejecutar optimizador ---
-        if optimizer_lower == "spsa":
-            # Descomentar cuando SPSA esté disponible
-            # opt = SPSA(**opt_config["params"])
-            # result = opt.minimize(fun=loss_func, x0=initial_params)
-            raise NotImplementedError("SPSA no está importado. Descomenta import SPSA si lo usas.")
-        elif optimizer_lower == "differentialevolution":
+        if optimizer_lower == "differentialevolution":
             result = differential_evolution(
                 loss_func,
-                bounds=[(0, 2*np.pi)]*len(initial_params),
-                seed=0, 
+                bounds=[(0, 2 * np.pi)] * len(initial_params),
                 callback=callback_de,
-                **opt_config["kwargs"]  # Solo parámetros válidos para DE: strategy, maxiter, popsize, etc.
+                **opt_config["kwargs"]
+            )
+
+            compute_loss_bpp(
+                result.x,
+                loss_func_estimator=loss_func_estimator,
+                alpha=alpha,
+                beta=beta,
+                lambda_1=lambda_1,
+                lambda_2=lambda_2,
+                lambda_3=lambda_3,
+                compiled_circuit=compiled_circuit,
+                sim=sim,
+                Capacity=Capacity,
+                Weights=Weights,
+                num_items=num_items,
+                list_size=list_size,
+                d_t=d_t,
+                n_shots=n_shots,
+                experiment_result=experiment_result,
+                CUNQA=cunqa_str,
+                family_name=family_name,
+                cost_history=cost_history
             )
 
         elif optimizer_lower == "brute":
-            result = brute(loss_func, ranges=[(0, 2*np.pi)]*len(initial_params))
+            result = brute(
+                loss_func,
+                ranges=[(0, 2 * np.pi)] * len(initial_params)
+            )
+
         else:
             result = minimize(
                 loss_func,
@@ -245,12 +271,11 @@ def run_vqe_optimization(
             )
 
     else:
-        # Objeto optimizador personalizado
         result = optimizer.minimize(fun=loss_func, x0=initial_params)
 
-    # --- Guardar CSV si se solicita ---
     if log_csv_path:
         os.makedirs(os.path.dirname(log_csv_path), exist_ok=True)
+
         with open(log_csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["iteracion", "valor_coste"])

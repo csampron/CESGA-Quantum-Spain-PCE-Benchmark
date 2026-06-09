@@ -1,0 +1,15 @@
+For DIFFERENTIAL EVOLUTION, the execution parameters were the following:
+
+de_params = {
+                "strategy": "best1exp",
+                "maxiter": 1000,
+                "popsize": 3,
+                "tol": 1e-7,
+                "mutation": (0.5, 1),
+                "recombination": 0.7,
+                "disp": True,
+                "polish": True
+            }
+
+
+NOTE: no seed

@@ -1,0 +1,76 @@
+====================================================
+BPP EMBEDDING SUMMARY — ALPHA / BETA
+Timestamp: 2026-06-04T17:27:18
+====================================================
+
+GLOBAL STATS
+--------------------------------------------
+Total rows: 108
+Perfect rate: 0.0000
+Combinatorial rate: 0.6296
+Feasible rate: 0.6296
+
+GLOBAL EMBEDDING METRICS
+--------------------------------------------
+Rows: 108
+Mean gap: 0.5018
+Min gap mean: 0.0000
+Mean row max: 0.7869
+Min row max mean: 0.4783
+
+Best regions by mean_gap:
+alpha=40.0, beta=1.0 | runs=3, mean_gap=0.5425, min_gap=0.0000, mean_row_max=0.7844, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.3333, ref_bins_mean=3.0000
+alpha=25.0, beta=0.4 | runs=3, mean_gap=0.4787, min_gap=0.0000, mean_row_max=0.8168, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=3.6667, ref_bins_mean=3.0000
+alpha=30.0, beta=0.2 | runs=3, mean_gap=0.4764, min_gap=0.0000, mean_row_max=0.7778, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=20.0, beta=1.0 | runs=3, mean_gap=0.4619, min_gap=0.0000, mean_row_max=0.7732, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.0 | runs=3, mean_gap=0.6172, min_gap=0.0000, mean_row_max=0.8398, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.0 | runs=3, mean_gap=0.6076, min_gap=0.0000, mean_row_max=0.8389, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=3.5000, ref_bins_mean=3.0000
+alpha=25.0, beta=0.2 | runs=3, mean_gap=0.5949, min_gap=0.0000, mean_row_max=0.8189, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=40.0, beta=0.8 | runs=3, mean_gap=0.5893, min_gap=0.0000, mean_row_max=0.8476, min_row_max=0.4594, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=4.5000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.6 | runs=3, mean_gap=0.5825, min_gap=0.0000, mean_row_max=0.7952, min_row_max=0.4617, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.8 | runs=3, mean_gap=0.5781, min_gap=0.0000, mean_row_max=0.8020, min_row_max=0.4257, perfect_rate=0.0000, combinatorial_rate=0.6667, valid_rate=0.6667, init_bins_mean=4.0000, ref_bins_mean=3.0000
+
+PERFECT REGIONS METRICS
+--------------------------------------------
+No rows
+
+COMBINATORIAL REGIONS METRICS
+--------------------------------------------
+Rows: 68
+Mean gap: 0.5371
+Min gap mean: 0.0000
+Mean row max: 0.8180
+Min row max mean: 0.5000
+
+Best regions by mean_gap:
+alpha=30.0, beta=0.8 | runs=2, mean_gap=0.6755, min_gap=0.0000, mean_row_max=0.8827, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=15.0, beta=0.2 | runs=1, mean_gap=0.6580, min_gap=0.0000, mean_row_max=0.8959, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.0 | runs=2, mean_gap=0.6416, min_gap=0.0000, mean_row_max=0.8697, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=3.5000, ref_bins_mean=3.0000
+alpha=20.0, beta=0.2 | runs=1, mean_gap=0.6286, min_gap=0.0000, mean_row_max=0.8256, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=40.0, beta=0.8 | runs=2, mean_gap=0.6152, min_gap=0.0000, mean_row_max=0.8733, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.5000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.4 | runs=1, mean_gap=0.6039, min_gap=0.0000, mean_row_max=0.8520, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.0 | runs=2, mean_gap=0.6025, min_gap=0.0000, mean_row_max=0.8457, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.8 | runs=2, mean_gap=0.6020, min_gap=0.0000, mean_row_max=0.8369, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=1.0 | runs=2, mean_gap=0.6007, min_gap=0.0000, mean_row_max=0.8432, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=40.0, beta=0.2 | runs=2, mean_gap=0.5952, min_gap=0.0000, mean_row_max=0.8462, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+
+VALID REGIONS METRICS
+--------------------------------------------
+Rows: 68
+Mean gap: 0.5371
+Min gap mean: 0.0000
+Mean row max: 0.8180
+Min row max mean: 0.5000
+
+Best regions by mean_gap:
+alpha=30.0, beta=0.8 | runs=2, mean_gap=0.6755, min_gap=0.0000, mean_row_max=0.8827, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=15.0, beta=0.2 | runs=1, mean_gap=0.6580, min_gap=0.0000, mean_row_max=0.8959, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.0 | runs=2, mean_gap=0.6416, min_gap=0.0000, mean_row_max=0.8697, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=3.5000, ref_bins_mean=3.0000
+alpha=20.0, beta=0.2 | runs=1, mean_gap=0.6286, min_gap=0.0000, mean_row_max=0.8256, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=40.0, beta=0.8 | runs=2, mean_gap=0.6152, min_gap=0.0000, mean_row_max=0.8733, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.5000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.4 | runs=1, mean_gap=0.6039, min_gap=0.0000, mean_row_max=0.8520, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=0.0 | runs=2, mean_gap=0.6025, min_gap=0.0000, mean_row_max=0.8457, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=35.0, beta=0.8 | runs=2, mean_gap=0.6020, min_gap=0.0000, mean_row_max=0.8369, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=30.0, beta=1.0 | runs=2, mean_gap=0.6007, min_gap=0.0000, mean_row_max=0.8432, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+alpha=40.0, beta=0.2 | runs=2, mean_gap=0.5952, min_gap=0.0000, mean_row_max=0.8462, min_row_max=0.5000, perfect_rate=0.0000, combinatorial_rate=1.0000, valid_rate=1.0000, init_bins_mean=4.0000, ref_bins_mean=3.0000
+

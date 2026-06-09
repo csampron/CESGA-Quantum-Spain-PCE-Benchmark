@@ -116,88 +116,250 @@ def solve_for_k(m: float, k: int, max_n: int = 100, tol: float = 1e-6):
 ### FUNCIONES DE PARTICIÓN Y REFINAMIENTO LOCAL
 ### ========================================================= ###
 
-def build_bpp_solution_from_expmap(node_exp_map, alpha, weights, Capacity, y_threshold=0.0):
-    """
-    Reconstruye la solución BPP usando x_ij y y_j relajados en (-1,1) directamente.
-    - node_exp_map incluye N^2 x_ij + N y_j
-    - Se filtran bins activos según y_threshold (en rango [-1,1])
-    """
+from itertools import product
+import numpy as np
 
+
+def build_bpp_solution_from_expmap(
+    node_exp_map,
+    alpha,
+    weights,
+    Capacity,
+    threshold=0.5
+):
     N = len(weights)
     max_bins = N
 
-    # Extraer valores de node_exp_map
-    exp_values = np.array([node_exp_map[i] for i in range(N**2 + N)])
+    # ============================================================
+    # 1. Reconstruir matriz x_ij desde exp_map
+    # ============================================================
 
-    # Valores relajados z ∈ (-1,1)
-    z = np.tanh(alpha * exp_values)
+    if isinstance(node_exp_map, dict):
+        exp_array = np.array(
+            [node_exp_map[i] for i in range(N * max_bins)],
+            dtype=float
+        )
+    else:
+        exp_array = np.asarray(node_exp_map[:N * max_bins], dtype=float)
 
-    # x_ij y y_j (sin transformar a [0,1])
-    x_vals = z[:N*N].reshape(N, N)
-    y_vals = z[N*N:]
+    z_relaxed = np.tanh(alpha * exp_array)
+    x_relaxed = (z_relaxed + 1.0) / 2.0
 
-    # -------------------------
-    # 1) Filtrar bins activos según y_threshold
-    # -------------------------
-    active_bins = [j for j in range(max_bins) if y_vals[j] > y_threshold]
+    x_matrix = x_relaxed.reshape(N, max_bins)
+    x_binary = (x_matrix >= threshold).astype(int)
 
-    # Caso extremo: ningún bin supera el threshold
-    if len(active_bins) == 0:
-        active_bins = [int(np.argmax(y_vals))]
+    # ============================================================
+    # 2. Candidatos por objeto
+    # ============================================================
 
-    # Crear estructura para bins activos
-    bins = {j: [] for j in active_bins}
+    item_candidates = {
+        i: [j for j in range(max_bins) if x_binary[i, j] == 1]
+        for i in range(N)
+    }
 
-    # -------------------------
-    # 2) Asignar cada ítem al bin activo con mayor x_ij
-    # -------------------------
+    unassigned_items = [
+        i for i, cand in item_candidates.items()
+        if len(cand) == 0
+    ]
+
+    ambiguous_items = [
+        i for i, cand in item_candidates.items()
+        if len(cand) > 1
+    ]
+
+    x_values = {
+        i: [float(x_matrix[i, j]) for j in range(max_bins)]
+        for i in range(N)
+    }
+
+    x_binary_values = {
+        i: [int(x_binary[i, j]) for j in range(max_bins)]
+        for i in range(N)
+    }
+
+    candidate_info = {
+        "item_candidates": item_candidates,
+        "unassigned_items": unassigned_items,
+        "ambiguous_items": ambiguous_items,
+        "x_binary": x_binary_values
+    }
+
+    # ============================================================
+    # 3. Si algún objeto no tiene candidato, la solución no existe
+    # ============================================================
+
+    if len(unassigned_items) > 0:
+        report = {
+            "feasible": False,
+            "assignment_feasible": False,
+            "capacity_feasible": False,
+            "reason": "items_without_candidate_bins",
+            "num_combinations": 0,
+            "feasible_solutions": 0,
+            "unassigned_items": unassigned_items,
+            "ambiguous_items": ambiguous_items,
+            "violations": []
+        }
+
+        return None, report, "infeasible", candidate_info, x_values
+
+    # ============================================================
+    # 4. Número de combinaciones compatibles con la binarización
+    # ============================================================
+
+    num_combinations = 1
     for i in range(N):
-        j_best = max(active_bins, key=lambda j: x_vals[i, j])
-        bins[j_best].append(i)
+        num_combinations *= len(item_candidates[i])
 
-    # Limpiar bins vacíos
-    bin_list = [bins[j] for j in sorted(bins.keys()) if len(bins[j]) > 0]
+    # ============================================================
+    # 5. Enumerar todas las combinaciones candidatas
+    # ============================================================
 
-    # -------------------------
-    # 3) Chequeo de factibilidad
-    # -------------------------
-    feasible = True
-    violations = []
-    for idx, b in enumerate(bin_list):
-        total_weight = sum(int(weights[i]) for i in b)
-        if total_weight > Capacity:
-            feasible = False
-            violations.append({
-                "bin_index": idx,
-                "total_weight": total_weight,
-                "capacity": Capacity,
-                "items": b
-            })
+    candidate_lists = [item_candidates[i] for i in range(N)]
 
-    report = {"feasible": feasible, "violations": violations}
+    best_bins = None
+    best_assignment = None
+    best_score = None
+    feasible_solutions = 0
+    best_violations = None
 
-    return bin_list, report
+    for assignment_tuple in product(*candidate_lists):
+        bins_dict = {j: [] for j in range(max_bins)}
 
+        for i, j in enumerate(assignment_tuple):
+            bins_dict[j].append(i)
 
+        bin_list = [
+            bins_dict[j]
+            for j in range(max_bins)
+            if len(bins_dict[j]) > 0
+        ]
+
+        # --------------------------------------------------------
+        # Validar capacidad
+        # --------------------------------------------------------
+
+        capacity_feasible = True
+        violations = []
+
+        for idx, b in enumerate(bin_list):
+            total_weight = sum(int(weights[i]) for i in b)
+
+            if total_weight > Capacity:
+                capacity_feasible = False
+                violations.append({
+                    "bin_index": idx,
+                    "total_weight": total_weight,
+                    "capacity": Capacity,
+                    "items": b,
+                    "weights": [int(weights[i]) for i in b]
+                })
+
+        if not capacity_feasible:
+            if best_violations is None:
+                best_violations = violations
+            continue
+
+        feasible_solutions += 1
+
+        # --------------------------------------------------------
+        # Criterio:
+        # 1) menor número de bins
+        # 2) mayor confianza del embedding
+        # --------------------------------------------------------
+
+        num_bins_used = len(bin_list)
+
+        confidence = sum(
+            x_matrix[i, assignment_tuple[i]]
+            for i in range(N)
+        )
+
+        score = (
+            num_bins_used,
+            -confidence
+        )
+
+        if best_score is None or score < best_score:
+            best_score = score
+            best_bins = bin_list
+            best_assignment = assignment_tuple
+
+    # ============================================================
+    # 6. Ninguna combinación fue factible
+    # ============================================================
+
+    if best_bins is None:
+
+        reconstruction_info = {
+            "num_combinations": num_combinations,
+            "feasible_solutions": feasible_solutions,
+            "unassigned_items": unassigned_items,
+            "ambiguous_items": ambiguous_items,
+            "selected_assignment": None,
+            "num_bins_used": None
+        }
+
+        return (
+            None,
+            reconstruction_info,
+            "infeasible",
+            candidate_info,
+            x_values
+        )
+
+    # ============================================================
+    # 7. Status final
+    # ============================================================
+
+    if len(ambiguous_items) == 0:
+        status = "perfect"
+    else:
+        status = "combinatorial"
+
+    reconstruction_info = {
+        "num_combinations": num_combinations,
+        "feasible_solutions": feasible_solutions,
+        "unassigned_items": unassigned_items,
+        "ambiguous_items": ambiguous_items,
+        "selected_assignment": list(best_assignment),
+        "num_bins_used": len(best_bins)
+    }
+
+    return (
+        best_bins,
+        reconstruction_info,
+        status,
+        candidate_info,
+        x_values
+    )
 
 
 
 def postprocess_bins(bins, pesos, Capacity):
-    # Copia profunda para no alterar la original
+    """
+    Postprocesado seguro:
+    - Si bins is None, no hace nada.
+    - Si bins existe, se asume que ya es factible.
+    - Solo mueve singleton bins si el movimiento preserva capacidad.
+    - Devuelve únicamente bins_post.
+    """
+
+    if bins is None:
+        return None
+
     bins = [b[:] for b in bins]
+
     improved = True
 
     while improved:
         improved = False
 
-        # Identificar bins con un solo ítem
         singleton_bins = [b for b in bins if len(b) == 1]
 
         for sb in singleton_bins:
             item = sb[0]
             weight_item = int(pesos[item])
-
-            moved = False  # Para marcar si logramos moverlo legítimamente
 
             for b in bins:
                 if b is sb:
@@ -205,35 +367,13 @@ def postprocess_bins(bins, pesos, Capacity):
 
                 current_weight = sum(int(pesos[i]) for i in b)
 
-                # Verificar capacidad ANTES de mover
                 if current_weight + weight_item <= Capacity:
-                    # --- Movimiento seguro ---
                     b.append(item)
                     bins.remove(sb)
                     improved = True
-                    moved = True
                     break
 
-            # Si este singleton no pudo moverse, seguimos al siguiente
             if improved:
                 break
 
-    # ----- Chequeo final de factibilidad -----
-    feasible = True
-    violations = []
-
-    for idx, b in enumerate(bins):
-        total_weight = sum(int(pesos[i]) for i in b)
-        if total_weight > Capacity:
-            feasible = False
-            violations.append({
-                "bin_index": idx,
-                "total_weight": total_weight,
-                "capacity": Capacity,
-                "items": b,
-                "weights": [pesos[i] for i in b]
-            })
-            print(f"⚠️ Postprocesado: Bin {idx} excede la capacidad! Peso total: {total_weight}, Capacidad: {Capacity}")
-
-    report = {"feasible": feasible, "violations": violations}
-    return bins, report
+    return bins

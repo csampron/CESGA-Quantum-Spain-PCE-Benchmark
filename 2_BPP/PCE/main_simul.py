@@ -9,24 +9,13 @@ from cunqa.qutils import qraise, qdrop
 
 from src.exe_experiments import (
     casuistica_experimento,     # genera todas las combinaciones posibles de parámetros
-    filtrar_combinaciones,      # permite filtrar combinaciones por criterio (opcional)
     ejecutar_experimentos       # ejecuta los experimentos uno por uno
 )
-
-from src.auxiliar import num_qubits # Calcula el número de qubits necesarios
 
 # Función encargada de graficar los resultados obtenidos en cada experimento
 from src.grafica_csv import (
     graficar_coste         # genera y guarda una gráfica a partir del CSV del experimento
 )
-
-
-import argparse
-# === PARSEAR ARGUMENTOS DE LA LÍNEA DE COMANDOS ===
-parser = argparse.ArgumentParser(description="Ejecutar experimentos BPP con semilla opcional")
-parser.add_argument("--seed", type=int, default=None, help="Semilla para el RNG")
-args = parser.parse_args()
-seed = args.seed
 
 # === 1. DEFINICIÓN DE LOS PARÁMETROS DEL EXPERIMENTO ===
 # Cada lista representa un conjunto de valores posibles para uno de los ejes del experimento.
@@ -37,7 +26,7 @@ seed = args.seed
 #   - k: parámetro que controla la compresión o agrupación de variables del circuito cuántico.
 
 Problema = ["BPP"]
-Tamaño = [3]
+Tamaño = [4]
 Optimiz = ["DIFFERENTIALEVOLUTION"]
 k = [2]
 
@@ -81,11 +70,15 @@ for combo in combinaciones:
     print(f"\n🚀 Ejecutando experimento con parámetros: {combo}")
     
     # Definir los hiperparámetros usados internamente
-    alpha = 2.0
-    beta = 0.7
+    alpha = 35.0
+    beta = 0.6
+
+    lambda_1 = 1.0
+    lambda_2 = 50.0
+    lambda_3 = 100.0
     
     # Ejecuta el experimento y obtiene la ruta del CSV con los resultados
-    ruta_csv, ruta_csv_iter = ejecutar_experimentos(exp_list=combo, optimizer_params=optimizer_params, alpha=alpha, beta=beta, maxiter=maxiter, n_shots=n_shots, nqpus = None, cunqa_str = "Simulation", family_name = None, seed=seed)
+    ruta_csv, ruta_csv_iter = ejecutar_experimentos(exp_list=combo, optimizer_params=optimizer_params, alpha=alpha, beta=beta, lambda_1=lambda_1, lambda_2=lambda_2, lambda_3=lambda_3, maxiter=maxiter, n_shots=n_shots, nqpus = None, cunqa_str = "Simulation", family_name = None)
     
     # Genera y guarda la gráfica correspondiente al CSV del experimento
     graficar_coste(ruta_csv_iter)

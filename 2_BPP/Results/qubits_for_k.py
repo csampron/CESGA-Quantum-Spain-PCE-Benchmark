@@ -77,8 +77,8 @@ def num_qubits(num_variables: int, order_compression: int) -> Optional[int]:
 num_variables = [3,4,5,6,7,8,9,10,12,14]
 
 
-ORDERS_FULL = [1, 2, 3, 4, 5]
-ORDERS_PARTIAL = [2, 3, 4, 5]
+ORDERS_FULL = [1, 2, 3, 4]
+ORDERS_PARTIAL = [2, 3, 4]
 
 # ------------------------------------------------
 #  Paleta fija por order (CLAVE)
@@ -101,7 +101,7 @@ def compute_results(order_list):
     for k in order_list:
         vals = []
         for n in num_variables:
-            q = num_qubits(n**2 + n, k)
+            q = num_qubits(n**2, k)
             vals.append(q)
         results[k] = vals
     return results
@@ -146,7 +146,7 @@ def plot_results(order_list, results, filename):
 #  Generación de figuras
 # ------------------------------------------------
 
-output_dir = "Your_route/z_BPP/A_DIFFERENTIAL_COMPARISON"
+output_dir = "Your_path/z_BPP/A_DIFFERENTIAL_COMPARISON_new"
 os.makedirs(output_dir, exist_ok=True)
 
 plot_results(

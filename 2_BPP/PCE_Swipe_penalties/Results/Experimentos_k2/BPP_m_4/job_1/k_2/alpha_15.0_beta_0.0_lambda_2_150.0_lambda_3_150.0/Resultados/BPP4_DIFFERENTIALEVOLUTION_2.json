@@ -1,0 +1,391 @@
+{
+  "resultados": [
+    {
+      "qubits": 5,
+      "elapsed_time": 63.427022218704224,
+      "alpha": 15.0,
+      "beta": 0.0,
+      "f_loss_value": 10.551632502560102,
+      "function_evaluations": 32807,
+      "Number of iterations": 2500,
+      "num_params": 13,
+      "params": [
+        3.437746529282974,
+        1.5886746742722337,
+        3.668789062723946,
+        2.8331518131383513,
+        5.852361320968205,
+        0.6263734983409788,
+        3.155529381394353,
+        3.0077069974447146,
+        1.4983089337511266,
+        1.7305190057276894,
+        4.545915764342054,
+        1.260191476421435,
+        3.141743413561156
+      ],
+      "status_initial": "infeasible",
+      "reconstruction_info": {
+        "feasible": false,
+        "assignment_feasible": false,
+        "capacity_feasible": false,
+        "reason": "items_without_candidate_bins",
+        "num_combinations": 0,
+        "feasible_solutions": 0,
+        "unassigned_items": [
+          0,
+          1
+        ],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "violations": []
+      },
+      "candidate_info": {
+        "item_candidates": {
+          "0": [],
+          "1": [],
+          "2": [
+            0,
+            1
+          ],
+          "3": [
+            2,
+            3
+          ]
+        },
+        "unassigned_items": [
+          0,
+          1
+        ],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "x_binary": {
+          "0": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "2": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "x_values": {
+        "0": [
+          0.19512749025577386,
+          0.2730090268416956,
+          0.03914213168336761,
+          0.49999999999999983
+        ],
+        "1": [
+          4.047301382925639e-11,
+          0.4519258749254803,
+          6.919865175314399e-08,
+          0.49999999999999944
+        ],
+        "2": [
+          0.5000000000000001,
+          0.5000000000000002,
+          0.10394269690390612,
+          0.021253807526233237
+        ],
+        "3": [
+          0.018106444068880123,
+          3.459627029300805e-11,
+          0.5695436839297667,
+          0.5724713694006355
+        ]
+      },
+      "bins_solution": null,
+      "num_bins_used": null,
+      "bins_solution_post": null,
+      "num_bins_used_post": null,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    },
+    {
+      "qubits": 5,
+      "elapsed_time": 63.67964482307434,
+      "alpha": 15.0,
+      "beta": 0.0,
+      "f_loss_value": 11.453144246751515,
+      "function_evaluations": 32807,
+      "Number of iterations": 2500,
+      "num_params": 13,
+      "params": [
+        5.870174228064826,
+        2.4336918037898,
+        4.792310804758264,
+        3.4566619871041797,
+        0.29242147240620175,
+        0.745856886917069,
+        4.1528491792664015,
+        3.392041382607358,
+        4.780093771584966,
+        4.3159477780563,
+        1.937479612236451,
+        1.3473417047577445,
+        3.2444152942877156
+      ],
+      "status_initial": "combinatorial",
+      "reconstruction_info": {
+        "num_combinations": 4,
+        "feasible_solutions": 4,
+        "unassigned_items": [],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "selected_assignment": [
+          3,
+          3,
+          0,
+          3
+        ],
+        "num_bins_used": 2
+      },
+      "candidate_info": {
+        "item_candidates": {
+          "0": [
+            3
+          ],
+          "1": [
+            3
+          ],
+          "2": [
+            0,
+            1
+          ],
+          "3": [
+            2,
+            3
+          ]
+        },
+        "unassigned_items": [],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "x_binary": {
+          "0": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "1": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "2": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "x_values": {
+        "0": [
+          0.09128382442844496,
+          0.3560510107866524,
+          0.0634605327804263,
+          0.5000000000000001
+        ],
+        "1": [
+          2.1139684836579686e-05,
+          0.43161360393553583,
+          6.14159795203073e-05,
+          0.5
+        ],
+        "2": [
+          0.5000000000000003,
+          0.5000000000000003,
+          0.12278988062833485,
+          0.012426202288492505
+        ],
+        "3": [
+          0.016914756345945803,
+          5.355477172841461e-10,
+          0.5757974468650148,
+          0.5704511639181609
+        ]
+      },
+      "bins_solution": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "num_bins_used": 2,
+      "bins_solution_post": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "num_bins_used_post": 2,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    },
+    {
+      "qubits": 5,
+      "elapsed_time": 63.8637490272522,
+      "alpha": 15.0,
+      "beta": 0.0,
+      "f_loss_value": 12.675916253459715,
+      "function_evaluations": 32807,
+      "Number of iterations": 2500,
+      "num_params": 13,
+      "params": [
+        0.6014750879851292,
+        1.1252898819172907,
+        3.2738135302975517,
+        1.7423511788754464,
+        5.617304378982236,
+        4.476450848061319,
+        5.805698405136065,
+        5.888071596322024,
+        1.6353643592485045,
+        0.23812693691835474,
+        0.8723869428815716,
+        2.4983260744048414,
+        3.14113095944245
+      ],
+      "status_initial": "infeasible",
+      "reconstruction_info": {
+        "feasible": false,
+        "assignment_feasible": false,
+        "capacity_feasible": false,
+        "reason": "items_without_candidate_bins",
+        "num_combinations": 0,
+        "feasible_solutions": 0,
+        "unassigned_items": [
+          0
+        ],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "violations": []
+      },
+      "candidate_info": {
+        "item_candidates": {
+          "0": [],
+          "1": [
+            3
+          ],
+          "2": [
+            0,
+            1
+          ],
+          "3": [
+            2,
+            3
+          ]
+        },
+        "unassigned_items": [
+          0
+        ],
+        "ambiguous_items": [
+          2,
+          3
+        ],
+        "x_binary": {
+          "0": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "2": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "3": [
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      },
+      "x_values": {
+        "0": [
+          0.008864852800888778,
+          0.3887722176115488,
+          0.13751855812600694,
+          0.4999999999999999
+        ],
+        "1": [
+          0.18753765679774126,
+          0.27401791290666355,
+          0.02514227286453491,
+          0.5000000000000006
+        ],
+        "2": [
+          0.5000000000000004,
+          0.5000000000000007,
+          0.14349555826766047,
+          0.003735155963498382
+        ],
+        "3": [
+          0.02421556845473699,
+          0.0015432021122716022,
+          0.5964103149982748,
+          0.5642436094596535
+        ]
+      },
+      "bins_solution": null,
+      "num_bins_used": null,
+      "bins_solution_post": null,
+      "num_bins_used_post": null,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    }
+  ]
+}

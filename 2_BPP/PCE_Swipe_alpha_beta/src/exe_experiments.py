@@ -57,7 +57,7 @@ def filtrar_combinaciones(combos, indice, valor):
 
 
 
-def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, maxiter, n_shots, nqpus, cunqa_str, family_name, output_dir):   
+def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, lambda_1, lambda_2, lambda_3, maxiter, n_shots, nqpus, cunqa_str, family_name, output_dir):   
     """
     Ejecuta un experimento de BPP para una combinación de parámetros dada.
 
@@ -141,7 +141,7 @@ def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, maxiter, n_sh
     # === 2. Cargar el grafo correspondiente al problema ===
     # Se espera un archivo con nombre "{problema}_{tamaño}.mc"
     parent = Path(__file__).resolve().parent
-    Capacity, pesos, num_items = load_bpp(f"{parent}/data/{problema}_{tamaño}.bpp")
+    Capacity, Weights, num_items = load_bpp(f"{parent}/data/{problema}_{tamaño}.bpp")
 
 
     # === 3. Determinar parámetros del optimizador ===
@@ -151,13 +151,16 @@ def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, maxiter, n_sh
     # === 4. Ejecutar BPP ===
     dic_resultado, subcarpeta, ruta_csv, ruta_csv_iter = ejecutar_bpp(
         Capacity=Capacity,
+        Weights=Weights,
         num_items=num_items,
-        pesos=pesos,
         optimizer=optimizer,
         optimizer_params=opt_params,
         k=k,
         alpha=alpha,
         beta=beta,
+        lambda_1=lambda_1,
+        lambda_2=lambda_2,
+        lambda_3=lambda_3,
         maxiter=maxiter,
         n_shots=n_shots,
         nqpus=nqpus,

@@ -58,6 +58,16 @@ def combination_tensor(n_circuits, n_qubits, k_degree):
     # Garantiza coherencia en el orden de bits: la fila 0 corresponde a Z0, la fila 1 a Z1, etc.
     base = base[::-1, :]
 
+    # print("\n=== Combinaciones ===")
+
+    # for j in range(base.shape[1]):
+    #     active = np.where(base[:, j] == 1)[0]
+
+    #     print(
+    #         f"col {j}: qubits={list(active)} "
+    #         f"label={''.join('Y' if i in active else 'I' for i in range(n_qubits))}"
+    #     )
+
     # Replicamos la matriz base a lo largo del eje de circuitos (sin copiar datos)
     return np.broadcast_to(base, (n_circuits, n_qubits, n_combinations))
 

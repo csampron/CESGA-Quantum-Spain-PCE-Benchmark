@@ -27,13 +27,13 @@ def loss_func_estimator(
     x,
     alpha,
     beta,
-    A,
-    B,
-    D,
+    lambda_1,
+    lambda_2,
+    lambda_3,
     ansatz,
     sim,
     Capacity,
-    pesos,
+    Weights,
     num_items,
     list_size,
     num_qubits,
@@ -87,11 +87,6 @@ def loss_func_estimator(
         Valor escalar de la función de pérdida.
     """
 
-    # Definimos unas variables necesarias:
-
-    max_bins = num_items # Máximo número de bins que se ocupan
-    m = num_items*num_items + num_items # Máximo número de variables que se pueden tener
-
     ### ----------------------------------------------------- ###
     ### 1. Bind de parámetros en cada circuito
     ### ----------------------------------------------------- ###
@@ -144,20 +139,35 @@ def loss_func_estimator(
             qc_clean.save_statevector()
             return qc_clean
 
-        # Preparamos los circuitos
-        bound_circuit_x = prepare_for_statevector(bound_circuit_list[0])
-        bound_circuit_y = prepare_for_statevector(bound_circuit_list[1])
-       
+        # Preparamos los circuitos     
         # Ejecutar Z completo
-        bound_circuit_z = prepare_for_statevector(bound_circuit_list[2])
+        bound_circuit_z = prepare_for_statevector(bound_circuit_list[0])
         state_z = sim.run(bound_circuit_z).result().get_statevector(bound_circuit_z)
 
         # Probabilidades exactas
         probs_z = np.abs(state_z) ** 2
 
         # Ejecutar X e Y sobre statevector de Z
-        state_x = sim.run(bound_circuit_x, initial_statevector=state_z).result().get_statevector(bound_circuit_x)
-        state_y = sim.run(bound_circuit_y, initial_statevector=state_z).result().get_statevector(bound_circuit_y)
+        from qiskit import QuantumCircuit
+
+        # Ejecutar sobre initial_statevector=state_z
+        # X: aplicar H
+        qc_x = QuantumCircuit(num_qubits)
+        qc_x.set_statevector(state_z)
+        for q in range(num_qubits):
+            qc_x.h(q)
+        qc_x.save_statevector()
+        state_x = sim.run(qc_x).result().get_statevector(qc_x)
+
+        # Y: aplicar S† H
+        qc_y = QuantumCircuit(num_qubits)
+        qc_y.set_statevector(state_z)
+        for q in range(num_qubits):
+            qc_y.sdg(q)
+            qc_y.h(q)
+        qc_y.save_statevector()
+        state_y = sim.run(qc_y).result().get_statevector(qc_y)
+
 
         # Probabilidades exactas
         probs_x = np.abs(state_x) ** 2
@@ -169,7 +179,7 @@ def loss_func_estimator(
         # Para probabilities exactas, n_shots debe ser 1
         n_shots = 1
 
-    p_t = build_probability_tensor(counts_list, n_shots)
+    p_t = build_probability_tensor(counts_list, n_shots,num_qubits)
 
     ### ----------------------------------------------------- ###
     ### 3. Calcular valores esperados usando d_t
@@ -179,71 +189,86 @@ def loss_func_estimator(
     ### ----------------------------------------------------- ###
     ### 4. Selección de nodos de interés
     ### ----------------------------------------------------- ###
+    m = num_items**2
+
     node_exp_map = select_nodes_from_aux(aux, m, list_size, return_concatenated=True)
 
     # ---------------------------------------------------------
-    # 5. Convertir expectativas → variables binarias suaves
+    # 5. Convertir expectativas -> variables x_ij
     # ---------------------------------------------------------
-    # Asumimos:
-    # - primeros N^2 elementos: x_ij
-    # - siguientes N elementos: y_j
 
-    z_relaxed = {i: np.tanh(alpha * node_exp_map[i]) for i in node_exp_map}
+    m = num_items * num_items
 
-    def idx_ij(i, j):
-        return i * max_bins + j
+    exp_vec = np.asarray(
+        [node_exp_map[k] for k in range(m)],
+        dtype=float
+    )
 
-    def idx_y(j):
-        return num_items * num_items + j
+    z_vec = np.tanh(alpha * exp_vec)
 
-    # Funciones de acceso a [0,1]
-    def x_ij(i, j):
-        return (z_relaxed[idx_ij(i, j)] + 1) / 2
-
-    def y_j(j):
-        return (z_relaxed[idx_y(j)] + 1) / 2
-
-    loss = 0.0
+    X = ((z_vec + 1.0) / 2.0).reshape(num_items, num_items)
 
     # ---------------------------------------------------------
-    # A) Cada item en un solo bin: sum_j x_ij = 1
+    # Construir y_j desde X
+    # y_j = 1 si existe algún x_ij > threshold
     # ---------------------------------------------------------
-    #A = 100.0
-    for i in range(num_items):
-        s = sum(x_ij(i, j) for j in range(max_bins))
-        loss += A * (1.0 - s)**2
+
+    threshold = 0.5
+    Y = (X > threshold).any(axis=0).astype(float)
 
     # ---------------------------------------------------------
-    # B) Capacidad del bin: sum_i w_i * x_ij <= Capacity
+    # Q1: minimizar número de bins activos
     # ---------------------------------------------------------
-    # B se le pasa a la función
-    #B = float(B)  # Convertir a tipo nativo antes de pasar a loss_func_estimator
 
-    for j in range(max_bins):
-        weight_sum = sum(int(pesos[i]) * x_ij(i, j) for i in range(num_items))
-        excess = max(0.0, weight_sum - Capacity)
-        loss += B * excess**2
+    loss_q1 = lambda_1 * np.sum(Y)
 
     # ---------------------------------------------------------
-    # C) Minimizar número de bins: sum y_j
+    # Q2: cada item en exactamente un bin
     # ---------------------------------------------------------
-    C = 1.0
-    for j in range(max_bins):
-        loss += C * y_j(j)
+
+    row_sums = X.sum(axis=1)
+
+    loss_q2 = lambda_2 * np.sum(
+        (row_sums - 1.0) ** 2
+    )
 
     # ---------------------------------------------------------
-    # D) Redundancia: asegurar coherencia x_ij ≤ y_j
+    # Q3: restricción de capacidad
+    # sum_i w_i x_ij <= Capacity * y_j
     # ---------------------------------------------------------
-    #D = 1000.0
-    for j in range(max_bins):
-        for i in range(num_items):
-            # penaliza si x_ij > y_j
-            loss += D * (x_ij(i, j) * (1 - y_j(j)))**2
-            # explicación: si y_j ≈ 0, x_ij debería ≈ 0
+
+    weights = np.asarray(Weights, dtype=float)
+
+    weight_sums = weights @ X
+
+    excess = np.maximum(
+        0.0,
+        weight_sums - Capacity * Y
+    )
+
+    loss_q3 = lambda_3 * np.sum(
+        excess ** 2
+    )
 
     # ---------------------------------------------------------
-    # Guardar historial
+    # Regularización anti-saturación
     # ---------------------------------------------------------
+    nu = 1.0
+
+    reg_term = np.mean(z_vec ** 2) ** 2
+
+    loss_reg = beta * nu * reg_term
+
+    # ---------------------------------------------------------
+    # Loss total
+    # ---------------------------------------------------------
+
+    loss = loss_q1 + loss_q2 + loss_q3 + loss_reg
+
+    # ---------------------------------------------------------
+    # Guardar historial manteniendo el flujo actual
+    # ---------------------------------------------------------
+
     experiment_result.append({
         "loss": loss,
         "exp_map": node_exp_map

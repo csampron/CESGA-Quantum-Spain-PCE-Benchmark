@@ -27,10 +27,13 @@ def loss_func_estimator(
     x,
     alpha,
     beta,
+    lambda_1,
+    lambda_2,
+    lambda_3,
     ansatz,
     sim,
     Capacity,
-    pesos,
+    Weights,
     num_items,
     list_size,
     num_qubits,
@@ -83,11 +86,6 @@ def loss_func_estimator(
     float
         Valor escalar de la función de pérdida.
     """
-
-    # Definimos unas variables necesarias:
-
-    max_bins = num_items # Máximo número de bins que se ocupan
-    m = num_items*num_items + num_items # Máximo número de variables que se pueden tener
 
     ### ----------------------------------------------------- ###
     ### 1. Bind de parámetros en cada circuito
@@ -191,77 +189,88 @@ def loss_func_estimator(
     ### ----------------------------------------------------- ###
     ### 4. Selección de nodos de interés
     ### ----------------------------------------------------- ###
+    m = num_items**2
+
     node_exp_map = select_nodes_from_aux(aux, m, list_size, return_concatenated=True)
 
-    # ---------------------------------------------------------
-    # 5. Convertir expectativas → variables binarias suaves
-    # ---------------------------------------------------------
-    # Asumimos:
-    # - primeros N^2 elementos: x_ij
-    # - siguientes N elementos: y_j
-
-    z_relaxed = {i: np.tanh(alpha * node_exp_map[i]) for i in node_exp_map}
-
-    def idx_ij(i, j):
-        return i * max_bins + j
-
-    def idx_y(j):
-        return num_items * num_items + j
-
-    # Funciones de acceso a [0,1]
-    def x_ij(i, j):
-        return (z_relaxed[idx_ij(i, j)] + 1) / 2
-
-    def y_j(j):
-        return (z_relaxed[idx_y(j)] + 1) / 2
-
-    loss = 0.0
+    # print(node_exp_map) 
 
     # ---------------------------------------------------------
-    # A) Cada item en un solo bin: sum_j x_ij = 1
+    # 5. Convertir expectativas -> variables x_ij
     # ---------------------------------------------------------
-    A = 100.0
-    for i in range(num_items):
-        s = sum(x_ij(i, j) for j in range(max_bins))
-        loss += A * (1.0 - s)**2
+
+    m = num_items * num_items
+
+    exp_vec = np.asarray(
+        [node_exp_map[k] for k in range(m)],
+        dtype=float
+    )
+
+    z_vec = np.tanh(alpha * exp_vec)
+
+    X = ((z_vec + 1.0) / 2.0).reshape(num_items, num_items)
 
     # ---------------------------------------------------------
-    # B) Capacidad del bin: sum_i w_i * x_ij <= Capacity
+    # Construir y_j desde X
+    # y_j = 1 si existe algún x_ij > threshold
     # ---------------------------------------------------------
-    B = 10000.0
-    for j in range(max_bins):
-        weight_sum = sum(int(pesos[i]) * x_ij(i, j) for i in range(num_items))
-        excess = max(0.0, weight_sum - Capacity)
-        loss += B * excess**2
+
+    threshold = 0.5
+    Y = (X > threshold).any(axis=0).astype(float)
 
     # ---------------------------------------------------------
-    # C) Minimizar número de bins: sum y_j
+    # Q1: minimizar número de bins activos
     # ---------------------------------------------------------
-    C = 1.0
-    for j in range(max_bins):
-        loss += C * y_j(j)
+
+    loss_q1 = lambda_1 * np.sum(Y)
 
     # ---------------------------------------------------------
-    # D) Redundancia: asegurar coherencia x_ij ≤ y_j
+    # Q2: cada item en exactamente un bin
     # ---------------------------------------------------------
-    D = 1000.0
-    for j in range(max_bins):
-        for i in range(num_items):
-            # penaliza si x_ij > y_j
-            loss += D * (x_ij(i, j) * (1 - y_j(j)))**2
-            # explicación: si y_j ≈ 0, x_ij debería ≈ 0
+
+    row_sums = X.sum(axis=1)
+
+    loss_q2 = lambda_2 * np.sum(
+        (row_sums - 1.0) ** 2
+    )
 
     # ---------------------------------------------------------
-    # E) Regularización anti-saturación (tipo MaxCut)
+    # Q3: restricción de capacidad
+    # sum_i w_i x_ij <= Capacity * y_j
     # ---------------------------------------------------------
-    reg_term = np.mean([z**2 for z in z_relaxed.values()]) ** 2
 
-    nu = 100.0   # o 100.0, o 1000.0
-    loss += beta * nu * reg_term
+    weights = np.asarray(Weights, dtype=float)
+
+    weight_sums = weights @ X
+
+    excess = np.maximum(
+        0.0,
+        weight_sums - Capacity * Y
+    )
+
+    loss_q3 = lambda_3 * np.sum(
+        excess ** 2
+    )
 
     # ---------------------------------------------------------
-    # Guardar historial
+    # Regularización anti-saturación
     # ---------------------------------------------------------
+    nu = 1.0
+
+    reg_term = np.mean(z_vec ** 2) ** 2
+
+    loss_reg = beta * nu * reg_term
+
+    # ---------------------------------------------------------
+    # Loss total
+    # ---------------------------------------------------------
+
+    loss = loss_q1 + loss_q2 + loss_q3 + loss_reg
+
+    # ---------------------------------------------------------
+    # Guardar historial manteniendo el flujo actual
+    # ---------------------------------------------------------
+
     experiment_result.append({
         "loss": loss,
         "exp_map": node_exp_map
