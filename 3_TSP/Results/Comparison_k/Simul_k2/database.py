@@ -8,7 +8,7 @@ import re
 import statistics
 from typing import Optional
 
-RESULTS_DIR = "/Results/Comparison_k/Simul_k2/Resultados"
+RESULTS_DIR = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/Results/Comparison_k/Simul_k2/Resultados"
 DB_NAME = "TSP_results_feasible_vs_repaired_k2.db"
 
 THRESHOLD = 0.5
@@ -181,7 +181,10 @@ CREATE TABLE IF NOT EXISTS TSP_feasibility_counts (
     total_runs INTEGER,
     feasible_runs INTEGER,
     repaired_runs INTEGER,
-    feasible_percentage REAL
+    feasible_percentage REAL,
+    best_feasible_initial REAL,
+    best_feasible_count INTEGER,
+    best_feasible_percentage REAL
 )
 """)
 
@@ -246,19 +249,25 @@ for ruta in sorted(json_files):
     # Separar runs
     # -------------------------------------------------
 
+    feasible_runs = []
+    repaired_runs = []   # ahora equivale a greedy
+
     for run_data in resultados:
 
-        embedding_values = run_data.get("embedding_values")
+        status = run_data.get("status")
 
-        is_feasible = check_binary_feasibility(
-            embedding_values,
-            threshold=THRESHOLD
-        )
-
-        if is_feasible:
+        if status == "perfect":
             feasible_runs.append(run_data)
-        else:
+
+        elif status == "greedy":
             repaired_runs.append(run_data)
+
+        elif status == "infeasible":
+            # No se guarda en feasible ni repaired
+            pass
+
+        else:
+            print(f"Status desconocido en {filename}: {status}")
 
     total_runs_count = len(resultados)
     feasible_runs_count = len(feasible_runs)
@@ -269,11 +278,52 @@ for ruta in sorted(json_files):
         if total_runs_count > 0 else None
     )
 
+    # =====================================================
+    # Mejor solución perfect encontrada y frecuencia
+    # =====================================================
+
+    feasible_initial_distances = [
+        r.get("initial_distance")
+        for r in feasible_runs
+        if r.get("initial_distance") is not None
+    ]
+
+    if feasible_initial_distances:
+
+        best_feasible_initial = min(feasible_initial_distances)
+
+        best_feasible_count = sum(
+            1
+            for v in feasible_initial_distances
+            if v == best_feasible_initial
+        )
+
+        best_feasible_percentage = (
+            100.0 * best_feasible_count /
+            len(feasible_initial_distances)
+        )
+
+    else:
+
+        best_feasible_initial = None
+        best_feasible_count = 0
+        best_feasible_percentage = None
+
     c.execute("""
     INSERT OR REPLACE INTO TSP_feasibility_counts
-    (filename, instance, optimizer, total_runs,
-    feasible_runs, repaired_runs, feasible_percentage)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    (
+        filename,
+        instance,
+        optimizer,
+        total_runs,
+        feasible_runs,
+        repaired_runs,
+        feasible_percentage,
+        best_feasible_initial,
+        best_feasible_count,
+        best_feasible_percentage
+    )
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         filename,
         instance,
@@ -281,7 +331,10 @@ for ruta in sorted(json_files):
         total_runs_count,
         feasible_runs_count,
         repaired_runs_count,
-        feasible_percentage
+        feasible_percentage,
+        best_feasible_initial,
+        best_feasible_count,
+        best_feasible_percentage
     ))
 
     bench = benchmark[instance]

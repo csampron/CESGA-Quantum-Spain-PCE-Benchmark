@@ -42,6 +42,8 @@ BENCHMARK = {
     "tsp22": 13005, "tsp25": 83132,
 }
 
+def tiene_datos(vals):
+    return any(v is not None and not np.isnan(v) for v in vals)
 
 def cargar_datos(db_files, table_name):
     data = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
@@ -202,7 +204,7 @@ def generar_graficas(result_type, table_name):
                 vals_no,
                 width=BAR_WIDTH,
                 color=COLORS_K[k],
-                label=f"k={k} (No reg)"
+                label=f"k={k} (No reg)" if tiene_datos(vals_no) else None
             )
 
             plt.bar(
@@ -214,7 +216,7 @@ def generar_graficas(result_type, table_name):
                 alpha=0.8,
                 edgecolor=EDGE_COLOR,
                 linewidth=LINE_WIDTH,
-                label=f"k={k} (Reg)"
+                label=f"k={k} (Reg)" if tiene_datos(vals_reg) else None
             )
 
         plt.title(
@@ -260,7 +262,7 @@ def generar_graficas(result_type, table_name):
                 vals_no,
                 width=BAR_WIDTH,
                 color=COLORS_K[k],
-                label=f"k={k} (No reg)"
+                label=f"k={k} (No reg)" if tiene_datos(vals_no) else None
             )
 
             plt.bar(
@@ -272,7 +274,7 @@ def generar_graficas(result_type, table_name):
                 alpha=0.8,
                 edgecolor=EDGE_COLOR,
                 linewidth=LINE_WIDTH,
-                label=f"k={k} (Reg)"
+                label=f"k={k} (Reg)" if tiene_datos(vals_reg) else None
             )
 
         plt.title(
@@ -344,7 +346,7 @@ def generar_graficas(result_type, table_name):
                 yerr=stds_no,
                 capsize=5,
                 error_kw={"elinewidth": 0.8, "ecolor": "black"},
-                label=f"k={k} (No reg)"
+                label=f"k={k} (No reg)" if tiene_datos(vals_no) else None
             )
 
             plt.bar(
@@ -359,7 +361,7 @@ def generar_graficas(result_type, table_name):
                 alpha=0.8,
                 edgecolor=EDGE_COLOR,
                 linewidth=LINE_WIDTH,
-                label=f"k={k} (Reg)"
+                label=f"k={k} (Reg)" if tiene_datos(vals_reg) else None
             )
 
         plt.title(
@@ -413,7 +415,7 @@ def generar_graficas(result_type, table_name):
                 vals_no,
                 width=BAR_WIDTH,
                 color=COLORS_K[k],
-                label=f"k={k} (No reg)"
+                label=f"k={k} (No reg)" if tiene_datos(vals_no) else None
             )
 
             plt.bar(
@@ -425,7 +427,7 @@ def generar_graficas(result_type, table_name):
                 alpha=0.8,
                 edgecolor=EDGE_COLOR,
                 linewidth=LINE_WIDTH,
-                label=f"k={k} (Reg)"
+                label=f"k={k} (Reg)" if tiene_datos(vals_reg) else None
             )
 
         plt.title(
@@ -479,7 +481,7 @@ def generar_graficas(result_type, table_name):
                 vals_no,
                 width=BAR_WIDTH,
                 color=COLORS_K[k],
-                label=f"k={k} (No reg)"
+                label=f"k={k} (No reg)" if tiene_datos(vals_no) else None
             )
 
             plt.bar(
@@ -491,7 +493,7 @@ def generar_graficas(result_type, table_name):
                 alpha=0.8,
                 edgecolor=EDGE_COLOR,
                 linewidth=LINE_WIDTH,
-                label=f"k={k} (Reg)"
+                label=f"k={k} (Reg)" if tiene_datos(vals_reg) else None
             )
 
         plt.title(

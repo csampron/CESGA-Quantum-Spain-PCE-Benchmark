@@ -1,0 +1,76 @@
+====================================================
+TSP EMBEDDING SUMMARY — ALPHA / BETA
+Timestamp: 2026-06-02T19:48:05
+====================================================
+
+GLOBAL STATS
+--------------------------------------------
+Total rows: 144
+Perfect rate: 0.2708
+Greedy rate: 0.0000
+Feasible rate: 0.2708
+
+GLOBAL EMBEDDING METRICS
+--------------------------------------------
+Rows: 144
+Mean gap: 0.4062
+Min gap mean: 0.1094
+Mean row max: 0.6198
+Min row max mean: 0.4259
+
+Best regions by mean_gap:
+alpha=40.0, beta=0.2 | runs=3, mean_gap=0.7889, min_gap=0.3763, mean_row_max=0.8897, min_row_max=0.6830, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3299.6667, ref_dist_mean=2838.0000
+alpha=40.0, beta=0.4 | runs=3, mean_gap=0.7288, min_gap=0.2696, mean_row_max=0.8575, min_row_max=0.6048, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3513.6667, ref_dist_mean=2998.6667
+alpha=40.0, beta=0.0 | runs=3, mean_gap=0.6648, min_gap=0.3717, mean_row_max=0.8185, min_row_max=0.6765, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3854.3333, ref_dist_mean=3087.6667
+alpha=40.0, beta=0.8 | runs=3, mean_gap=0.6143, min_gap=0.1599, mean_row_max=0.8008, min_row_max=0.5726, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3616.3333, ref_dist_mean=3213.0000
+alpha=35.0, beta=1.0 | runs=3, mean_gap=0.6951, min_gap=0.2948, mean_row_max=0.8350, min_row_max=0.6144, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3466.5000, ref_dist_mean=2778.5000
+alpha=35.0, beta=0.4 | runs=3, mean_gap=0.6926, min_gap=0.3243, mean_row_max=0.8302, min_row_max=0.5911, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3676.0000, ref_dist_mean=2980.5000
+alpha=40.0, beta=1.0 | runs=3, mean_gap=0.6879, min_gap=0.2331, mean_row_max=0.8305, min_row_max=0.5795, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3356.5000, ref_dist_mean=2818.5000
+alpha=35.0, beta=0.2 | runs=3, mean_gap=0.6623, min_gap=0.3392, mean_row_max=0.8009, min_row_max=0.5719, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3020.0000, ref_dist_mean=2820.5000
+alpha=40.0, beta=0.6 | runs=3, mean_gap=0.5943, min_gap=0.1980, mean_row_max=0.7805, min_row_max=0.5408, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3218.0000, ref_dist_mean=2890.5000
+alpha=30.0, beta=0.6 | runs=3, mean_gap=0.5827, min_gap=0.0976, mean_row_max=0.7811, min_row_max=0.5263, perfect_rate=0.6667, greedy_rate=0.0000, valid_rate=0.6667, init_dist_mean=3171.5000, ref_dist_mean=2820.5000
+
+PERFECT REGIONS METRICS
+--------------------------------------------
+Rows: 39
+Mean gap: 0.6840
+Min gap mean: 0.2917
+Mean row max: 0.8286
+Min row max mean: 0.6185
+
+Best regions by mean_gap:
+alpha=40.0, beta=0.2 | runs=3, mean_gap=0.7889, min_gap=0.3763, mean_row_max=0.8897, min_row_max=0.6830, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3299.6667, ref_dist_mean=2838.0000
+alpha=35.0, beta=0.4 | runs=2, mean_gap=0.7689, min_gap=0.4824, mean_row_max=0.8749, min_row_max=0.7036, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3676.0000, ref_dist_mean=2980.5000
+alpha=40.0, beta=1.0 | runs=2, mean_gap=0.7605, min_gap=0.3034, mean_row_max=0.8749, min_row_max=0.6440, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3356.5000, ref_dist_mean=2818.5000
+alpha=35.0, beta=0.2 | runs=2, mean_gap=0.7345, min_gap=0.4326, mean_row_max=0.8428, min_row_max=0.6280, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3020.0000, ref_dist_mean=2820.5000
+alpha=35.0, beta=1.0 | runs=2, mean_gap=0.7302, min_gap=0.4231, mean_row_max=0.8582, min_row_max=0.7027, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3466.5000, ref_dist_mean=2778.5000
+alpha=40.0, beta=0.4 | runs=3, mean_gap=0.7288, min_gap=0.2696, mean_row_max=0.8575, min_row_max=0.6048, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3513.6667, ref_dist_mean=2998.6667
+alpha=30.0, beta=0.0 | runs=1, mean_gap=0.7288, min_gap=0.4971, mean_row_max=0.8528, min_row_max=0.6798, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3264.0000, ref_dist_mean=2856.0000
+alpha=25.0, beta=0.8 | runs=1, mean_gap=0.7079, min_gap=0.4885, mean_row_max=0.8381, min_row_max=0.7135, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3154.0000, ref_dist_mean=2764.0000
+alpha=30.0, beta=0.2 | runs=2, mean_gap=0.7069, min_gap=0.2895, mean_row_max=0.8132, min_row_max=0.5422, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3441.5000, ref_dist_mean=3286.5000
+alpha=30.0, beta=0.4 | runs=2, mean_gap=0.7022, min_gap=0.2840, mean_row_max=0.8402, min_row_max=0.6233, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=2883.5000, ref_dist_mean=2812.5000
+
+GREEDY REGIONS METRICS
+--------------------------------------------
+No rows
+
+VALID REGIONS METRICS
+--------------------------------------------
+Rows: 39
+Mean gap: 0.6840
+Min gap mean: 0.2917
+Mean row max: 0.8286
+Min row max mean: 0.6185
+
+Best regions by mean_gap:
+alpha=40.0, beta=0.2 | runs=3, mean_gap=0.7889, min_gap=0.3763, mean_row_max=0.8897, min_row_max=0.6830, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3299.6667, ref_dist_mean=2838.0000
+alpha=35.0, beta=0.4 | runs=2, mean_gap=0.7689, min_gap=0.4824, mean_row_max=0.8749, min_row_max=0.7036, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3676.0000, ref_dist_mean=2980.5000
+alpha=40.0, beta=1.0 | runs=2, mean_gap=0.7605, min_gap=0.3034, mean_row_max=0.8749, min_row_max=0.6440, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3356.5000, ref_dist_mean=2818.5000
+alpha=35.0, beta=0.2 | runs=2, mean_gap=0.7345, min_gap=0.4326, mean_row_max=0.8428, min_row_max=0.6280, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3020.0000, ref_dist_mean=2820.5000
+alpha=35.0, beta=1.0 | runs=2, mean_gap=0.7302, min_gap=0.4231, mean_row_max=0.8582, min_row_max=0.7027, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3466.5000, ref_dist_mean=2778.5000
+alpha=40.0, beta=0.4 | runs=3, mean_gap=0.7288, min_gap=0.2696, mean_row_max=0.8575, min_row_max=0.6048, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3513.6667, ref_dist_mean=2998.6667
+alpha=30.0, beta=0.0 | runs=1, mean_gap=0.7288, min_gap=0.4971, mean_row_max=0.8528, min_row_max=0.6798, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3264.0000, ref_dist_mean=2856.0000
+alpha=25.0, beta=0.8 | runs=1, mean_gap=0.7079, min_gap=0.4885, mean_row_max=0.8381, min_row_max=0.7135, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3154.0000, ref_dist_mean=2764.0000
+alpha=30.0, beta=0.2 | runs=2, mean_gap=0.7069, min_gap=0.2895, mean_row_max=0.8132, min_row_max=0.5422, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=3441.5000, ref_dist_mean=3286.5000
+alpha=30.0, beta=0.4 | runs=2, mean_gap=0.7022, min_gap=0.2840, mean_row_max=0.8402, min_row_max=0.6233, perfect_rate=1.0000, greedy_rate=0.0000, valid_rate=1.0000, init_dist_mean=2883.5000, ref_dist_mean=2812.5000
+

@@ -156,117 +156,270 @@ def build_pauli_correlation_encoding(pauli, node_list, n, k):
 
 import numpy as np
 
-def get_tsp_tour_from_expmap(node_exp_map, graph, alpha, allow_repeats=False):
-    """
-    Reconstruye un tour a partir de un exp_map relajado.
+def get_tsp_tour_from_expmap(
+    node_exp_map,
+    graph,
+    alpha,
+    threshold= (0.5 - 1e-6)
+):
+    import numpy as np
 
-    Parameters
-    ----------
-    node_exp_map : dict[int, float] o np.ndarray
-        Diccionario o array linealizado de variables x_ij relajadas.
-    graph : nx.Graph
-        Grafo completo con nodos 1..n.
-    alpha : float
-        Escala de la relajación tanh.
-    allow_repeats : bool, default False
-        - True  -> permite que algunas ciudades se repitan (tour relajado)
-        - False -> fuerza un tour factible (cada ciudad una sola vez)
+    # ============================================================
+    # 1. Nodos
+    # ============================================================
 
-    Returns
-    -------
-    tour : list[int]
-        Lista de nodos del tour (1-index, compatible con NetworkX).
-    dist : float
-        Distancia total del tour.
-    x_values : dict[int, list[float]]
-        Diccionario {nodo_real: [x_ij por posición j]}.
-
-    Raises
-    ------
-    ValueError
-        Si se detectan nodos repetidos y allow_repeats=False.
-    """
     nodes_list = list(graph.nodes())
-    m = len(nodes_list)
 
-    # Convertir dict -> array lineal
+    fixed_node = nodes_list[0]
+    free_cities = [n for n in nodes_list if n != fixed_node]
+
+    m = len(free_cities)
+    node_to_idx = {n: i for i, n in enumerate(free_cities)}
+
+    # ============================================================
+    # 2. Embedding relajado
+    # ============================================================
+
     if isinstance(node_exp_map, dict):
         exp_array = np.array([node_exp_map[i] for i in range(len(node_exp_map))])
     else:
         exp_array = np.array(node_exp_map)
 
-    # Variables relajadas x_ij en [-1,1] -> [0,1]
     z_relaxed = np.tanh(alpha * exp_array)
     x_relaxed = (z_relaxed + 1.0) / 2.0
 
     def idx_ij(i, j):
         return i * m + j
 
-    # Construcción del tour
-    tour = []
-    if allow_repeats:
-        # Tour relajado: pueden repetirse nodos
+    # ============================================================
+    # 3. matriz x_ij
+    # ============================================================
+
+    x_matrix = np.zeros((m, m))
+
+    for i in range(m):
         for j in range(m):
-            best_i = np.argmax([x_relaxed[idx_ij(i, j)] for i in range(m)])
-            tour.append(nodes_list[best_i])
+            x_matrix[i, j] = x_relaxed[idx_ij(i, j)]
 
-        # Verificación: self-loops
-        if len(set(tour)) < len(tour):
-            repeated = [x for x in tour if tour.count(x) > 1]
-            print(f"WARNING: Tour relajado con nodos repetidos {repeated}")
+    x_values = {
+        free_cities[i]: [x_matrix[i, j] for j in range(m)]
+        for i in range(m)
+    }
 
-    else:
-        # Tour factible: cada ciudad aparece una sola vez
-        assigned_cities = set()
-        for j in range(m):
-            available = [i for i in range(m) if nodes_list[i] not in assigned_cities]
-            best_i = max(available, key=lambda i: x_relaxed[idx_ij(i, j)])
-            tour.append(nodes_list[best_i])
-            assigned_cities.add(nodes_list[best_i])
+    # ============================================================
+    # 4. binarización
+    # ============================================================
 
-        # Seguridad adicional
-        if len(set(tour)) < len(tour):
-            repeated = [x for x in tour if tour.count(x) > 1]
-            raise ValueError(f"Tour no factible generado: nodos repetidos {repeated}")
+    x_binary = (x_matrix >= threshold).astype(int)
 
-    # Calcular distancia total
-    dist = 0
+    # ============================================================
+    # 5. candidatos
+    # ============================================================
+
+    position_candidates = {}
+
     for j in range(m):
-        c1 = tour[j]
-        c2 = tour[(j + 1) % m]
+        position_candidates[j] = [
+            free_cities[i]
+            for i in range(m)
+            if x_binary[i, j] == 1
+        ]
+
+    # ============================================================
+    # 6. métricas estructurales
+    # ============================================================
+
+    node_occurrences = {n: 0 for n in free_cities}
+
+    empty_positions = []
+    ambiguous_positions = []
+    missing_nodes = []
+    duplicate_nodes = []
+
+    for j in range(m):
+        if len(position_candidates[j]) == 0:
+            empty_positions.append(j)
+        if len(position_candidates[j]) > 1:
+            ambiguous_positions.append(j)
+
+        for n in position_candidates[j]:
+            node_occurrences[n] += 1
+
+    for n, occ in node_occurrences.items():
+        if occ == 0:
+            missing_nodes.append(n)
+        elif occ > 1:
+            duplicate_nodes.append(n)
+
+    initial_feasible = (
+        len(empty_positions) == 0 and
+        len(ambiguous_positions) == 0 and
+        len(missing_nodes) == 0 and
+        len(duplicate_nodes) == 0
+    )
+
+    # ============================================================
+    # 7. reconstrucción
+    # ============================================================
+
+    initial_tour = [None] * m
+    used_nodes = set()
+
+    greedy_used = False
+
+    # 7.1 asignaciones directas
+    for j in range(m):
+        if len(position_candidates[j]) == 1:
+            node = position_candidates[j][0]
+            initial_tour[j] = node
+            used_nodes.add(node)
+
+    # 7.2 greedy
+    for j in range(m):
+
+        if initial_tour[j] is not None:
+            continue
+
+        candidates = [
+            n for n in position_candidates[j]
+            if n not in used_nodes
+        ]
+
+        if len(candidates) == 0:
+            return (
+                None,
+                None,
+                "infeasible",
+                {
+                    "position_candidates": position_candidates,
+                    "empty_positions": empty_positions,
+                    "ambiguous_positions": ambiguous_positions,
+                    "missing_nodes": missing_nodes,
+                    "duplicate_nodes": duplicate_nodes
+                },
+                x_values
+            )
+
+        best_node = max(
+            candidates,
+            key=lambda n: x_matrix[node_to_idx[n], j]
+        )
+
+        initial_tour[j] = best_node
+        used_nodes.add(best_node)
+
+        greedy_used = True
+
+    # ============================================================
+    # 8. validación final
+    # ============================================================
+
+    if set(initial_tour) != set(free_cities):
+        return (
+            None,
+            None,
+            "infeasible",
+            {
+                "position_candidates": position_candidates,
+                "empty_positions": empty_positions,
+                "ambiguous_positions": ambiguous_positions,
+                "missing_nodes": missing_nodes,
+                "duplicate_nodes": duplicate_nodes
+            },
+            x_values
+        )
+
+    # ============================================================
+    # 9. tour completo
+    # ============================================================
+
+    full_tour = [fixed_node] + initial_tour + [fixed_node]
+
+    dist = 0.0
+    for i in range(len(full_tour) - 1):
+        c1 = full_tour[i]
+        c2 = full_tour[i + 1]
         dist += graph[c1][c2]["weight"]
 
-    # Valores de x_ij por nodo real
-    x_values = {nodes_list[i]: [x_relaxed[idx_ij(i, j)] for j in range(m)] for i in range(m)}
+    # ============================================================
+    # 10. status final
+    # ============================================================
 
-    return tour, dist, x_values
+    if initial_feasible:
+        status = "perfect"
+    elif greedy_used:
+        status = "greedy"
+    else:
+        status = "infeasible"
 
+    # ============================================================
+    # 11. output
+    # ============================================================
+
+    candidate_info = {
+        "position_candidates": position_candidates,
+        "empty_positions": empty_positions,
+        "ambiguous_positions": ambiguous_positions,
+        "missing_nodes": missing_nodes,
+        "duplicate_nodes": duplicate_nodes
+    }
+
+    return (
+        full_tour,
+        dist,
+        status,
+        candidate_info,
+        x_values
+    )
 
 
         
 def two_opt_refinement(tour, graph):
-    improved = True
+
+    # ---------------------------------------------------------
+    # FIX 1: eliminar duplicado final si existe
+    # ---------------------------------------------------------
+    if tour[0] == tour[-1]:
+        tour = tour[:-1]
+
+    fixed = tour[0]
+    subtour = tour[1:]
+
     n = len(tour)
+
     best_tour = tour[:]
 
     def length(t):
-        return sum(graph[t[i]][t[(i+1)%n]]["weight"] for i in range(n))
+
+        for node in t:
+            if node not in graph:
+                raise ValueError(f"Node {node} not in graph: {node}")
+
+        return sum(
+            graph[t[i]][t[(i+1) % len(t)]]["weight"]
+            for i in range(len(t))
+        )
 
     best_len = length(best_tour)
 
+    improved = True
+
     while improved:
         improved = False
-        for i in range(n-2):
-            for j in range(i+2, n):
-                if j == n-1 and i == 0:
-                    continue
+
+        for i in range(1, n-2):          # no tocar fixed node
+            for j in range(i+1, n-1):
+
                 new_tour = best_tour[:]
-                new_tour[i+1:j+1] = reversed(best_tour[i+1:j+1])
+                new_tour[i:j] = reversed(new_tour[i:j])
+
                 new_len = length(new_tour)
+
                 if new_len < best_len:
-                    best_len = new_len
                     best_tour = new_tour
+                    best_len = new_len
                     improved = True
 
     return best_tour, best_len
+
 

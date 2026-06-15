@@ -77,10 +77,10 @@ def num_qubits(num_variables: int, order_compression: int) -> Optional[int]:
 #  Parámetros
 # ------------------------------------------------
 
-num_variables = [3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 22, 25]
+num_variables = [3, 4, 5, 6, 7, 8, 9, 10, 15, 22, 25]
 
-ORDERS_FULL = [1, 2, 3, 4, 5]
-ORDERS_PARTIAL = [2, 3, 4, 5]
+ORDERS_FULL = [1, 2, 3, 4]
+ORDERS_PARTIAL = [2, 3, 4]
 
 # ------------------------------------------------
 #  Paleta fija por order (CLAVE)
@@ -104,7 +104,7 @@ def compute_results(order_list):
     for k in order_list:
         vals = []
         for n in num_variables:
-            q = num_qubits(n**2, k)
+            q = num_qubits((n-1)**2, k)
             vals.append(q)
         results[k] = vals
     return results
@@ -149,7 +149,7 @@ def plot_results(order_list, results, filename):
 #  Generación de figuras
 # ------------------------------------------------
 
-output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/A_DIFFERENTIAL_COMPARISON"
+output_dir = "/mnt/netapp1/Store_CESGA/home/cesga/falonso/z_TSP/Results"
 os.makedirs(output_dir, exist_ok=True)
 
 plot_results(

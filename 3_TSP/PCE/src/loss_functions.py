@@ -24,6 +24,9 @@ def loss_func_estimator(
     x,
     alpha,
     beta,
+    A_1,
+    A_2,
+    gamma,
     ansatz,
     sim,
     graph,
@@ -181,71 +184,143 @@ def loss_func_estimator(
     ### ----------------------------------------------------- ###
     ### 4. Selección de nodos de interés
     ### ----------------------------------------------------- ###
-    m = graph.number_of_nodes()
+    # ---------------------------------------------------------
+    # TSP QUBO/PCE con nodo fijo
+    # ---------------------------------------------------------
+
+    # Número total de nodos del grafo
+    N = graph.number_of_nodes()
+
+    # Lista original de ciudades
+    cities = list(graph.nodes())
+
+    # ---------------------------------------------------------
+    # 1. Fijar nodo de referencia
+    # ---------------------------------------------------------
+    fixed_node = cities[0]
+
+    # Ciudades que sí se optimizan
+    free_cities = [c for c in cities if c != fixed_node]
+
+    # Ahora m = N-1
+    m = len(free_cities)
+
+    # ---------------------------------------------------------
+    # 2. Selección de variables auxiliares
+    # ---------------------------------------------------------
+    # Ahora hay (N-1)^2 variables binarias
     node_exp_map = select_nodes_from_aux(aux, m**2, list_size, return_concatenated=True)
 
-    # ------------------------------
-    # 3. Variables cuánticas "relajadas" por ciudad
-    # ------------------------------
-    # --- 1. Relajación de las variables binaria x_{i,j} ~ [0,1] ---
-    # node_exp_map -> dict {0: val0, 1: val1, ..., m-1: val_{m-1}}
+    # ---------------------------------------------------------
+    # 3. Variables relajadas
+    # ---------------------------------------------------------
     values = np.array([node_exp_map[i] for i in range(len(node_exp_map))])
+
+    # z in [-1,1]
     z_relaxed = np.tanh(alpha * values)
 
+    # ---------------------------------------------------------
+    # 4. Indexado
+    # ---------------------------------------------------------
     def idx_ij(i, j):
-        return i * m + j  # índice lineal
+        return i * m + j
 
     def x_ij(i, j):
-        # [0,1] desde [-1,1]
-        return (z_relaxed[idx_ij(i,j)] + 1.0) / 2.0
+        # map [-1,1] -> [0,1]
+        return (z_relaxed[idx_ij(i, j)] + 1.0) / 2.0
 
-    # --- 2. Coste del tour (relajado) ---
-    B = 1.0
+    # ---------------------------------------------------------
+    # 5. Coste del TSP
+    # ---------------------------------------------------------
+    B_0 = 1.0
     tsp_cost = 0.0
-    
-    cities = list(graph.nodes())
-    #print("DEBUG: cities =", cities)
-    #print("DEBUG: graph nodes =", list(graph.nodes()))
-    #print("DEBUG: graph edges =", list(graph.edges(data=True)))
+
+    # ---------------------------------------------------------
+    # 5A. Costes entre ciudades consecutivas
+    # ---------------------------------------------------------
+    for i in range(m):
+
+        node_i = free_cities[i]
+
+        for k in range(m):
+
+            if i == k:
+                continue
+
+            node_k = free_cities[k]
+
+            # posiciones consecutivas
+            for p in range(m - 1):
+
+                tsp_cost += ( B_0 * graph[node_i][node_k]["weight"] * x_ij(i, p) * x_ij(k, p + 1) )
+
+    # ---------------------------------------------------------
+    # 5B. Conexión con nodo fijo
+    # ---------------------------------------------------------
+    # fixed_node -> primera ciudad
+    # última ciudad -> fixed_node
 
     for i in range(m):
-        for j in range(m):
-            p_next = (j + 1) % m  # posición siguiente
-            for k in range(m):
-                node_i = cities[i]
-                node_k = cities[k]
-                if node_i == node_k:
-                    continue  # evitar aristas no existentes
-                tsp_cost += B * graph[node_i][node_k]["weight"] * x_ij(i,j) * x_ij(k,p_next)
-                
 
-    # --- 3. Restricciones suavizadas ---
-    # Cada ciudad aparece exactamente una vez
+        node_i = free_cities[i]
+
+        w = graph[fixed_node][node_i]["weight"]
+
+        # inicio del tour
+        tsp_cost += B_0 * w * x_ij(i, 0)
+
+        # final del tour
+        tsp_cost += B_0 * w * x_ij(i, m - 1)
+
+    # ---------------------------------------------------------
+    # 6. Restricciones
+    # ---------------------------------------------------------
+
+    # 6.a) Cada ciudad aparece exactamente una vez
     constraint_city = 0.0
+
     for i in range(m):
-        s = sum(x_ij(i,j) for j in range(m)) - 1
+
+        s = sum(x_ij(i, j) for j in range(m)) - 1
+
         constraint_city += s**2
 
-    # Cada posición ocupada por exactamente una ciudad
+    # 6.b) Cada posición contiene exactamente una ciudad
     constraint_pos = 0.0
+
     for j in range(m):
-        s = sum(x_ij(i,j) for i in range(m)) - 1
+
+        s = sum(x_ij(i, j) for i in range(m)) - 1
+
         constraint_pos += s**2
 
-    # --- 4. Loss total ---
-    A = 100.0
-    loss = tsp_cost + A * (constraint_city + constraint_pos)
+    # ---------------------------------------------------------
+    # 6.1 NUEVO: término de competencia intra-columna (QUBO clave)
+    # ---------------------------------------------------------
 
-    ### ----------------------------------------------------- ###
-    ### 6. TÉRMINO DE REGULARIZACIÓN SOBRE z_relaxed
-    ### ----------------------------------------------------- ###
-    # z_relaxed ya está en [-1, 1], igual que en MaxCut
-    # Penaliza que los valores estén demasiado saturados (+1 o -1)
-    reg_term = np.mean(z_relaxed**2)   # valores cercanos a ±1 contribuyen más
+    collision_col = 0.0
 
-    # Escalador del grafo para ajustar magnitud
-    v = A
-    # Añadir al loss total
+    for j in range(m):
+        for i in range(m):
+            for k in range(i + 1, m):
+                collision_col += x_ij(i, j) * x_ij(k, j)
+
+    
+    
+    # ---------------------------------------------------------
+    # 7. Loss total
+    # ---------------------------------------------------------
+    
+
+    loss = tsp_cost + A_1 * constraint_city + A_2 * constraint_pos + gamma * collision_col
+
+    # ---------------------------------------------------------
+    # 8. Regularización
+    # ---------------------------------------------------------
+    reg_term = np.mean(z_relaxed**2)
+
+    v = 1.0
+
     loss += beta * v * reg_term
 
     # ------------------------------

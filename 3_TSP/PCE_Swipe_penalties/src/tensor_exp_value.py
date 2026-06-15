@@ -28,9 +28,16 @@ def computational_basis_tensor(n_circuits, n_qubits):
     # Creamos una columna con enteros desde 0 hasta 2^n - 1
     states = np.arange(n_states, dtype=np.int8)[:, None]
 
-    # Generamos la matriz de bits para cada entero (representación binaria)
+    # Generamos la matriz de bits para cada entero (representación binaria en orden q_0 ... q_{n-1})
     # '>>' desplaza bits a la derecha y '& 1' se queda solo con el último bit
-    bits = ((states >> np.arange(n_qubits - 1, -1, -1)) & 1).astype(np.uint8)
+
+
+    # Orden invertido que coincide con qiskit (|q_{n-1} ... q_0>)
+    #bits = ((states >> np.arange(n_qubits)) & 1).astype(np.uint8)
+
+    # Orden invertido que NO coincide con qiskit (|q_{n-1} ... q_0>)
+    bits = ((states >> np.arange(n_qubits - 1, -1, -1)) & 1).astype(np.uint8) 
+
 
     # Replicamos esta matriz 'bits' para cada circuito (sin copiar datos)
     return np.broadcast_to(bits, (n_circuits, n_states, n_qubits))
@@ -48,36 +55,70 @@ def combination_tensor(n_circuits, n_qubits, k_degree):
     for j, combo in enumerate(combinations(range(n_qubits), k_degree)):
         base[list(combo), j] = 1  # Ponemos 1 donde la combinación lo indique
 
+    # Garantiza coherencia en el orden de bits: la fila 0 corresponde a Z0, la fila 1 a Z1, etc.
+    base = base[::-1, :]
+
     # Replicamos la matriz base a lo largo del eje de circuitos (sin copiar datos)
     return np.broadcast_to(base, (n_circuits, n_qubits, n_combinations))
 
 
-def build_probability_tensor(df_list, n_shots):
-    """
-    df_list puede contener:
-       - DataFrames con columna 'total_counts'
-       - Arrays numpy con probabilidades ya normalizadas
-    """
 
+
+
+def build_probability_tensor(df_list, n_shots, n_qubits):
+    """
+    Convierte una lista de DataFrames o arrays de probabilidades a un tensor de probabilidades
+    siguiendo el orden natural de bits (Z0, ..., Zn-1).
+
+    Parámetros
+    ----------
+    df_list : list
+        Lista de DataFrames con columna 'total_counts' o arrays de probabilidades ya normalizadas.
+    n_shots : int
+        Número de disparos (para normalizar DataFrames).
+    n_qubits : int
+        Número de qubits del sistema.
+
+    Returns
+    -------
+    np.ndarray
+        Tensor de probabilidades con shape (n_circuits, 2^n_qubits, 1)
+    """
     prob_arrays = []
 
     for item in df_list:
-
-        # Caso 1: item es un DataFrame (compatibilidad total con lo anterior)
+        # Caso 1: DataFrame con counts de Qiskit
         if hasattr(item, "columns") and "total_counts" in item.columns:
-            probs = (item["total_counts"] / n_shots).to_numpy()
+            counts = item["total_counts"].to_numpy()
+            n_states = 2**n_qubits
 
-        # Caso 2: item es ya un array de probabilidades
+            # Creamos array de probabilidades inicializado en 0
+            probs = np.zeros(n_states, dtype=float)
+
+            # Los índices de los counts de Qiskit corresponden a los strings de bits
+            # Convertimos cada índice a bitstring y luego a índice en orden natural
+            for idx, c in enumerate(counts):
+                # Bitstring Qiskit: q_{n-1} ... q_0
+                bitstr_qiskit = format(idx, f'0{n_qubits}b')
+                # Convertir a orden natural: Z0 ... Zn-1
+                bitstr_nat = bitstr_qiskit[::-1]
+                # Nuevo índice en decimal
+                new_idx = idx
+                probs[new_idx] = c / n_shots
+
+        # Caso 2: array numpy de probabilidades
         else:
-            probs = np.asarray(item)
-            # Asegurar normalización (solo por robustez)
+            probs = np.asarray(item, dtype=float)
             if not np.isclose(probs.sum(), 1.0):
                 probs = probs / probs.sum()
 
-        # Dar forma (2^n, 1)
+        # Convertir a shape (2^n_qubits, 1)
         prob_arrays.append(probs.reshape(-1, 1))
 
+    # Apilar en eje de circuitos
     return np.stack(prob_arrays, axis=0)
+
+
 
 
 def build_sign_tensor(n_circuits, n_qubits, k_degree):

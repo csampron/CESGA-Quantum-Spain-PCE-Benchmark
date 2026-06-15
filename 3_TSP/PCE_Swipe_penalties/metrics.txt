@@ -1,0 +1,225 @@
+====================================================
+TSP EMBEDDING METRICS SUMMARY
+====================================================
+
+Las métricas utilizadas tienen como objetivo caracterizar
+la calidad geométrica del embedding relajado producido por
+el PCE antes del decoder greedy.
+
+La idea principal es distinguir entre:
+
+- soluciones bien separadas,
+- soluciones ambiguas,
+- filas parcialmente apagadas,
+- y embeddings excesivamente suaves.
+
+====================================================
+1) mean_gap
+====================================================
+
+Definición:
+    media del gap top1-top2 por fila.
+
+Para cada fila i:
+
+    gap_i = max(x_i) - second_max(x_i)
+
+y posteriormente:
+
+    mean_gap = mean_i(gap_i)
+
+Interpretación:
+
+- Valores altos:
+    buena separabilidad entre candidatos.
+
+- Valores bajos:
+    múltiples ciudades compiten con valores similares.
+
+Observaciones:
+    un mean_gap alto NO garantiza factibilidad global,
+    ya que pueden existir filas muertas o inconsistencias.
+
+====================================================
+2) min_gap
+====================================================
+
+Definición:
+    mínimo gap top1-top2 observado entre todas las filas.
+
+Interpretación:
+
+- Detecta la peor ambigüedad del embedding.
+- Valores próximos a 0 indican empates duros.
+
+Ejemplo:
+    min_gap ≈ 0
+
+implica que al menos una fila tiene varios candidatos
+casi indistinguibles.
+
+====================================================
+3) mean_row_max
+====================================================
+
+Definición:
+    media del máximo valor por fila.
+
+Para cada fila i:
+
+    rowmax_i = max_k x_ik
+
+y luego:
+
+    mean_row_max = mean_i(rowmax_i)
+
+Interpretación:
+
+- Valores altos:
+    las ciudades presentan activaciones fuertes.
+
+- Valores bajos:
+    embeddings suaves y poco polarizados.
+
+====================================================
+4) min_row_max
+====================================================
+
+Definición:
+    mínimo valor máximo observado entre todas las filas.
+
+Interpretación:
+
+- Detecta la fila más débil del embedding.
+- Muy útil para identificar ciudades casi apagadas.
+
+Ejemplo:
+    min_row_max ≈ 0.3
+
+indica que existe al menos una ciudad que nunca
+activa fuertemente ninguna posición.
+
+====================================================
+5) dead_rows
+====================================================
+
+Definición:
+    número de filas cuya activación máxima es menor
+    que un umbral fijo.
+
+En este trabajo:
+
+    dead row:
+        max(row) < 0.4
+
+Interpretación:
+
+- Detecta ciudades prácticamente desaparecidas.
+- Es una de las métricas más importantes observadas
+  en problemas grandes.
+
+Observación:
+    un número elevado de dead_rows suele impedir
+    completamente la reconstrucción del tour.
+
+====================================================
+6) weak_rows
+====================================================
+
+Definición:
+    número de filas con activación máxima insuficiente.
+
+En este trabajo:
+
+    weak row:
+        max(row) < 0.5
+
+Interpretación:
+
+- Detecta ciudades activas pero débiles.
+- Indica embeddings demasiado suaves.
+
+====================================================
+7) ambiguous_rows
+====================================================
+
+Definición:
+    número de filas cuyo gap top1-top2 es pequeño.
+
+En este trabajo:
+
+    ambiguous row:
+        gap < 0.05
+
+Interpretación:
+
+- Detecta ambigüedad local.
+- Indica dificultad para decidir el candidato correcto.
+
+====================================================
+8) very_ambiguous_rows
+====================================================
+
+Definición:
+    número de filas con empates prácticamente exactos.
+
+En este trabajo:
+
+    very ambiguous row:
+        gap < 0.01
+
+Interpretación:
+
+- Detecta empates duros.
+- Muy problemático para decoders greedy.
+
+====================================================
+9) feasible_rate
+====================================================
+
+Definición:
+    proporción de ejecuciones que producen soluciones
+    válidas (perfect o greedy).
+
+Interpretación:
+
+- Métrica final de éxito combinatorio.
+- Resume la capacidad del embedding para inducir tours.
+
+====================================================
+10) perfect_rate
+====================================================
+
+Definición:
+    proporción de soluciones perfect.
+
+Interpretación:
+
+- Evalúa reconstrucciones totalmente consistentes.
+- En este trabajo suele ser muy bajo o nulo.
+
+====================================================
+11) greedy_rate
+====================================================
+
+Definición:
+    proporción de soluciones greedy válidas.
+
+Interpretación:
+
+- Mide la capacidad práctica del embedding para producir
+  tours reconstruibles mediante un decoder sencillo.
+
+====================================================
+CONCLUSIÓN GENERAL
+====================================================
+
+Los experimentos realizados sugieren que la principal
+limitación observada en el PCE relajado no es únicamente
+la ambigüedad local entre candidatos, sino especialmente
+la aparición de filas débiles o parcialmente apagadas.
+
+En problemas de mayor tamaño, la métrica dead_rows
+parece correlacionar más fuertemente con la pérdida
+de factibilidad que las métricas de ambigüedad.
+```

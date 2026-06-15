@@ -29,13 +29,64 @@ import csv
 import os
 from functools import partial
 
+def compute_loss(
+    x,
+    loss_func_estimator,
+    alpha,
+    beta,
+    A_1,
+    A_2,
+    gamma,
+    compiled_circuit,
+    sim,
+    graph,
+    list_size,
+    d_t,
+    n_shots,
+    experiment_result,
+    CUNQA,
+    family_name,
+    cost_history=None,
+    worker_id=None,
+    worker_histories=None
+):
+    value = loss_func_estimator(
+        x=x,
+        alpha=alpha,
+        beta=beta,
+        A_1=A_1,
+        A_2=A_2,
+        gamma=gamma,
+        ansatz=compiled_circuit,
+        sim=sim,
+        graph=graph,
+        list_size=list_size,
+        num_qubits=compiled_circuit[0].num_qubits,
+        d_t=d_t,
+        n_shots=n_shots,
+        experiment_result=experiment_result,
+        CUNQA=CUNQA,
+        family_name=family_name
+    )
+
+    # Historial global
+    if cost_history is not None:
+        cost_history.append(value)
+
+    # Historial por worker (paralelización)
+    if worker_histories is not None and worker_id is not None:
+        worker_histories[worker_id].append(value)
+
+    return value
+
 def run_vqe_optimization(
     sim,
     n_shots,
     alpha,
     beta,
-    A,
-    B,
+    A_1,
+    A_2,
+    gamma,
     compiled_circuit,
     G,
     list_size,
@@ -77,33 +128,29 @@ def run_vqe_optimization(
         """Callback para SPSA."""
         cost_history.append(fx)
 
-    def loss_func(x):
-        value = loss_func_estimator(
-            x=x,
-            alpha=alpha,
-            beta=beta,
-            A=A,
-            B=B,
-            ansatz=compiled_circuit,
-            sim=sim,
-            graph=G,
-            list_size=list_size,
-            num_qubits=compiled_circuit[0].num_qubits,
-            d_t=d_t,
-            n_shots=n_shots,
-            experiment_result=experiment_result,
-            CUNQA=cunqa_str,
-            family_name=family_name
-        )
-        cost_history.append(value)
-        return value
+    loss_func = partial(
+        compute_loss,
+        loss_func_estimator=loss_func_estimator,
+        alpha=alpha,
+        beta=beta,
+        A_1=A_1,
+        A_2=A_2,
+        gamma=gamma,
+        compiled_circuit=compiled_circuit,
+        sim=sim,
+        graph=G,  # 👈 agregado
+        list_size=list_size,
+        d_t=d_t,
+        n_shots=n_shots,
+        experiment_result=experiment_result,
+        CUNQA=cunqa_str,
+        family_name=family_name,
+        cost_history=cost_history
+    )
 
     # Generar parámetros iniciales
     rng_default = np.random.default_rng(33)
-    if cunqa_str!= "Simulation":
-        initial_params = rng_default.random(len(compiled_circuit[0].parameters)) * 2 * np.pi
-    else:
-        initial_params = rng_default.random(len(compiled_circuit[2].parameters)) * 2 * np.pi
+    initial_params = rng_default.random(len(compiled_circuit[0].parameters)) * 2 * np.pi
 
     if isinstance(optimizer, str):
         optimizer_lower = optimizer.lower()
@@ -189,13 +236,14 @@ def run_vqe_optimization(
                 "kwargs": {
                     "strategy": "best1exp",
                     "maxiter": maxiter,
-                    "popsize": 8,
+                    "popsize": 1,
                     "tol": 1e-24,
                     "mutation": (0.5, 1),
                     "recombination": 0.7,
                     "disp": True,
                     "polish": True,
-                    "init": "halton"
+                    "init": "halton",
+                    "workers": -1
                 }
             },
             "brute": {}  # Sin opciones por defecto
@@ -229,9 +277,31 @@ def run_vqe_optimization(
             result = differential_evolution(
                 loss_func,
                 bounds=[(0, 2*np.pi)]*len(initial_params),
-                seed=5, 
+                #seed=33, 
                 callback=callback_de,
                 **opt_config["kwargs"]  # Solo parámetros válidos para DE: strategy, maxiter, popsize, etc.
+            )
+
+            best_x = result.x
+
+            compute_loss(
+                best_x,
+                loss_func_estimator=loss_func_estimator,
+                alpha=alpha,
+                beta=beta,
+                A_1=A_1,
+                A_2=A_2,
+                gamma=gamma,
+                compiled_circuit=compiled_circuit,
+                sim=sim,
+                graph=G,
+                list_size=list_size,
+                d_t=d_t,
+                n_shots=n_shots,
+                experiment_result=experiment_result,
+                CUNQA=cunqa_str,
+                family_name=family_name,
+                cost_history=cost_history
             )
 
         elif optimizer_lower == "brute":

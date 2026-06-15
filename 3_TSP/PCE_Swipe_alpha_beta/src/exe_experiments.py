@@ -57,7 +57,7 @@ def filtrar_combinaciones(combos, indice, valor):
 
 
 
-def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, A, B, maxiter, n_shots, nqpus, cunqa_str, family_name, output_dir):   
+def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, A_1, A_2, gamma, maxiter, n_shots, nqpus, cunqa_str, family_name, output_dir):   
     """
     Ejecuta un experimento de MaxCut para una combinación de parámetros dada.
 
@@ -141,7 +141,7 @@ def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, A, B, maxiter
     # === 2. Cargar el grafo correspondiente al problema ===
     # Se espera un archivo con nombre "{problema}_{tamaño}.mc"
     parent = Path(__file__).resolve().parent
-    G, num_ver = load_graph(f"{parent}/graphs/{problema.lower()}_{tamaño}.tsp")
+    G, num_ver, mean_edge_weight, max_edge_weight = load_graph(f"{parent}/graphs/{problema.lower()}_{tamaño}.tsp")
 
     #print("Nodos en G:", list(G.nodes()))
     #print("Número de nodos:", num_ver)
@@ -149,6 +149,12 @@ def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, A, B, maxiter
     # === 3. Determinar parámetros del optimizador ===
     # Si se pasaron parámetros específicos para este optimizador, se usan
     opt_params = optimizer_params.get(optimizer.upper(), None) if optimizer_params else None
+
+    # Escalamos A para comparar por tamaño
+    A_1_scaled = A_1 * max_edge_weight
+    A_2_scaled = A_2 * max_edge_weight
+
+    gamma_scaled = gamma * max_edge_weight
 
     # === 4. Ejecutar MaxCut ===
     dic_resultado, subcarpeta, ruta_csv, ruta_csv_iter = ejecutar_tsp(
@@ -159,8 +165,9 @@ def ejecutar_experimentos(exp_list, optimizer_params, alpha, beta, A, B, maxiter
         k=k,
         alpha=alpha,
         beta=beta,
-        A=A,    
-        B=B,
+        A_1=A_1_scaled,
+        A_2=A_2_scaled,    
+        gamma=gamma_scaled,
         maxiter=maxiter,
         n_shots=n_shots,
         nqpus=nqpus,

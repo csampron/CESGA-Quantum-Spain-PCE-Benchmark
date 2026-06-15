@@ -1,0 +1,244 @@
+{
+  "resultados": [
+    {
+      "qubits": 3,
+      "elapsed_time": 18.813090324401855,
+      "alpha": 20.0,
+      "beta": 0.4,
+      "f_loss_value": 22098.24419582737,
+      "function_evaluations": 5550,
+      "Number of iterations": 903,
+      "num_params": 6,
+      "params": [
+        5.134913637861056,
+        4.448125172167323,
+        3.185576546764051,
+        1.996711470187609,
+        1.4668383946069046,
+        4.852268185306374
+      ],
+      "embedding_values": {
+        "2": [
+          0.0,
+          0.49999999999999917,
+          0.5000000000000009
+        ],
+        "3": [
+          0.4999999999999972,
+          0.49999999999999917,
+          0.49999999999999917
+        ],
+        "4": [
+          0.6407736157844599,
+          0.15252485026617646,
+          0.09078091784999831
+        ]
+      },
+      "candidate_info": {
+        "position_candidates": {
+          "0": [
+            3,
+            4
+          ],
+          "1": [
+            2,
+            3
+          ],
+          "2": [
+            2,
+            3
+          ]
+        },
+        "empty_positions": [],
+        "ambiguous_positions": [
+          0,
+          1,
+          2
+        ],
+        "missing_nodes": [],
+        "duplicate_nodes": [
+          2,
+          3
+        ]
+      },
+      "status": "greedy",
+      "initial_tour": [
+        1,
+        4,
+        2,
+        3,
+        1
+      ],
+      "initial_distance": 9495.0,
+      "refined_tour": [
+        1,
+        4,
+        2,
+        3
+      ],
+      "refined_distance": 9495,
+      "optimizer_message": "Optimization terminated successfully.",
+      "optimizer_status": ""
+    },
+    {
+      "qubits": 3,
+      "elapsed_time": 49.207568883895874,
+      "alpha": 20.0,
+      "beta": 0.4,
+      "f_loss_value": 22254.12227452835,
+      "function_evaluations": 15125,
+      "Number of iterations": 2500,
+      "num_params": 6,
+      "params": [
+        5.506815244400102,
+        1.4229380119016972,
+        1.717253621161958,
+        3.335392121183074,
+        1.5340824586171151,
+        5.2503513592472615
+      ],
+      "embedding_values": {
+        "2": [
+          1.2212453270876722e-15,
+          0.4999999999999983,
+          0.5000000000000016
+        ],
+        "3": [
+          0.49999999999999584,
+          0.49999999999999944,
+          0.4999999999999989
+        ],
+        "4": [
+          0.6796795795801771,
+          0.19143092712444154,
+          1.8431209336533527e-09
+        ]
+      },
+      "candidate_info": {
+        "position_candidates": {
+          "0": [
+            3,
+            4
+          ],
+          "1": [
+            2,
+            3
+          ],
+          "2": [
+            2,
+            3
+          ]
+        },
+        "empty_positions": [],
+        "ambiguous_positions": [
+          0,
+          1,
+          2
+        ],
+        "missing_nodes": [],
+        "duplicate_nodes": [
+          2,
+          3
+        ]
+      },
+      "status": "greedy",
+      "initial_tour": [
+        1,
+        4,
+        3,
+        2,
+        1
+      ],
+      "initial_distance": 6700.0,
+      "refined_tour": [
+        1,
+        4,
+        3,
+        2
+      ],
+      "refined_distance": 6700,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    },
+    {
+      "qubits": 3,
+      "elapsed_time": 49.56233286857605,
+      "alpha": 20.0,
+      "beta": 0.4,
+      "f_loss_value": 22098.244195827505,
+      "function_evaluations": 15125,
+      "Number of iterations": 2500,
+      "num_params": 6,
+      "params": [
+        1.563740981282584,
+        1.4972003516732866,
+        2.2431023617513244,
+        5.138304269888743,
+        4.608431079974326,
+        1.7106754357654488
+      ],
+      "embedding_values": {
+        "2": [
+          0.0,
+          0.4999999999999975,
+          0.5000000000000024
+        ],
+        "3": [
+          0.4999999999999947,
+          0.49999999999999944,
+          0.5
+        ],
+        "4": [
+          0.6407734844301876,
+          0.15252484639178882,
+          0.09078098620628666
+        ]
+      },
+      "candidate_info": {
+        "position_candidates": {
+          "0": [
+            3,
+            4
+          ],
+          "1": [
+            2,
+            3
+          ],
+          "2": [
+            2,
+            3
+          ]
+        },
+        "empty_positions": [],
+        "ambiguous_positions": [
+          0,
+          1,
+          2
+        ],
+        "missing_nodes": [],
+        "duplicate_nodes": [
+          2,
+          3
+        ]
+      },
+      "status": "greedy",
+      "initial_tour": [
+        1,
+        4,
+        3,
+        2,
+        1
+      ],
+      "initial_distance": 6700.0,
+      "refined_tour": [
+        1,
+        4,
+        3,
+        2
+      ],
+      "refined_distance": 6700,
+      "optimizer_message": "Maximum number of iterations has been exceeded.",
+      "optimizer_status": ""
+    }
+  ]
+}

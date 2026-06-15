@@ -1,0 +1,156 @@
+====================================================
+TSP EDGE ANALYSIS
+====================================================
+
+Threshold = 1000.0
+
+--------------------------------------------
+Size: 4
+Vertices: 4
+Edges: 6
+Mean edge weight: 1945.3333
+Max edge weight: 2648.0000
+Total weight sum: 11672.0000
+Max edge * (N-1): 7944.0000
+Max edge * (N-1)^2: 23832.0000
+Node with max incident weight sum: 3
+Max incident weight sum: 6216.0000
+Degree of max incident node: 3
+Edges >= 1000.0: 5
+Fraction >= 1000.0: 0.8333
+
+--------------------------------------------
+Size: 5
+Vertices: 5
+Edges: 10
+Mean edge weight: 1707.2000
+Max edge weight: 3324.0000
+Total weight sum: 17072.0000
+Max edge * (N-1): 13296.0000
+Max edge * (N-1)^2: 53184.0000
+Node with max incident weight sum: 1
+Max incident weight sum: 9717.0000
+Degree of max incident node: 4
+Edges >= 1000.0: 8
+Fraction >= 1000.0: 0.8000
+
+--------------------------------------------
+Size: 6
+Vertices: 6
+Edges: 15
+Mean edge weight: 2337.8667
+Max edge weight: 4087.0000
+Total weight sum: 35068.0000
+Max edge * (N-1): 20435.0000
+Max edge * (N-1)^2: 102175.0000
+Node with max incident weight sum: 1
+Max incident weight sum: 14898.0000
+Degree of max incident node: 5
+Edges >= 1000.0: 15
+Fraction >= 1000.0: 1.0000
+
+--------------------------------------------
+Size: 7
+Vertices: 7
+Edges: 21
+Mean edge weight: 1756.4762
+Max edge weight: 3583.0000
+Total weight sum: 36886.0000
+Max edge * (N-1): 21498.0000
+Max edge * (N-1)^2: 128988.0000
+Node with max incident weight sum: 3
+Max incident weight sum: 12663.0000
+Degree of max incident node: 6
+Edges >= 1000.0: 15
+Fraction >= 1000.0: 0.7143
+
+--------------------------------------------
+Size: 8
+Vertices: 8
+Edges: 28
+Mean edge weight: 467.8571
+Max edge weight: 1319.0000
+Total weight sum: 13100.0000
+Max edge * (N-1): 9233.0000
+Max edge * (N-1)^2: 64631.0000
+Node with max incident weight sum: 4
+Max incident weight sum: 7179.0000
+Degree of max incident node: 7
+Edges >= 1000.0: 3
+Fraction >= 1000.0: 0.1071
+
+--------------------------------------------
+Size: 9
+Vertices: 9
+Edges: 36
+Mean edge weight: 396.1389
+Max edge weight: 991.0000
+Total weight sum: 14261.0000
+Max edge * (N-1): 7928.0000
+Max edge * (N-1)^2: 63424.0000
+Node with max incident weight sum: 1
+Max incident weight sum: 6216.0000
+Degree of max incident node: 8
+Edges >= 1000.0: 0
+Fraction >= 1000.0: 0.0000
+
+--------------------------------------------
+Size: 10
+Vertices: 10
+Edges: 45
+Mean edge weight: 534.5556
+Max edge weight: 1186.0000
+Total weight sum: 24055.0000
+Max edge * (N-1): 10674.0000
+Max edge * (N-1)^2: 96066.0000
+Node with max incident weight sum: 1
+Max incident weight sum: 7415.0000
+Degree of max incident node: 9
+Edges >= 1000.0: 4
+Fraction >= 1000.0: 0.0889
+
+--------------------------------------------
+Size: 15
+Vertices: 15
+Edges: 105
+Mean edge weight: 483.4381
+Max edge weight: 1439.0000
+Total weight sum: 50761.0000
+Max edge * (N-1): 20146.0000
+Max edge * (N-1)^2: 282044.0000
+Node with max incident weight sum: 11
+Max incident weight sum: 15014.0000
+Degree of max incident node: 14
+Edges >= 1000.0: 15
+Fraction >= 1000.0: 0.1429
+
+--------------------------------------------
+Size: 22
+Vertices: 22
+Edges: 231
+Mean edge weight: 553.1472
+Max edge weight: 1439.0000
+Total weight sum: 127777.0000
+Max edge * (N-1): 30219.0000
+Max edge * (N-1)^2: 634599.0000
+Node with max incident weight sum: 21
+Max incident weight sum: 22349.0000
+Degree of max incident node: 21
+Edges >= 1000.0: 34
+Fraction >= 1000.0: 0.1472
+
+--------------------------------------------
+Size: 25
+Vertices: 25
+Edges: 300
+Mean edge weight: 3781.7200
+Max edge weight: 9639.0000
+Total weight sum: 1134516.0000
+Max edge * (N-1): 231336.0000
+Max edge * (N-1)^2: 5552064.0000
+Node with max incident weight sum: 1
+Max incident weight sum: 127886.0000
+Degree of max incident node: 24
+Edges >= 1000.0: 277
+Fraction >= 1000.0: 0.9233
+

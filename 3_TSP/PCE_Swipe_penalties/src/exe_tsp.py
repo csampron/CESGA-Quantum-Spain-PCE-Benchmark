@@ -60,8 +60,9 @@ def ejecutar_tsp(
     k,
     alpha,
     beta,
-    A,
-    B,
+    A_1,
+    A_2,
+    gamma,
     maxiter,
     n_shots,
     nqpus,
@@ -102,7 +103,7 @@ def ejecutar_tsp(
     print(f"Nodos: {num_ver}, Aristas: {G.number_of_edges()}")
 
     # === 2. Definir número de qubits y capas del circuito ===
-    m = num_ver**2
+    m = (num_ver-1)**2
     qubits = num_qubits(m, k)                   # número de qubits en función de vértices y k
     layers = m ** (1 - (1 / k))                 # fórmula para el número de capas
 
@@ -166,6 +167,13 @@ def ejecutar_tsp(
         compiled_x = pm.run(qc_x)
         compiled_y = pm.run(qc_y)
 
+        #compiled_z = transpile(qc_z, sim, optimization_level=2)
+        #compiled_x = transpile(qc_x, sim, optimization_level=2)
+        #compiled_y = transpile(qc_y, sim, optimization_level=2)
+
+        # --- Unir los compilados en una lista (o dict) ---
+        compiled_circuit = [compiled_x, compiled_y, compiled_z]
+
     else:
         sim = AerSimulator(method="statevector", seed_simulator=33)
         
@@ -173,26 +181,13 @@ def ejecutar_tsp(
         qc_z = qc.copy()  # Para términos Z
 
         # --- Si es Simulation, solo aplicar rotaciones de base ---
-        
-        # X: aplicar H
-        qc_x = QuantumCircuit(qubits)
-        for q in range(qubits):
-            qc_x.h(q)
-
-        # Y: aplicar S† H
-        qc_y = QuantumCircuit(qubits)
-        for q in range(qubits):
-            qc_y.sdg(q)
-            qc_y.h(q)
+    
 
         # --- Transpilar para el backend statevector ---
         compiled_z = transpile(qc_z, sim, optimization_level=0)
-        compiled_x = transpile(qc_x, sim, optimization_level=0)
-        compiled_y = transpile(qc_y, sim, optimization_level=0)
 
-
-    # --- Unir los compilados en una lista (o dict) ---
-    compiled_circuit = [compiled_x, compiled_y, compiled_z]
+        # --- Unir los compilados en una lista (o dict) ---
+        compiled_circuit = [compiled_z]
 
     # --- Construimos el tensor de signo ---
     d_t = build_sign_tensor(n_circuits = 3, n_qubits = qubits, k_degree = k)
@@ -237,8 +232,9 @@ def ejecutar_tsp(
         n_shots=n_shots,
         alpha=alpha,
         beta=beta,
-        A=A,
-        B=B,
+        A_1=A_1,
+        A_2=A_2,
+        gamma=gamma,
         compiled_circuit=compiled_circuit,
         G=G,
         list_size=list_size,
@@ -256,39 +252,70 @@ def ejecutar_tsp(
     
         
     # === 6. Obtener tour resultante ===
-    last_exp_map = experiment_result[-1]["exp_map"]
+    min_loss = min(e["loss"] for e in experiment_result)
+    best = next(
+        e for e in reversed(experiment_result)
+        if e["loss"] == min_loss
+    )   
+    last_exp_map = best["exp_map"]
 
-    # Tour inicial a partir del exp_map cuántico
-    initial_tour, initial_dist, y_values = get_tsp_tour_from_expmap(last_exp_map, G, alpha, allow_repeats=False)
+    # ============================================================
+    # 1. Reconstrucción desde embedding cuántico
+    # ============================================================
+
+    initial_tour, initial_dist, status, candidate_info, x_values = \
+        get_tsp_tour_from_expmap(
+            last_exp_map,
+            G,
+            alpha
+        )
 
     print("Initial tour:", initial_tour)
+    print("Status:", status)
     print("Initial distance:", initial_dist)
 
+    # ============================================================
+    # 2. 2-opt SOLO si hay solución válida
+    # ============================================================
 
-    # Refinamiento local (2-opt)
-    refined_tour, refined_dist = two_opt_refinement(initial_tour, G)
+    if status != "infeasible":
 
+        refined_tour, refined_dist = two_opt_refinement(
+            initial_tour,
+            G
+        )
 
-    print("Refined tour:", refined_tour)
-    print("Refined distance:", refined_dist)
+        print("Refined tour:", refined_tour)
+        print("Refined distance:", refined_dist)
+
+    else:
+
+        refined_tour = None
+        refined_dist = None
+
+        print("No valid Hamiltonian reconstruction.")
+
+    # ============================================================
+    # 3. métricas optimización
+    # ============================================================
 
     end_time = time.time()
     elapsed = end_time - start_time
-    print(f"⏱️ Tiempo total de ejecución: {elapsed:.2f} segundos")
 
-    # === 7. Recolectar resultados finales de la optimización ===
     params = result.x
     num_params = len(params)
     fevs = getattr(result, "nfev", None)
     fvalue = result.fun
 
-    if optimizer.lower() != "cobyla":
-        nit = getattr(result, "nit", None)
-    else:
-        nit = None
+    nit = getattr(result, "nit", None) if optimizer.lower() != "cobyla" else None
+
+    # ============================================================
+    # 4. resultado final
+    # ============================================================
 
     dic_resultado = {
-        "qubits":qubits,
+        # ---------------- OPTIMIZATION ----------------
+        "qubits": qubits,
         "elapsed_time": elapsed,
         "alpha": alpha,
         "beta": beta,
@@ -298,14 +325,24 @@ def ejecutar_tsp(
         "num_params": num_params,
         "params": params.tolist(),
 
-        # Resultados TSP
-        "initial_tour": initial_tour,
-        "refined_tour": refined_tour,
-        "initial_distance": initial_dist,
-        "refined_distance": refined_dist,
-        "embedding_values": y_values,
+        # ---------------- EMBEDDING ----------------
+        "embedding_values": x_values,
 
-        # Información del optimizador
+        # ---------------- STRUCTURE ----------------
+        "candidate_info": candidate_info,
+
+        # ---------------- TSP STATUS ----------------
+        "status": status,
+
+        # ---------------- TSP SOLUTION ----------------
+        "initial_tour": initial_tour,
+        "initial_distance": initial_dist,
+
+        # ---------------- LOCAL SEARCH ----------------
+        "refined_tour": refined_tour,
+        "refined_distance": refined_dist,
+
+        # ---------------- OPTIMIZER INFO ----------------
         "optimizer_message": getattr(result, "message", ""),
         "optimizer_status": getattr(result, "status", ""),
     }

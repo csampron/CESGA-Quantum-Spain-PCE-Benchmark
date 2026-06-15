@@ -1,0 +1,116 @@
+====================================================
+TSP MULTI-SWEEP SUMMARY
+Timestamp: 2026-05-30T22:46:54
+====================================================
+
+GLOBAL STATS
+--------------------------------------------
+Total rows: 576
+Perfect rate: 0.0000
+Greedy rate: 0.1059
+Feasible rate: 0.1059
+
+GLOBAL METRICS
+--------------------------------------------
+Mean gap: 0.2733
+Min gap mean: 0.0017
+Mean row max: 0.6455
+Min row max mean: 0.4796
+Dead rows mean: 0.0747
+Weak rows mean: 1.1493
+Ambiguous rows mean: 1.5330
+
+BEST PERFECT REGIONS
+--------------------------------------------
+No rows
+
+BEST GREEDY REGIONS
+--------------------------------------------
+alpha=40.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=1.0000, valid_rate=1.0000, mean_gap=0.4152, min_gap=0.0000, mean_row_max=0.7415, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=20.0, beta=0.5, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3651, min_gap=0.0000, mean_row_max=0.7234, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3622, min_gap=0.0000, mean_row_max=0.6998, min_row_max=0.4924, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.0, A_1=5.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3620, min_gap=0.0000, mean_row_max=0.6982, min_row_max=0.4923, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=16.0, beta=0.5, A_1=25.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3530, min_gap=0.0000, mean_row_max=0.7222, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=16.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3146, min_gap=0.0000, mean_row_max=0.7010, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.4206, min_gap=0.0000, mean_row_max=0.7643, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=1.3333, init_mean=12764.0000, ref_mean=12764.0000
+alpha=16.0, beta=0.0, A_1=25.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.2680, min_gap=0.0000, mean_row_max=0.6609, min_row_max=0.4771, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=14674.0000, ref_mean=13702.5000
+alpha=20.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.2536, min_gap=0.0000, mean_row_max=0.6428, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=14674.0000, ref_mean=13702.5000
+alpha=40.0, beta=0.0, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3492, min_gap=0.0000, mean_row_max=0.7236, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=2.0000, init_mean=11919.0000, ref_mean=11919.0000
+alpha=30.0, beta=0.0, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2932, min_gap=0.0000, mean_row_max=0.6887, min_row_max=0.3821, dead_rows=0.6667, weak_rows=1.3333, ambiguous_rows=1.0000, init_mean=11919.0000, ref_mean=11919.0000
+alpha=30.0, beta=0.5, A_1=10.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4672, min_gap=0.0000, mean_row_max=0.7873, min_row_max=0.4965, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12450.0000, ref_mean=12071.0000
+alpha=40.0, beta=0.0, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4115, min_gap=0.0000, mean_row_max=0.7668, min_row_max=0.4824, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.6667, init_mean=12450.0000, ref_mean=12071.0000
+alpha=12.0, beta=0.0, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2611, min_gap=0.0000, mean_row_max=0.6633, min_row_max=0.4599, dead_rows=0.3333, weak_rows=0.6667, ambiguous_rows=2.0000, init_mean=14633.0000, ref_mean=12225.0000
+alpha=16.0, beta=0.5, A_1=10.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2396, min_gap=0.0000, mean_row_max=0.6582, min_row_max=0.4997, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=2.0000, init_mean=14633.0000, ref_mean=12225.0000
+alpha=8.0, beta=0.0, A_1=5.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.1586, min_gap=0.0000, mean_row_max=0.6061, min_row_max=0.4438, dead_rows=0.3333, weak_rows=0.6667, ambiguous_rows=2.3333, init_mean=14633.0000, ref_mean=12225.0000
+alpha=12.0, beta=0.5, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2642, min_gap=0.0000, mean_row_max=0.6350, min_row_max=0.4598, dead_rows=0.3333, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=13928.0000, ref_mean=12315.0000
+alpha=16.0, beta=0.0, A_1=10.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.1611, min_gap=0.0000, mean_row_max=0.5765, min_row_max=0.4901, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=2.0000, init_mean=13928.0000, ref_mean=12315.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4305, min_gap=0.0000, mean_row_max=0.7299, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3894, min_gap=0.0000, mean_row_max=0.7230, min_row_max=0.4939, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=20.0, beta=0.0, A_1=15.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3195, min_gap=0.0000, mean_row_max=0.6827, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3175, min_gap=0.0000, mean_row_max=0.6741, min_row_max=0.4400, dead_rows=0.3333, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3158, min_gap=0.0000, mean_row_max=0.7038, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.0, A_1=10.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3065, min_gap=0.0000, mean_row_max=0.6639, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.6667, ambiguous_rows=1.6667, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.0, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3028, min_gap=0.0000, mean_row_max=0.6661, min_row_max=0.4784, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+
+BEST VALID REGIONS
+--------------------------------------------
+alpha=40.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=1.0000, valid_rate=1.0000, mean_gap=0.4152, min_gap=0.0000, mean_row_max=0.7415, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=20.0, beta=0.5, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3651, min_gap=0.0000, mean_row_max=0.7234, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3622, min_gap=0.0000, mean_row_max=0.6998, min_row_max=0.4924, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.0, A_1=5.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3620, min_gap=0.0000, mean_row_max=0.6982, min_row_max=0.4923, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=16.0, beta=0.5, A_1=25.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3530, min_gap=0.0000, mean_row_max=0.7222, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=16.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3146, min_gap=0.0000, mean_row_max=0.7010, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.4206, min_gap=0.0000, mean_row_max=0.7643, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=1.3333, init_mean=12764.0000, ref_mean=12764.0000
+alpha=16.0, beta=0.0, A_1=25.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.2680, min_gap=0.0000, mean_row_max=0.6609, min_row_max=0.4771, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=14674.0000, ref_mean=13702.5000
+alpha=20.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.2536, min_gap=0.0000, mean_row_max=0.6428, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=14674.0000, ref_mean=13702.5000
+alpha=40.0, beta=0.0, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3492, min_gap=0.0000, mean_row_max=0.7236, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=2.0000, init_mean=11919.0000, ref_mean=11919.0000
+alpha=30.0, beta=0.0, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2932, min_gap=0.0000, mean_row_max=0.6887, min_row_max=0.3821, dead_rows=0.6667, weak_rows=1.3333, ambiguous_rows=1.0000, init_mean=11919.0000, ref_mean=11919.0000
+alpha=30.0, beta=0.5, A_1=10.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4672, min_gap=0.0000, mean_row_max=0.7873, min_row_max=0.4965, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12450.0000, ref_mean=12071.0000
+alpha=40.0, beta=0.0, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4115, min_gap=0.0000, mean_row_max=0.7668, min_row_max=0.4824, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.6667, init_mean=12450.0000, ref_mean=12071.0000
+alpha=12.0, beta=0.0, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2611, min_gap=0.0000, mean_row_max=0.6633, min_row_max=0.4599, dead_rows=0.3333, weak_rows=0.6667, ambiguous_rows=2.0000, init_mean=14633.0000, ref_mean=12225.0000
+alpha=16.0, beta=0.5, A_1=10.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2396, min_gap=0.0000, mean_row_max=0.6582, min_row_max=0.4997, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=2.0000, init_mean=14633.0000, ref_mean=12225.0000
+alpha=8.0, beta=0.0, A_1=5.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.1586, min_gap=0.0000, mean_row_max=0.6061, min_row_max=0.4438, dead_rows=0.3333, weak_rows=0.6667, ambiguous_rows=2.3333, init_mean=14633.0000, ref_mean=12225.0000
+alpha=12.0, beta=0.5, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2642, min_gap=0.0000, mean_row_max=0.6350, min_row_max=0.4598, dead_rows=0.3333, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=13928.0000, ref_mean=12315.0000
+alpha=16.0, beta=0.0, A_1=10.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.1611, min_gap=0.0000, mean_row_max=0.5765, min_row_max=0.4901, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=2.0000, init_mean=13928.0000, ref_mean=12315.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.4305, min_gap=0.0000, mean_row_max=0.7299, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3894, min_gap=0.0000, mean_row_max=0.7230, min_row_max=0.4939, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=20.0, beta=0.0, A_1=15.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3195, min_gap=0.0000, mean_row_max=0.6827, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3175, min_gap=0.0000, mean_row_max=0.6741, min_row_max=0.4400, dead_rows=0.3333, weak_rows=1.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3158, min_gap=0.0000, mean_row_max=0.7038, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.0, A_1=10.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3065, min_gap=0.0000, mean_row_max=0.6639, min_row_max=0.5000, dead_rows=0.0000, weak_rows=1.6667, ambiguous_rows=1.6667, init_mean=12528.0000, ref_mean=12528.0000
+alpha=40.0, beta=0.0, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3028, min_gap=0.0000, mean_row_max=0.6661, min_row_max=0.4784, dead_rows=0.0000, weak_rows=1.0000, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+
+GEOMETRICALLY CLEANEST REGIONS
+--------------------------------------------
+alpha=30.0, beta=0.5, A_1=10.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.4206, min_gap=0.0000, mean_row_max=0.7643, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=1.3333, init_mean=12764.0000, ref_mean=12764.0000
+alpha=40.0, beta=0.0, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3492, min_gap=0.0000, mean_row_max=0.7236, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.0000, ambiguous_rows=2.0000, init_mean=11919.0000, ref_mean=11919.0000
+alpha=40.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=1.0000, valid_rate=1.0000, mean_gap=0.4152, min_gap=0.0000, mean_row_max=0.7415, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=30.0, beta=0.0, A_1=5.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3620, min_gap=0.0000, mean_row_max=0.6982, min_row_max=0.4923, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=16.0, beta=0.0, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3448, min_gap=0.0000, mean_row_max=0.6770, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.5, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3300, min_gap=0.0000, mean_row_max=0.6871, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.0, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3294, min_gap=0.0000, mean_row_max=0.6945, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.0, A_1=25.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2809, min_gap=0.0000, mean_row_max=0.6565, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=12.0, beta=0.0, A_1=25.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2575, min_gap=0.0000, mean_row_max=0.6478, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.5, A_1=10.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2212, min_gap=0.0000, mean_row_max=0.6324, min_row_max=0.4859, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=20.0, beta=0.0, A_1=5.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.2821, min_gap=0.0000, mean_row_max=0.6663, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.3333, init_mean=12528.0000, ref_mean=12528.0000
+alpha=12.0, beta=0.0, A_1=15.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2458, min_gap=0.0000, mean_row_max=0.6322, min_row_max=0.4958, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.3333, init_mean=nan, ref_mean=nan
+alpha=30.0, beta=0.5, A_1=25.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3518, min_gap=0.0000, mean_row_max=0.6869, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.6667, init_mean=nan, ref_mean=nan
+alpha=30.0, beta=0.0, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.3333, valid_rate=0.3333, mean_gap=0.3303, min_gap=0.0000, mean_row_max=0.6706, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.6667, init_mean=16912.0000, ref_mean=14877.0000
+alpha=30.0, beta=0.0, A_1=25.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3080, min_gap=0.0000, mean_row_max=0.6664, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.6667, init_mean=nan, ref_mean=nan
+alpha=20.0, beta=0.0, A_1=10.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3064, min_gap=0.0000, mean_row_max=0.6643, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=1.6667, init_mean=nan, ref_mean=nan
+alpha=40.0, beta=0.5, A_1=5.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2766, min_gap=0.0000, mean_row_max=0.6302, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.3333, ambiguous_rows=2.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.5, A_1=10.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3927, min_gap=0.0000, mean_row_max=0.6765, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=12.0, beta=0.5, A_1=25.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3910, min_gap=0.0000, mean_row_max=0.6978, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=30.0, beta=0.5, A_1=5.0, A_2=10.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3622, min_gap=0.0000, mean_row_max=0.6998, min_row_max=0.4924, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=8.0, beta=0.5, A_1=25.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3545, min_gap=0.0000, mean_row_max=0.7039, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=16.0, beta=0.5, A_1=25.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.6667, valid_rate=0.6667, mean_gap=0.3530, min_gap=0.0000, mean_row_max=0.7222, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=12528.0000, ref_mean=12528.0000
+alpha=8.0, beta=0.0, A_1=15.0, A_2=1.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3491, min_gap=0.0000, mean_row_max=0.6754, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=12.0, beta=0.5, A_1=15.0, A_2=15.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.3102, min_gap=0.0000, mean_row_max=0.6917, min_row_max=0.4581, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+alpha=8.0, beta=0.5, A_1=25.0, A_2=5.0 | runs=3, perfect_rate=0.0000, greedy_rate=0.0000, valid_rate=0.0000, mean_gap=0.2676, min_gap=0.0000, mean_row_max=0.6510, min_row_max=0.5000, dead_rows=0.0000, weak_rows=0.6667, ambiguous_rows=1.0000, init_mean=nan, ref_mean=nan
+
+PARAMETER RANGES WITH VALID SOLUTIONS
+--------------------------------------------
+alpha: [8.0, 12.0, 16.0, 20.0, 30.0, 40.0]
+beta: [0.0, 0.5]
+A_1: [5.0, 10.0, 15.0, 25.0]
+A_2: [1.0, 5.0, 10.0, 15.0]

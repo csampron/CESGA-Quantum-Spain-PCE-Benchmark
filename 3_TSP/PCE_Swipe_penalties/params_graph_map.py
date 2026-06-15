@@ -1,196 +1,360 @@
-import matplotlib.pyplot as plt
 from pathlib import Path
 import pandas as pd
 import json
 import numpy as np
 from datetime import datetime
 
+
 # ====================================================
-# 1) LOAD RESULTS FROM JSON FILES (TSP VERSION α vs A, usando initial_distance)
+# THRESHOLDS
+# ====================================================
+DEAD_ROW_THRESHOLD = 0.40
+WEAK_ROW_THRESHOLD = 0.50
+AMBIGUOUS_GAP_THRESHOLD = 0.05
+
+
+# ====================================================
+# AUX METRICS
+# ====================================================
+def compute_row_metrics(embedding_values):
+
+    gaps = []
+    row_maxs = []
+
+    dead_rows = 0
+    weak_rows = 0
+    ambiguous_rows = 0
+
+    for _, vals in embedding_values.items():
+
+        arr = np.array(vals, dtype=float)
+
+        if len(arr) < 2:
+            continue
+
+        sorted_vals = np.sort(arr)[::-1]
+
+        top1 = sorted_vals[0]
+        top2 = sorted_vals[1]
+        gap = top1 - top2
+
+        gaps.append(gap)
+        row_maxs.append(top1)
+
+        if top1 < DEAD_ROW_THRESHOLD:
+            dead_rows += 1
+
+        if top1 < WEAK_ROW_THRESHOLD:
+            weak_rows += 1
+
+        if gap < AMBIGUOUS_GAP_THRESHOLD:
+            ambiguous_rows += 1
+
+    if len(gaps) == 0:
+        return {
+            "mean_gap": np.nan,
+            "min_gap": np.nan,
+            "mean_row_max": np.nan,
+            "min_row_max": np.nan,
+            "dead_rows": np.nan,
+            "weak_rows": np.nan,
+            "ambiguous_rows": np.nan,
+        }
+
+    return {
+        "mean_gap": np.mean(gaps),
+        "min_gap": np.min(gaps),
+        "mean_row_max": np.mean(row_maxs),
+        "min_row_max": np.min(row_maxs),
+        "dead_rows": dead_rows,
+        "weak_rows": weak_rows,
+        "ambiguous_rows": ambiguous_rows,
+    }
+
+
+# ====================================================
+# LOAD RESULTS
 # ====================================================
 def load_tsp_results_from_path(path):
+
     experiment_path = Path(path)
 
     if not experiment_path.exists():
-        raise FileNotFoundError(f"❌ No existe el directorio: {experiment_path}")
+        raise FileNotFoundError(f"No existe el directorio: {experiment_path}")
 
-    print(f"📂 Leyendo resultados en: {experiment_path}")
+    print(f"Leyendo resultados en: {experiment_path}")
 
     records = []
 
     for folder in experiment_path.iterdir():
+
         if folder.is_dir() and folder.name.lower().startswith("alpha_"):
+
             try:
-                # carpeta: alpha_{alpha}_A_{A}
                 parts = folder.name.split("_")
-                a = float(parts[1])
-                A = float(parts[3])
+
+                # Expected:
+                # alpha_10.0_beta_0.2_A_1_50.0_A_2_5.0
+                alpha = float(parts[1])
+                beta = float(parts[3])
+                A_1 = float(parts[6])
+                A_2 = float(parts[9])
 
                 resultados_dir = folder / "Resultados"
+
                 if not resultados_dir.exists():
-                    print(f"⚠️ No existe la carpeta {resultados_dir}, se ignora.")
                     continue
 
-                json_files = list(resultados_dir.glob("*.json")) + list(resultados_dir.glob("*.JSON"))
-                if not json_files:
-                    print(f"⚠️ No hay JSON en {resultados_dir}, se ignora.")
-                    continue
-
-                tour_length_list = []
+                json_files = (
+                    list(resultados_dir.glob("*.json")) +
+                    list(resultados_dir.glob("*.JSON"))
+                )
 
                 for jf in json_files:
+
                     with open(jf, "r") as f:
                         data = json.load(f)
 
-                        # Para TSP, usamos 'initial_distance' como métrica
-                        results = data.get("resultados", [])
-                        if not results:
-                            # Si el JSON es directamente un dict individual (ejecutar_experimentos)
-                            results = [data]
+                    results = data.get("resultados", [])
 
-                        distances = [
-                            res.get("initial_distance", np.inf)
-                            for res in results
-                            if res.get("initial_distance") is not None
-                        ]
+                    if not results:
+                        results = [data]
 
-                        if not distances:
-                            continue
+                    for res in results:
 
-                        tour_length_list.extend(distances)
+                        status = res.get("status", "infeasible")
 
-                if not tour_length_list:
-                    print(f"⚠️ No hay tours válidos en {resultados_dir}, se ignora.")
-                    continue
+                        init_dist = res.get("initial_distance")
+                        ref_dist = res.get("refined_distance")
 
-                mean_val = pd.Series(tour_length_list).mean()
-                std_val  = pd.Series(tour_length_list).std(ddof=0)
-                min_val  = min(tour_length_list)
+                        embedding_values = res.get("embedding_values", {})
+                        metrics = compute_row_metrics(embedding_values)
 
-                records.append([a, A, mean_val, std_val, min_val])
+                        records.append([
+                            alpha,
+                            beta,
+                            A_1,
+                            A_2,
+                            status,
+                            init_dist,
+                            ref_dist,
+                            metrics["mean_gap"],
+                            metrics["min_gap"],
+                            metrics["mean_row_max"],
+                            metrics["min_row_max"],
+                            metrics["dead_rows"],
+                            metrics["weak_rows"],
+                            metrics["ambiguous_rows"],
+                        ])
 
             except Exception as e:
-                print(f"⚠️ Carpeta ignorada: {folder.name} ({e})")
+                print(f"Carpeta ignorada: {folder.name} ({e})")
 
     if not records:
-        raise RuntimeError("⚠️ No se encontraron resultados válidos en este path.")
+        raise RuntimeError("No se encontraron resultados válidos.")
 
-    df = pd.DataFrame(records, columns=["alpha", "A", "mean", "std", "min_distance"])
+    df = pd.DataFrame(
+        records,
+        columns=[
+            "alpha",
+            "beta",
+            "A_1",
+            "A_2",
+            "status",
+            "init_dist",
+            "ref_dist",
+            "mean_gap",
+            "min_gap",
+            "mean_row_max",
+            "min_row_max",
+            "dead_rows",
+            "weak_rows",
+            "ambiguous_rows",
+        ]
+    )
+
+    df["perfect"] = df["status"] == "perfect"
+    df["greedy"] = df["status"] == "greedy"
+    df["valid"] = df["status"].isin(["perfect", "greedy"])
+
     return df
 
-# ====================================================
-# 2) HEATMAP FUNCTION (ROBUST FOR α vs A)
-# ====================================================
-def plot_heatmap(arr, x_vals, y_vals, title, xlabel, ylabel, cmap, out_path):
-    fig, ax = plt.subplots(figsize=(8,6))
-    c = ax.imshow(arr, origin="lower", aspect="auto", cmap=cmap)
-    ax.set_xticks(np.arange(len(x_vals)))
-    ax.set_xticklabels([f"{x:.2f}" for x in x_vals])
-    ax.set_yticks(np.arange(len(y_vals)))
-    ax.set_yticklabels([f"{y:.1f}" for y in y_vals])
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    ax.set_title(title)
-    fig.colorbar(c, ax=ax)
-    fig.savefig(out_path, dpi=300, bbox_inches="tight")
-    plt.close(fig)
 
 # ====================================================
-# 3) SAVE BEST SUMMARY (JSON + TXT)
+# SUMMARY HELPERS
 # ====================================================
-def save_best_summary(path, min_val, best_rows, alpha_vals, A_vals):
-    path = Path(path)
+def aggregate_regions(df):
 
-    summary = {
-        "timestamp": datetime.now().isoformat(timespec="seconds"),
-        "best_initial_distance": float(min_val),
-        "num_best_combinations": int(len(best_rows)),
-        "best_combinations": [
-            {"alpha": float(row["alpha"]), "A": float(row["A"])}
-            for _, row in best_rows.iterrows()
-        ],
-        "alpha_unique": int(len(alpha_vals)),
-        "A_unique": int(len(A_vals)),
-    }
+    return (
+        df.groupby(["alpha", "beta", "A_1", "A_2"])
+        .agg(
+            runs=("status", "count"),
+            perfect_rate=("perfect", "mean"),
+            greedy_rate=("greedy", "mean"),
+            valid_rate=("valid", "mean"),
+            mean_gap=("mean_gap", "mean"),
+            min_gap=("min_gap", "mean"),
+            mean_row_max=("mean_row_max", "mean"),
+            min_row_max=("min_row_max", "mean"),
+            dead_rows=("dead_rows", "mean"),
+            weak_rows=("weak_rows", "mean"),
+            ambiguous_rows=("ambiguous_rows", "mean"),
+            init_dist_mean=("init_dist", "mean"),
+            init_dist_std=("init_dist", "std"),
+            ref_dist_mean=("ref_dist", "mean"),
+            ref_dist_std=("ref_dist", "std"),
+        )
+        .reset_index()
+    )
 
-    # ---- JSON ----
-    json_path = path / "best_summary.json"
-    with open(json_path, "w") as f:
-        json.dump(summary, f, indent=2)
 
-    # ---- TXT ----
-    txt_path = path / "best_summary.txt"
-    with open(txt_path, "w") as f:
-        f.write("🎯 Mejor tour inicial\n")
-        f.write(f"Distancia mínima inicial: {min_val}\n\n")
-        f.write("Combinaciones alpha/A:\n")
-        for row in summary["best_combinations"]:
-            f.write(f"  alpha={row['alpha']}, A={row['A']}\n")
-        f.write("\n")
-        f.write(f"alpha únicos: {len(alpha_vals)}\n")
-        f.write(f"A únicos: {len(A_vals)}\n")
-        f.write(f"timestamp: {summary['timestamp']}\n")
+def write_region_table(f, title, table, max_rows=25):
 
-    print(f"💾 Resumen guardado en:\n  - {json_path}\n  - {txt_path}")
+    f.write(f"{title}\n")
+    f.write("--------------------------------------------\n")
+
+    if len(table) == 0:
+        f.write("No rows\n\n")
+        return
+
+    for _, row in table.head(max_rows).iterrows():
+
+        f.write(
+            f"alpha={row['alpha']}, beta={row['beta']}, "
+            f"A_1={row['A_1']}, A_2={row['A_2']} | "
+            f"runs={int(row['runs'])}, "
+            f"perfect_rate={row['perfect_rate']:.4f}, "
+            f"greedy_rate={row['greedy_rate']:.4f}, "
+            f"valid_rate={row['valid_rate']:.4f}, "
+            f"mean_gap={row['mean_gap']:.4f}, "
+            f"min_gap={row['min_gap']:.4f}, "
+            f"mean_row_max={row['mean_row_max']:.4f}, "
+            f"min_row_max={row['min_row_max']:.4f}, "
+            f"dead_rows={row['dead_rows']:.4f}, "
+            f"weak_rows={row['weak_rows']:.4f}, "
+            f"ambiguous_rows={row['ambiguous_rows']:.4f}, "
+            f"init_mean={row['init_dist_mean']:.4f}, "
+            f"ref_mean={row['ref_dist_mean']:.4f}\n"
+        )
+
+    f.write("\n")
+
 
 # ====================================================
-# 4) MAIN PLOT FUNCTION α vs A (initial_distance)
+# SAVE SUMMARY
 # ====================================================
-def plot_tsp_results(base_path):
+def save_status_summary_txt(df, out_path):
+
+    out_path = Path(out_path)
+    txt_file = out_path / "status_summary_multibarrido.txt"
+
+    regions = aggregate_regions(df)
+
+    perfect_regions = regions[regions["perfect_rate"] > 0].sort_values(
+        ["perfect_rate", "valid_rate", "ref_dist_mean", "mean_gap"],
+        ascending=[False, False, True, False]
+    )
+
+    greedy_regions = regions[regions["greedy_rate"] > 0].sort_values(
+        ["greedy_rate", "valid_rate", "ref_dist_mean", "mean_gap"],
+        ascending=[False, False, True, False]
+    )
+
+    valid_regions = regions[regions["valid_rate"] > 0].sort_values(
+        ["valid_rate", "perfect_rate", "greedy_rate", "ref_dist_mean", "mean_gap"],
+        ascending=[False, False, False, True, False]
+    )
+
+    clean_regions = regions.sort_values(
+        ["dead_rows", "weak_rows", "ambiguous_rows", "mean_gap"],
+        ascending=[True, True, True, False]
+    )
+
+    with open(txt_file, "w") as f:
+
+        f.write("====================================================\n")
+        f.write("TSP MULTI-SWEEP SUMMARY\n")
+        f.write(f"Timestamp: {datetime.now().isoformat(timespec='seconds')}\n")
+        f.write("====================================================\n\n")
+
+        f.write("GLOBAL STATS\n")
+        f.write("--------------------------------------------\n")
+        f.write(f"Total rows: {len(df)}\n")
+        f.write(f"Perfect rate: {df['perfect'].mean():.4f}\n")
+        f.write(f"Greedy rate: {df['greedy'].mean():.4f}\n")
+        f.write(f"Feasible rate: {df['valid'].mean():.4f}\n\n")
+
+        f.write("GLOBAL METRICS\n")
+        f.write("--------------------------------------------\n")
+        f.write(f"Mean gap: {df['mean_gap'].mean():.4f}\n")
+        f.write(f"Min gap mean: {df['min_gap'].mean():.4f}\n")
+        f.write(f"Mean row max: {df['mean_row_max'].mean():.4f}\n")
+        f.write(f"Min row max mean: {df['min_row_max'].mean():.4f}\n")
+        f.write(f"Dead rows mean: {df['dead_rows'].mean():.4f}\n")
+        f.write(f"Weak rows mean: {df['weak_rows'].mean():.4f}\n")
+        f.write(f"Ambiguous rows mean: {df['ambiguous_rows'].mean():.4f}\n\n")
+
+        write_region_table(
+            f,
+            "BEST PERFECT REGIONS",
+            perfect_regions
+        )
+
+        write_region_table(
+            f,
+            "BEST GREEDY REGIONS",
+            greedy_regions
+        )
+
+        write_region_table(
+            f,
+            "BEST VALID REGIONS",
+            valid_regions
+        )
+
+        write_region_table(
+            f,
+            "GEOMETRICALLY CLEANEST REGIONS",
+            clean_regions
+        )
+
+        f.write("PARAMETER RANGES WITH VALID SOLUTIONS\n")
+        f.write("--------------------------------------------\n")
+
+        valid_df = df[df["valid"]]
+
+        if len(valid_df) == 0:
+            f.write("No valid solutions found.\n")
+        else:
+            for col in ["alpha", "beta", "A_1", "A_2"]:
+                vals = np.sort(valid_df[col].unique())
+                f.write(f"{col}: {vals.tolist()}\n")
+
+    print(f"Resumen guardado en: {txt_file}")
+
+
+# ====================================================
+# MAIN
+# ====================================================
+def analyze_multisweep(base_path):
+
     base_path = Path(base_path)
+
     df = load_tsp_results_from_path(base_path)
 
-    # Mejor tour inicial global
-    min_val = df["min_distance"].min()
-    best_rows = df[df["min_distance"] == min_val].sort_values(by=["alpha", "A"])
+    save_status_summary_txt(df, base_path)
 
-    print(f"\n🎯 Mejor tour inicial tiene distancia {min_val} y se obtuvo con:")
-    for _, row in best_rows.iterrows():
-        print(f"    alpha={row['alpha']}, A={row['A']}")
+    print("Análisis finalizado.")
 
-    # Pivot tables (filas=A, columnas=alpha)
-    pivot_mean = df.pivot(index="A", columns="alpha", values="mean")
-    pivot_std  = df.pivot(index="A", columns="alpha", values="std")
-
-    arr_mean = pivot_mean.to_numpy()
-    arr_std  = pivot_std.to_numpy()
-
-    A_vals = pivot_mean.index.to_numpy()
-    alpha_vals = pivot_mean.columns.to_numpy()
-
-    print(f"\nalpha únicos: {len(alpha_vals)} | A únicos: {len(A_vals)}")
-
-    # Guardar resumen del mejor resultado
-    save_best_summary(base_path, min_val, best_rows, alpha_vals, A_vals)
-
-    # Heatmaps
-    plot_heatmap(
-        arr_mean,
-        x_vals=alpha_vals,
-        y_vals=A_vals,
-        title="Distancia promedio inicial del tour",
-        xlabel="Alpha",
-        ylabel="A",
-        cmap="viridis",
-        out_path=base_path / "tour_initial_distance_mean.png",
-    )
-
-    plot_heatmap(
-        arr_std,
-        x_vals=alpha_vals,
-        y_vals=A_vals,
-        title="Desviación estándar de la distancia inicial del tour",
-        xlabel="Alpha",
-        ylabel="A",
-        cmap="plasma",
-        out_path=base_path / "tour_initial_distance_std.png",
-    )
-
-    print("\n✅ Heatmaps generados correctamente.")
 
 # ====================================================
-# EJEMPLO DE USO
+# RUN
 # ====================================================
 if __name__ == "__main__":
-    base_path = "Your_route/z_TSP/PCE_TSP_barrido_alpha_B/Experimentos/TSP_m_15/13_01_2026_22_51/k_2"
-    plot_tsp_results(base_path)
+
+    base_path = (
+        "Your_route/PCE_Swipe_penalties/"
+        "Experimentos_k4/TSP_m_15/job_1/k_4"
+    )
+
+    analyze_multisweep(base_path)

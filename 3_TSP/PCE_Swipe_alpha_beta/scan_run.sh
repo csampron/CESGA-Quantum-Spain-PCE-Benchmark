@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH -J scan_ab
-#SBATCH --array=0-59
+#SBATCH --array=0-74
 #SBATCH -o scan_ab_%A_%a.out
 #SBATCH -e scan_ab_%A_%a.err
-#SBATCH --time=06:00:00
-#SBATCH --mem=80G
-
+#SBATCH --cpus-per-task=32
+#SBATCH --time=04:00:00
+#SBATCH --mem=20G
 
 # IMPORTANTE: si se desea cambiar el número de combinaciones de parámetros o de repeticiones hay que modificar --array=0-(len(grid) x num_repeticiones)-1)
 
@@ -15,5 +15,6 @@ module load qmio/hpc gcc/12.3.0 hpcx-ompi flexiblas/3.3.0 boost cmake/3.27.6 gcc
 module load qmio/hpc gcc/12.3.0 networkx/3.3-python-3.11.9
 module load qmio/hpc gcccore/12.3.0 matplotlib/3.6.3-python-3.11.9
 
+export EXP_BASE_DIR="./Experimentos_k4/TSP_m_15/job_1"
 
 srun python -u params_run.py

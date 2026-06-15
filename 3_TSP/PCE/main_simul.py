@@ -29,7 +29,7 @@ from src.grafica_csv import (
 #   - k: parámetro que controla la compresión o agrupación de variables del circuito cuántico.
 
 Problema = ["TSP"]
-Tamaño = [22]
+Tamaño = [7]
 Optimiz = ["DIFFERENTIALEVOLUTION"]
 k = [2]
 
@@ -74,12 +74,15 @@ for combo in combinaciones:
     print(f"\n🚀 Ejecutando experimento con parámetros: {combo}")
     
     # Definir los hiperparámetros usados internamente
-    alpha = 8.0
+    alpha = 30.0
     beta = 0.8
+
+    A_1 = 15.0
+    A_2 = 5.0
+    gamma = 0.0 # Este parámetro no se usa
     
     # Ejecuta el experimento y obtiene la ruta del CSV con los resultados
-    ruta_csv, ruta_csv_iter = ejecutar_experimentos(exp_list=combo, optimizer_params=optimizer_params, alpha=alpha, beta=beta, maxiter=maxiter, n_shots=n_shots, nqpus = None, cunqa_str = "Simulation", family_name = None)
+    ruta_csv, ruta_csv_iter = ejecutar_experimentos(exp_list=combo, optimizer_params=optimizer_params, alpha=alpha, beta=beta, A_1=A_1, A_2=A_2, gamma=gamma, maxiter=maxiter, n_shots=n_shots, nqpus = None, cunqa_str = "Simulation", family_name = None, output_dir = None)
     
     # Genera y guarda la gráfica correspondiente al CSV del experimento
     graficar_coste(ruta_csv_iter)
-

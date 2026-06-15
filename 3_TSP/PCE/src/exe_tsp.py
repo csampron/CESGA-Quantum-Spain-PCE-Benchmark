@@ -60,11 +60,15 @@ def ejecutar_tsp(
     k,
     alpha,
     beta,
+    A_1,
+    A_2,
+    gamma,
     maxiter,
     n_shots,
     nqpus,
     cunqa_str_arg,
-    family_name
+    family_name,
+    output_dir
 ):
     """
     Ejecuta un experimento de MaxCut utilizando un circuito cuántico variacional (VQE).
@@ -99,7 +103,7 @@ def ejecutar_tsp(
     print(f"Nodos: {num_ver}, Aristas: {G.number_of_edges()}")
 
     # === 2. Definir número de qubits y capas del circuito ===
-    m = num_ver**2
+    m = (num_ver-1)**2
     qubits = num_qubits(m, k)                   # número de qubits en función de vértices y k
     layers = m ** (1 - (1 / k))                 # fórmula para el número de capas
 
@@ -192,18 +196,34 @@ def ejecutar_tsp(
     # === 5. Ejecutar la optimización VQE ===
     start_time = time.time()
 
+    
+    # Si se proporcionó output_dir (viene de run_params), úsalo como raíz.
+    # Sino, mantener la lógica antigua (para compatibilidad).
+    if output_dir is not None:
+        # Crear rutas relativas dentro de output_dir
+        # p.ej. ./Experimentos/.../alpha_..../Resultados/...
+        # Puedes organizarlo como prefieras; aquí lo dejamos sencillo:
+        subcarpeta = os.path.join(output_dir, "Resultados")
+        if not os.path.isdir(subcarpeta):
+            os.makedirs(subcarpeta, exist_ok=True)
+        
+        nombre_archivo_csv = f"TSP_{num_ver}_{optimizer}_{k}.csv"
+        nombre_archivo_csv_iter =f"TSP_{num_ver}_{optimizer}_{k}_iter.csv"
+        ruta_csv = os.path.join(subcarpeta, nombre_archivo_csv)
+        ruta_csv_iter = os.path.join(subcarpeta, nombre_archivo_csv_iter)
     # lógica original existente (compatibilidad)
-    if cunqa_str_arg == "Simulation":
-        subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}"
     else:
-        subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{nqpus}qpus/{num_ver}_vertices/{optimizer}"
+        if cunqa_str_arg == "Simulation":
+            subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}"
+        else:
+            subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{nqpus}qpus/{num_ver}_vertices/{optimizer}"
 
 
-    # Definir rutas para guardar resultados (CSV)
-    nombre_archivo_csv = f"TSP_{num_ver}_{optimizer}_{k}.csv"
-    nombre_archivo_csv_iter =f"TSP_{num_ver}_{optimizer}_{k}_iter.csv"
-    ruta_csv = os.path.join(subcarpeta, nombre_archivo_csv)
-    ruta_csv_iter = os.path.join(subcarpeta, nombre_archivo_csv_iter)
+        # Definir rutas para guardar resultados (CSV)
+        nombre_archivo_csv = f"TSP_{num_ver}_{optimizer}_{k}.csv"
+        nombre_archivo_csv_iter =f"TSP_{num_ver}_{optimizer}_{k}_iter.csv"
+        ruta_csv = os.path.join(subcarpeta, nombre_archivo_csv)
+        ruta_csv_iter = os.path.join(subcarpeta, nombre_archivo_csv_iter)
 
     # Ejecutar el proceso de optimización variacional
     # Ejecutar el proceso de optimización variacional
@@ -212,6 +232,9 @@ def ejecutar_tsp(
         n_shots=n_shots,
         alpha=alpha,
         beta=beta,
+        A_1=A_1,
+        A_2=A_2,
+        gamma=gamma,
         compiled_circuit=compiled_circuit,
         G=G,
         list_size=list_size,
@@ -236,37 +259,63 @@ def ejecutar_tsp(
     )   
     last_exp_map = best["exp_map"]
 
-    # Tour inicial a partir del exp_map cuántico
-    initial_tour, initial_dist, y_values = get_tsp_tour_from_expmap(last_exp_map, G, alpha, allow_repeats=False)
+    # ============================================================
+    # 1. Reconstrucción desde embedding cuántico
+    # ============================================================
+
+    initial_tour, initial_dist, status, candidate_info, x_values = \
+        get_tsp_tour_from_expmap(
+            last_exp_map,
+            G,
+            alpha
+        )
 
     print("Initial tour:", initial_tour)
+    print("Status:", status)
     print("Initial distance:", initial_dist)
 
+    # ============================================================
+    # 2. 2-opt SOLO si hay solución válida
+    # ============================================================
 
-    # Refinamiento local (2-opt)
-    refined_tour, refined_dist = two_opt_refinement(initial_tour, G)
+    if status != "infeasible":
 
+        refined_tour, refined_dist = two_opt_refinement(
+            initial_tour,
+            G
+        )
 
-    print("Refined tour:", refined_tour)
-    print("Refined distance:", refined_dist)
+        print("Refined tour:", refined_tour)
+        print("Refined distance:", refined_dist)
+
+    else:
+
+        refined_tour = None
+        refined_dist = None
+
+        print("No valid Hamiltonian reconstruction.")
+
+    # ============================================================
+    # 3. métricas optimización
+    # ============================================================
 
     end_time = time.time()
     elapsed = end_time - start_time
-    print(f"⏱️ Tiempo total de ejecución: {elapsed:.2f} segundos")
 
-    # === 7. Recolectar resultados finales de la optimización ===
     params = result.x
     num_params = len(params)
     fevs = getattr(result, "nfev", None)
     fvalue = result.fun
 
-    if optimizer.lower() != "cobyla":
-        nit = getattr(result, "nit", None)
-    else:
-        nit = None
+    nit = getattr(result, "nit", None) if optimizer.lower() != "cobyla" else None
+
+    # ============================================================
+    # 4. resultado final
+    # ============================================================
 
     dic_resultado = {
-        "qubits":qubits,
+        # ---------------- OPTIMIZATION ----------------
+        "qubits": qubits,
         "elapsed_time": elapsed,
         "alpha": alpha,
         "beta": beta,
@@ -276,29 +325,45 @@ def ejecutar_tsp(
         "num_params": num_params,
         "params": params.tolist(),
 
-        # Resultados TSP
-        "initial_tour": initial_tour,
-        "refined_tour": refined_tour,
-        "initial_distance": initial_dist,
-        "refined_distance": refined_dist,
-        "embedding_values": y_values,
+        # ---------------- EMBEDDING ----------------
+        #"embedding_values": x_values,
 
-        # Información del optimizador
+        # ---------------- STRUCTURE ----------------
+        #"candidate_info": candidate_info,
+
+        # ---------------- TSP STATUS ----------------
+        "status": status,
+
+        # ---------------- TSP SOLUTION ----------------
+        "initial_tour": initial_tour,
+        "initial_distance": initial_dist,
+
+        # ---------------- LOCAL SEARCH ----------------
+        "refined_tour": refined_tour,
+        "refined_distance": refined_dist,
+
+        # ---------------- OPTIMIZER INFO ----------------
         "optimizer_message": getattr(result, "message", ""),
         "optimizer_status": getattr(result, "status", ""),
     }
 
     # === 8. Guardar en JSON ===
-    if cunqa_str_arg == "Simulation":
-        subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}"
+    if output_dir is not None:
+        # Guardamos JSON dentro de la carpeta del experimento (p.ej. output_dir/Resultados/)
+        nombre_archivo = f"TSP_{num_ver}_{optimizer}_{k}.json"
+        ruta_archivo = os.path.join(subcarpeta, nombre_archivo)
     else:
-        subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}/"
-   
-    nombre_archivo = f"TSP_{num_ver}_{optimizer}_{k}.json"
+        if cunqa_str_arg == "Simulation":
+            subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}"
+        else:
+            subcarpeta = f"Resultados/TSP/{cunqa_str_arg}/{num_ver}_vertices/{optimizer}/"
+    
+        nombre_archivo = f"TSP_{num_ver}_{optimizer}_{k}.json"
 
-    if not os.path.isdir(subcarpeta):
-        os.makedirs(subcarpeta, exist_ok=True)
-    ruta_archivo = os.path.join(subcarpeta, nombre_archivo)
+        if not os.path.isdir(subcarpeta):
+            os.makedirs(subcarpeta, exist_ok=True)
+        ruta_archivo = os.path.join(subcarpeta, nombre_archivo)
+        
     append_result_to_json(ruta_archivo, dic_resultado)
 
     # === 10. Devolver resultado individual ===
