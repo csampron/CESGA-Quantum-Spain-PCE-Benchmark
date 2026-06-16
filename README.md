@@ -1,8 +1,43 @@
 # CESGA-Quantum-Spain-PCE-Benchmark
 
-## Benchmark of Pauli Correlation Encoding for different optimisation problems
 
-In this repository you can find the code used to get the results shown in the paper Benchmark of Pauli Correlation Encoding for different optimisation problems.
+<p align="center">
+  <a>
+    <img src="https://img.shields.io/badge/os-linux-blue" alt="Python version" height="18">
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/python-3.9-blue.svg" alt="Python version" height="18">
+  </a>
+  <a href="cesga-quantum-spain.github.io/cunqa/">
+    <img src="https://img.shields.io/badge/docs-blue.svg" alt="Python version" height="18">
+  </a>
+</p>
+
+<br>
+
+<p>
+    <div align="center">
+      <a href="https://www.cesga.es/">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="docs/source/_static/logo_cesga_blanco.png" width="200" height="50">
+          <source media="(prefers-color-scheme: light)" srcset="docs/source/_static/logo_cesga_negro.png" width="200" height="50">
+          <img src="docs/source/_static/logo_cesga_negro.png" width="30%" style="display: inline-block;" alt="CESGA logo">
+        </picture>
+      </a>
+      <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="40">
+      <a href="https://quantumspain-project.es/">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="docs/source/_static/QuantumSpain_logo_white.png" width="240" height="50">
+          <source media="(prefers-color-scheme: light)" srcset="docs/source/_static/QuantumSpain_logo_color.png" width="240" height="50">
+          <img src="docs/source/_static/QuantumSpain_logo_white.png" width="30%" style="display: inline-block;" alt="QuantumSpain logo">
+        </picture>
+      </a>
+    </div>
+</p>
+
+
+#
+In this repository you can find the code used to get the results shown in the paper <i>Benchmark of Pauli Correlation Encoding for different optimisation problems</i>.
 
 The repository is organized as followed:
 
