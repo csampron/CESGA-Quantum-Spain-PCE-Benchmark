@@ -43,7 +43,7 @@ EXACT_SOLUTIONS = {
 
 # === CARPETAS A EXPLORAR (con etiqueta) ===
 folders_to_search = [
-    ("Circuits", os.path.join(BASE_DIR, "Resultados", "MaxCut"))
+    ("Circuits", os.path.join(BASE_DIR, "Results", "MaxCut"))
 ]
 
 # === RECOLECTAR TODOS LOS JSON DE MAXCUT ===
