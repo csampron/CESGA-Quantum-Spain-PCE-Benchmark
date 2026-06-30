@@ -123,7 +123,7 @@ for optimizador in ["DIFFERENTIALEVOLUTION"]:
 
     # === Estilo
     plt.xlabel("Number of nodes")
-    plt.ylabel("Ratio of success")
+    plt.ylabel("Solution approximation ratio")
     plt.title(f"Simulation | Optimizer: {optimizador} | k=4")
     plt.grid(True, linestyle=':')
     plt.legend()
